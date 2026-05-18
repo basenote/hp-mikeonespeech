@@ -1,0 +1,2125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마이크온 스피치 아카데미 | 조진희 대표</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0C1B2E;
+      --navy-mid:   #122540;
+      --navy-light: #1E3A5F;
+      --gold:       #C9A227;
+      --gold-light: #E8C54A;
+      --gold-pale:  #F5E9C0;
+      --white:      #F5F3EE;
+      --gray:       #8B9BB4;
+      --gray-light: #CBD5E1;
+      --section-bg: #0F2035;
+      --alt-bg:     #142844;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px;
+      height: 72px;
+      background: rgba(12, 27, 46, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 162, 39, 0.2);
+    }
+
+    .nav-brand {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
+    .nav-brand-icon {
+      width: 36px; height: 36px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 700; color: var(--navy);
+    }
+    .nav-brand-text {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 16px; font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.3px;
+    }
+    .nav-brand-sub {
+      font-size: 11px; color: var(--gold);
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex; align-items: center; gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--gray-light);
+      font-size: 14px; font-weight: 400;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy) !important;
+      font-weight: 700 !important;
+      padding: 10px 22px;
+      border-radius: 4px;
+      font-size: 13px !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--gold-light) !important; }
+
+    /* ── HERO ── 전체 배경 컨테이너 */
+    #hero {
+      background: linear-gradient(130deg, #0C1B2E 0%, #122540 55%, #0D1E35 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 80px 10px 0px 10px;
+    }
+
+    /* 3열 그리드 — max-width 1160px 내에서 정렬 */
+    .hero-inner {
+      max-width: 1160px;
+      width: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 340px 300px;
+      align-items: stretch;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 700px 500px at 20% 60%,
+        rgba(201,162,39,0.07) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+
+    /* 좌열 — 텍스트 */
+    .hero-text-col {
+      padding: 20px 48px 48px 48px;
+      display: flex; flex-direction: column; justify-content: flex-start;
+      position: relative; z-index: 2;
+    }
+
+    .hero-label {
+      font-size: 13px; font-weight: 500;
+      color: var(--gold-light);
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: clamp(38px, 4vw, 56px);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -1.5px;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .hero-title .gold { color: var(--gold); }
+
+    .hero-subtitle {
+      font-size: 15px; color: var(--gray-light);
+      line-height: 1.85;
+      margin-bottom: 40px;
+      max-width: 420px;
+    }
+
+    .hero-btns {
+      display: flex; gap: 14px; flex-wrap: wrap;
+    }
+
+    /* 중열 — 대표 사진 */
+    .hero-photo-col {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-top: 0px;
+    }
+
+    .hero-photo-col img {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      max-height: 560px;
+      height: auto;
+      object-fit: contain;
+      object-position: bottom center;
+      filter: drop-shadow(0 0 30px rgba(12,27,46,0.4));
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 사진 좌우/하단 경계 블렌딩 */
+    .hero-photo-col::before {
+      content: '';
+      position: absolute; top: 0; bottom: 0; left: 0;
+      width: 38%; z-index: 2; pointer-events: none;
+      background: linear-gradient(to right, var(--navy), transparent);
+    }
+    .hero-photo-col::after {
+      content: '';
+      position: absolute; top: 0; bottom: 0; right: 0;
+      width: 38%; z-index: 2; pointer-events: none;
+      background: linear-gradient(to left, var(--navy-mid), transparent);
+    }
+    .hero-photo-bottom {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 80px; z-index: 3; pointer-events: none;
+      background: linear-gradient(to bottom, transparent, var(--navy));
+    }
+
+    /* 우열 — 크레덴셜 세로 리스트 */
+    .hero-cred-col {
+      padding: 30px 48px 48px 28px;
+      display: flex; flex-direction: column; justify-content: flex-start;
+      gap: 22px;
+      position: relative; z-index: 2;
+    }
+
+    .hero-cred-item {
+      display: flex; align-items: flex-start; gap: 14px;
+    }
+
+    .hero-cred-icon {
+      width: 42px; height: 42px; flex-shrink: 0;
+      border: 1.5px solid rgba(201,162,39,0.45);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      background: rgba(201,162,39,0.06);
+    }
+
+    .hero-cred-text {}
+    .hero-cred-title {
+      font-size: 12.5px; font-weight: 700;
+      color: var(--white);
+      line-height: 1.45;
+      margin-bottom: 5px;
+    }
+    .hero-cred-desc {
+      font-size: 11px; color: var(--gray);
+      line-height: 1.55;
+    }
+
+    /* 히어로 하단 프로그램 스트립 — 전체 너비 배경 */
+    .hero-programs-strip {
+      background: rgba(201,162,39,0.06);
+      border-top: 1px solid rgba(201,162,39,0.18);
+    }
+
+    /* 스트립 내부 — max-width 1160px */
+    .hero-strip-inner {
+      max-width: 1160px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 48px;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .hero-strip-label {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 13px; font-weight: 700;
+      color: var(--gold);
+      white-space: nowrap;
+      display: flex; align-items: center;
+      padding: 20px 32px 20px 0;
+      border-right: 1px solid rgba(201,162,39,0.2);
+      margin-right: 8px;
+      min-width: 160px;
+    }
+
+    .hero-strip-items {
+      display: flex; flex: 1;
+    }
+
+    .hero-strip-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 16px 24px;
+      text-decoration: none;
+      border-right: 1px solid rgba(255,255,255,0.06);
+      flex: 1;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+    .hero-strip-item:hover { background: rgba(201,162,39,0.1); }
+
+    .strip-icon {
+      width: 38px; height: 38px; flex-shrink: 0;
+      border-radius: 50%;
+      background: rgba(201,162,39,0.1);
+      border: 1.5px solid rgba(201,162,39,0.35);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px;
+    }
+
+    .strip-title {
+      font-size: 12px; color: var(--gray-light);
+      line-height: 1.45; font-weight: 500;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700; font-size: 15px;
+      padding: 14px 30px; border-radius: 4px;
+      border: none; cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      font-weight: 500; font-size: 15px;
+      padding: 13px 30px; border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.3);
+      cursor: pointer; text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── SECTION STYLES ── */
+    section {
+      padding: 80px 48px;
+    }
+
+    .section-inner {
+      max-width: 1160px; margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold); font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 700; line-height: 1.3;
+      color: var(--white);
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-desc {
+      font-size: 16px; color: var(--gray-light);
+      line-height: 1.8; max-width: 640px;
+    }
+
+    .divider {
+      width: 48px; height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin: 20px 0 40px;
+    }
+
+    /* ── PROGRAMS ── */
+    #programs { background: var(--section-bg); }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .program-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(201,162,39,0.15);
+      border-radius: 12px;
+      padding: 32px 28px;
+      transition: transform 0.2s, background 0.2s, border-color 0.2s;
+      cursor: default;
+    }
+    .program-card:hover {
+      transform: translateY(-4px);
+      background: rgba(201,162,39,0.06);
+      border-color: rgba(201,162,39,0.4);
+    }
+
+    .program-icon {
+      width: 52px; height: 52px;
+      background: rgba(201,162,39,0.15);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .program-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 18px; font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .program-desc {
+      font-size: 13.5px; color: var(--gray-light);
+      line-height: 1.7;
+    }
+
+    .program-tags {
+      display: flex; flex-wrap: wrap; gap: 6px;
+      margin-top: 18px;
+    }
+    .tag {
+      font-size: 11px; padding: 4px 10px;
+      background: rgba(201,162,39,0.12);
+      color: var(--gold-light);
+      border-radius: 100px;
+      border: 1px solid rgba(201,162,39,0.25);
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--navy); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+      margin-top: 48px;
+    }
+
+    .about-photo-wrap {
+      position: relative;
+    }
+    .about-photo-frame {
+      background: var(--navy-light);
+      border: 2px solid rgba(201,162,39,0.3);
+      border-radius: 12px;
+      aspect-ratio: 3/4;
+      max-height: 520px;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      font-size: 48px;
+      color: var(--gray);
+    }
+    .about-photo-badge {
+      position: absolute; bottom: -16px; right: -16px;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700; font-size: 12px;
+      padding: 14px 18px;
+      border-radius: 8px;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    .about-content {
+      /* 이미지 높이 초과 방지 — JS로 sync하거나 CSS max-height 활용 */
+    }
+
+    /* 타임라인 스타일 */
+    .career-timeline {
+      list-style: none;
+      position: relative;
+      padding-left: 28px;
+      /* 이미지 높이 초과 방지 */
+      max-height: 580px;
+      overflow: hidden;
+    }
+
+    /* 수직 연결선 */
+    .career-timeline::before {
+      content: '';
+      position: absolute;
+      left: 4px; top: 10px; bottom: 20px;
+      width: 2px;
+      background: linear-gradient(to bottom,
+        var(--gold) 0%,
+        rgba(201,162,39,0.4) 70%,
+        transparent 100%);
+    }
+
+    .career-item {
+      position: relative;
+      padding-bottom: 24px;
+      margin-bottom: 0;
+    }
+    .career-item:last-child { padding-bottom: 0; }
+
+    /* 타임라인 점 */
+    .career-item::before {
+      content: '';
+      position: absolute;
+      left: -26px; top: 5px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--navy);
+      box-shadow: 0 0 0 3px rgba(201,162,39,0.25);
+    }
+
+    .career-period {
+      font-size: 11px; color: var(--gold);
+      font-weight: 700; letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+    .career-role {
+      font-size: 14px; font-weight: 700; color: var(--white);
+      margin-bottom: 4px;
+      line-height: 1.35;
+    }
+    .career-detail {
+      font-size: 12px; color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* ── NOTABLE CLIENTS ── */
+    #clients { background: var(--section-bg); }
+
+    .clients-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-top: 48px;
+    }
+
+    .client-category {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(201,162,39,0.15);
+      border-radius: 10px;
+      padding: 28px;
+    }
+
+    .client-cat-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 20px; font-weight: 700;
+      color: var(--white);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--gold);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .client-cat-title::before {
+      content: '';
+      display: inline-block;
+      width: 4px; height: 20px;
+      background: var(--gold);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .client-names {
+      display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .client-chip {
+      font-size: 12px; padding: 5px 12px;
+      background: rgba(255,255,255,0.05);
+      color: var(--gray-light);
+      border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Media logos row */
+    .media-row {
+      margin-top: 48px;
+      padding: 28px 0;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .media-label {
+      text-align: center; font-size: 11px;
+      color: var(--gray); letter-spacing: 2px;
+      text-transform: uppercase; margin-bottom: 20px;
+    }
+
+    .media-logos {
+      display: flex; flex-wrap: wrap;
+      align-items: center; justify-content: center;
+      gap: 12px 20px;
+    }
+
+    .media-logo-item {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .media-logo-item:hover { border-color: rgba(201,162,39,0.4); background: rgba(201,162,39,0.06); }
+
+    .media-logo-img {
+      width: 22px; height: 22px;
+      object-fit: contain; border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .media-logo-badge {
+      width: 22px; height: 22px; flex-shrink: 0;
+      background: rgba(201,162,39,0.2);
+      border-radius: 3px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: var(--gold);
+    }
+
+    .media-logo-name {
+      font-size: 13px; color: var(--gray-light);
+      font-weight: 500;
+    }
+
+    .media-logos-old {
+      display: flex; flex-wrap: wrap;
+      align-items: center; justify-content: center;
+      gap: 16px 28px;
+    }
+
+    .media-logo-chip {
+      font-size: 13px; font-weight: 700;
+      color: var(--gray-light);
+      opacity: 0.65;
+      padding: 6px 14px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      transition: opacity 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .media-logo-chip:hover {
+      opacity: 1; color: var(--gold-light);
+      border-color: rgba(201,162,39,0.4);
+    }
+
+    /* ── AWARDS ── */
+    #awards { background: var(--alt-bg); }
+
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .award-card {
+      background: rgba(201,162,39,0.06);
+      border: 1px solid rgba(201,162,39,0.2);
+      border-radius: 10px;
+      padding: 28px;
+      text-align: center;
+    }
+    .award-emoji { font-size: 36px; margin-bottom: 16px; display: block; }
+    .award-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 16px; font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+    .award-desc { font-size: 13px; color: var(--gray-light); }
+
+    /* ── COURSES TABLE ── */
+    #courses { background: var(--navy); }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .course-section {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 28px;
+    }
+
+    .course-section-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 18px; font-weight: 700;
+      color: var(--white);
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--gold);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .course-section-title::before {
+      content: '';
+      display: inline-block;
+      width: 4px; height: 18px;
+      background: var(--gold);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .course-list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .course-list li {
+      font-size: 13px; color: var(--gray-light);
+      line-height: 1.5;
+      padding-left: 16px;
+      position: relative;
+    }
+    .course-list li::before {
+      content: '›';
+      position: absolute; left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: linear-gradient(135deg, #0C1B2E 0%, #142844 100%);
+      text-align: center;
+    }
+    [data-theme="2"] #contact {
+      background: linear-gradient(135deg, #FFF3E8 0%, #FFFAF5 100%) !important;
+    }
+    [data-theme="3"] #contact {
+      background: linear-gradient(135deg, #FFF8E8 0%, #F0FBF8 100%) !important;
+    }
+
+    #contact .section-title { margin: 0 auto 16px; }
+    #contact .section-desc { margin: 0 auto 48px; }
+
+    .contact-cards {
+      display: flex; justify-content: center;
+      gap: 24px; flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,162,39,0.2);
+      border-radius: 12px;
+      padding: 28px 32px;
+      min-width: 200px;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .contact-card:hover { background: rgba(201,162,39,0.08); }
+
+    .contact-card-icon { font-size: 28px; margin-bottom: 12px; }
+    .contact-card-label {
+      font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--gold); font-weight: 600; margin-bottom: 8px;
+    }
+    .contact-card-value {
+      font-size: 15px; font-weight: 700; color: var(--white);
+    }
+
+    .contact-cta-wrap {
+      display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;
+    }
+
+    .btn-lg {
+      padding: 18px 40px; font-size: 16px; border-radius: 6px;
+    }
+
+    /* ── REVIEWS MARQUEE ── */
+    @keyframes marqueeScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .review-marquee-outer {
+      overflow: hidden;
+      padding: 8px 0 24px;
+    }
+
+    .review-marquee-track {
+      display: flex;
+      gap: 24px;
+      width: max-content;
+      animation: marqueeScroll 36s linear infinite;
+      cursor: grab;
+    }
+    .review-marquee-track:hover { animation-play-state: paused; }
+    .review-marquee-track:active { cursor: grabbing; }
+
+    .rv-card {
+      width: 340px;
+      flex-shrink: 0;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,162,39,0.18);
+      border-radius: 14px;
+      padding: 28px 26px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+      user-select: none;
+    }
+    .rv-card:hover {
+      border-color: rgba(201,162,39,0.45);
+      background: rgba(201,162,39,0.06);
+      transform: translateY(-3px);
+    }
+
+    .rv-quote {
+      font-size: 36px;
+      color: var(--gold);
+      font-family: 'Noto Serif KR', serif;
+      line-height: 1;
+      margin-bottom: 14px;
+      opacity: 0.45;
+    }
+    .rv-text {
+      font-size: 13.5px;
+      color: var(--gray-light);
+      line-height: 1.85;
+      margin-bottom: 22px;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .rv-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .rv-avatar {
+      width: 38px; height: 38px; flex-shrink: 0;
+      background: rgba(201,162,39,0.15);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; font-weight: 700; color: var(--gold);
+    }
+    .rv-name {
+      font-size: 13px; font-weight: 700; color: var(--white);
+      margin-bottom: 3px;
+    }
+    .rv-role {
+      font-size: 11px; color: var(--gray);
+    }
+
+    /* 모달 */
+    #reviewModal.open {
+      display: flex !important;
+      animation: fadeIn 0.2s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080F1C;
+      padding: 40px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-brand {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 16px; font-weight: 700;
+      color: var(--gold);
+    }
+
+    .footer-info {
+      font-size: 12px; color: var(--gray);
+      line-height: 1.8;
+    }
+
+    /* ── RESPONSIVE ── */
+    /* ── 햄버거 버튼 (기본 숨김) ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px; height: 40px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--white); border-radius: 2px;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── 드로어 메뉴 ── */
+    .nav-drawer {
+      position: fixed; top: 72px; right: 0; bottom: 0;
+      width: 280px; z-index: 200;
+      background: #0C1B2E;
+      border-left: 1px solid rgba(201,162,39,0.2);
+      display: flex; flex-direction: column;
+      padding: 32px 28px; gap: 4px;
+      transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    .nav-drawer.open { transform: translateX(0); }
+    .nav-drawer a {
+      text-decoration: none; color: var(--gray-light);
+      font-size: 15px; font-weight: 400;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      transition: color 0.2s;
+    }
+    .nav-drawer a:hover { color: var(--gold); }
+    .nav-drawer .drawer-cta {
+      margin-top: 20px;
+      background: var(--gold); color: var(--navy) !important;
+      font-weight: 700 !important;
+      padding: 14px 24px; border-radius: 4px;
+      text-align: center; border-bottom: none;
+    }
+    .nav-drawer-overlay {
+      display: none;
+      position: fixed; inset: 0; z-index: 199;
+      background: rgba(0,0,0,0.5);
+    }
+    .nav-drawer-overlay.open { display: block; }
+
+    /* ════════════════════════════════
+       breakpoint 1: 태블릿 (≤ 900px)
+       ════════════════════════════════ */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+      .hero-text-col { padding: 20px 32px 48px; }
+      .hero-photo-col { display: none; }
+      .hero-cred-col { display: none; }
+
+      .hero-strip-inner {
+        padding: 0 32px;
+        flex-wrap: wrap;
+      }
+      .hero-strip-items { flex-wrap: wrap; }
+      .hero-strip-item { flex: 1 1 45%; min-width: 160px; }
+
+      section { padding: 72px 32px; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 36px; }
+      .about-photo-wrap { max-width: 400px; margin: 0 auto; }
+
+      .clients-intro { grid-template-columns: 1fr; gap: 20px; }
+
+      .courses-grid { grid-template-columns: 1fr; gap: 20px; }
+
+      .programs-grid { grid-template-columns: 1fr 1fr; }
+
+      .awards-grid { grid-template-columns: 1fr 1fr; }
+
+      /* 후기 마퀴 카드 */
+      .rv-card { width: 300px; }
+
+      /* footer */
+      footer { padding: 40px 32px; }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 28px !important;
+      }
+    }
+
+    /* ════════════════════════════════
+       breakpoint 2: 모바일 (≤ 640px)
+       ════════════════════════════════ */
+    @media (max-width: 640px) {
+      .hero-text-col { padding: 20px 20px 40px; }
+      .hero-title { font-size: clamp(32px, 8vw, 44px); }
+      .hero-subtitle { font-size: 14px; }
+
+      .hero-strip-inner { padding: 0 20px; }
+      .hero-strip-label { display: none; }
+      .hero-strip-item { flex: 1 1 50%; padding: 12px 12px; }
+      .strip-title { font-size: 11px; }
+
+      section { padding: 56px 20px; }
+
+      .section-title { font-size: clamp(22px, 5vw, 30px); }
+
+      .programs-grid { grid-template-columns: 1fr; }
+
+      .awards-grid { grid-template-columns: 1fr; }
+
+      .clients-intro { grid-template-columns: 1fr; }
+
+      /* 후기 마퀴 */
+      .rv-card { width: 280px; }
+      .review-marquee-outer { padding: 4px 0 16px; }
+
+      /* footer: 2열 → 1열 */
+      .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+      }
+      footer { padding: 36px 20px; }
+    }
+
+    /* ════════════════════════════════
+       breakpoint 3: 소형폰 (≤ 400px)
+       ════════════════════════════════ */
+    @media (max-width: 400px) {
+      .hero-title { font-size: 28px; letter-spacing: -0.5px; }
+      .hero-btns { flex-direction: column; }
+      .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+
+      .hero-strip-item { flex: 1 1 100%; }
+
+      .rv-card { width: 260px; }
+
+      .section-inner { padding: 0; }
+    }
+    /* ═══════════════════════════════════════
+       THEME 2 — 밝고 화사한 (Bright & Vibrant)
+       ═══════════════════════════════════════ */
+    [data-theme="2"] {
+      --navy:       #FFFAF5;
+      --navy-mid:   #FFF3E8;
+      --navy-light: #FFE8D0;
+      --gold:       #C84B11;
+      --gold-light: #E05A1A;
+      --gold-pale:  #FFD4AA;
+      --white:      #1A0800;
+      --gray:       #6B3820;
+      --gray-light: #3D2010;
+      --section-bg: #FFF6EE;
+      --alt-bg:     #FFF0E5;
+    }
+    [data-theme="2"] body {
+      background: #FFFAF5;
+      color: #1A0800;
+    }
+    [data-theme="2"] nav {
+      background: rgba(255,250,245,0.96);
+      border-bottom-color: rgba(200,75,17,0.25);
+    }
+    [data-theme="2"] .nav-brand-text,
+    [data-theme="2"] .nav-links a { color: #1A0800; }
+    [data-theme="2"] .nav-hamburger span { background: #1A0800; }
+    [data-theme="2"] .nav-drawer { background: #FFF6EE; border-left-color: rgba(200,75,17,0.2); }
+    [data-theme="2"] .nav-drawer a { color: #3D2010; }
+
+    [data-theme="2"] #hero {
+      background: linear-gradient(130deg, #FFF3E8 0%, #FFFAF5 55%, #FFF0E0 100%);
+    }
+    [data-theme="2"] #hero::before {
+      background: radial-gradient(ellipse 700px 500px at 20% 60%, rgba(200,75,17,0.07) 0%, transparent 70%);
+    }
+    [data-theme="2"] .hero-photo-col::before {
+      background: linear-gradient(to right, #FFF3E8, transparent);
+    }
+    [data-theme="2"] .hero-photo-col::after {
+      background: linear-gradient(to left, #FFFAF5, transparent);
+    }
+    [data-theme="2"] .hero-photo-bottom {
+      background: linear-gradient(to bottom, transparent, #FFFAF5);
+    }
+    [data-theme="2"] .hero-programs-strip {
+      background: rgba(200,75,17,0.06);
+      border-top-color: rgba(200,75,17,0.18);
+    }
+    [data-theme="2"] .hero-programs-strip,
+    [data-theme="2"] .hero-cred-col { background: transparent; }
+    [data-theme="2"] .cred-card,
+    [data-theme="2"] .program-card,
+    [data-theme="2"] .course-section,
+    [data-theme="2"] .client-category,
+    [data-theme="2"] .award-card {
+      background: rgba(200,75,17,0.05);
+      border-color: rgba(200,75,17,0.2);
+    }
+    [data-theme="2"] .rv-card { background: rgba(200,75,17,0.05); border-color: rgba(200,75,17,0.2); }
+    [data-theme="2"] .section-inner { max-width: 1160px; }
+    [data-theme="2"] .about-photo-frame { background: radial-gradient(ellipse at 50% 30%, rgba(200,75,17,0.12) 0%, #FFFAF5 65%) !important; border-color: rgba(200,75,17,0.2) !important; }
+    [data-theme="2"] .media-logo-item { background: rgba(200,75,17,0.04); border-color: rgba(200,75,17,0.12); }
+    [data-theme="2"] footer { background: #FFF0E8; border-top-color: rgba(200,75,17,0.15); }
+    [data-theme="2"] .career-timeline::before { background: linear-gradient(to bottom, #C84B11 0%, rgba(200,75,17,0.15) 85%, transparent 100%); }
+    [data-theme="2"] .career-item::before { background: #C84B11; }
+    [data-theme="2"] #courses { background: #FFF6EE !important; }
+    [data-theme="2"] .about-photo-badge { background: #C84B11; }
+
+    /* ═══════════════════════════════════════════
+       THEME 3 — 아기자기한 (Playful / Kids)
+       ═══════════════════════════════════════════ */
+    [data-theme="3"] {
+      --navy:       #FFFDF5;
+      --navy-mid:   #FFF8E8;
+      --navy-light: #FFF0CC;
+      --gold:       #E06010;
+      --gold-light: #FF8040;
+      --gold-pale:  #FFDDBB;
+      --white:      #1A1000;
+      --gray:       #6B5020;
+      --gray-light: #3D3010;
+      --section-bg: #F0FBF8;
+      --alt-bg:     #FFF0FA;
+    }
+    [data-theme="3"] body { background: #FFFDF5; color: #1A1000; }
+    [data-theme="3"] nav {
+      background: rgba(255,253,245,0.97);
+      border-bottom-color: rgba(224,96,16,0.3);
+    }
+    [data-theme="3"] .nav-brand-text,
+    [data-theme="3"] .nav-links a { color: #1A1000; }
+    [data-theme="3"] .nav-hamburger span { background: #1A1000; }
+    [data-theme="3"] .nav-drawer { background: #FFF8E8; border-left-color: rgba(224,96,16,0.2); }
+    [data-theme="3"] .nav-drawer a { color: #3D3010; }
+
+    [data-theme="3"] #hero {
+      background: linear-gradient(130deg, #FFF8E8 0%, #FFFDF5 40%, #F0FBF8 100%);
+    }
+    [data-theme="3"] #hero::before {
+      background: radial-gradient(ellipse 700px 500px at 20% 60%, rgba(224,96,16,0.08) 0%, transparent 70%);
+    }
+    [data-theme="3"] .hero-photo-col::before {
+      background: linear-gradient(to right, #FFF8E8, transparent);
+    }
+    [data-theme="3"] .hero-photo-col::after {
+      background: linear-gradient(to left, #FFFDF5, transparent);
+    }
+    [data-theme="3"] .hero-photo-bottom {
+      background: linear-gradient(to bottom, transparent, #FFFDF5);
+    }
+    [data-theme="3"] .hero-programs-strip {
+      background: rgba(224,96,16,0.07);
+      border-top-color: rgba(224,96,16,0.2);
+    }
+    [data-theme="3"] .cred-card,
+    [data-theme="3"] .program-card,
+    [data-theme="3"] .course-section,
+    [data-theme="3"] .client-category,
+    [data-theme="3"] .award-card {
+      background: rgba(224,96,16,0.05);
+      border-color: rgba(224,96,16,0.25);
+      border-radius: 16px;
+    }
+    [data-theme="3"] .rv-card {
+      background: rgba(224,96,16,0.05);
+      border-color: rgba(224,96,16,0.2);
+      border-radius: 20px;
+    }
+    [data-theme="3"] .program-card { border-radius: 20px; }
+    [data-theme="3"] .about-photo-frame { background: radial-gradient(ellipse at 50% 30%, rgba(224,96,16,0.12) 0%, #FFFDF5 65%) !important; border-color: rgba(224,96,16,0.2) !important; }
+    [data-theme="3"] .media-logo-item { background: rgba(224,96,16,0.05); border-color: rgba(224,96,16,0.15); border-radius: 10px; }
+    [data-theme="3"] footer { background: #FFF0FA; border-top-color: rgba(224,96,16,0.15); }
+    [data-theme="3"] .career-timeline::before { background: linear-gradient(to bottom, #E06010 0%, rgba(224,96,16,0.2) 85%, transparent 100%); }
+    [data-theme="3"] .career-item::before { background: #E06010; }
+    [data-theme="3"] #courses { background: #F0FBF8 !important; }
+    [data-theme="3"] .about-photo-badge { background: #E06010; }
+    [data-theme="3"] .section-title { letter-spacing: -0.5px; }
+    [data-theme="3"] .btn-primary { border-radius: 100px; }
+    [data-theme="3"] .btn-secondary { border-radius: 100px; }
+    [data-theme="3"] .nav-cta { border-radius: 100px; }
+
+    /* ── 테마 스위처 UI ── */
+    .theme-switcher {
+      position: fixed;
+      bottom: 28px; right: 24px;
+      z-index: 500;
+      display: flex; flex-direction: column; align-items: flex-end; gap: 10px;
+    }
+    .theme-toggle-btn {
+      width: 52px; height: 52px;
+      background: #C9A227;
+      color: #0C1B2E;
+      border: none; border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.35), 0 0 0 3px rgba(201,162,39,0.25);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 2px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .theme-toggle-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.4), 0 0 0 4px rgba(201,162,39,0.4);
+    }
+    .theme-toggle-btn svg { display: block; }
+    .theme-toggle-label {
+      font-size: 8px; font-weight: 700; letter-spacing: 0.5px;
+      color: #0C1B2E; line-height: 1;
+    }
+
+    .theme-picker {
+      display: none;
+      flex-direction: column; gap: 8px;
+      align-items: center;
+    }
+    .theme-picker.open { display: flex; }
+
+    .theme-dot {
+      width: 36px; height: 36px;
+      border-radius: 50%; border: 3px solid transparent;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+      transition: transform 0.15s, border-color 0.15s;
+      position: relative;
+    }
+    .theme-dot:hover { transform: scale(1.15); }
+    .theme-dot.active { border-color: #fff; box-shadow: 0 0 0 2px rgba(0,0,0,0.3), 0 2px 10px rgba(0,0,0,0.25); }
+    .theme-dot-1 { background: linear-gradient(135deg, #0C1B2E 50%, #C9A227 50%); }
+    .theme-dot-2 { background: linear-gradient(135deg, #FFFAF5 50%, #C84B11 50%); }
+    .theme-dot-3 { background: linear-gradient(135deg, #FFFDF5 50%, #E06010 50%); }
+
+    .theme-dot-label {
+      position: absolute;
+      right: 48px; top: 50%; transform: translateY(-50%);
+      background: rgba(0,0,0,0.75);
+      color: #fff; font-size: 11px;
+      padding: 4px 10px; border-radius: 4px;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0; transition: opacity 0.15s;
+    }
+    .theme-dot:hover .theme-dot-label { opacity: 1; }
+
+    /* ── 찾아오시는길 섹션 ── */
+    #location { background: var(--navy); }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 48px;
+      margin-top: 48px;
+      align-items: start;
+    }
+
+    .location-map-wrap {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(201,162,39,0.2);
+      height: 380px;
+      position: relative;
+    }
+    .location-map-wrap iframe {
+      width: 100%; height: 100%;
+      border: 0; display: block;
+    }
+
+    .location-info-wrap {
+      display: flex; flex-direction: column; gap: 24px;
+    }
+
+    .location-info-block {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,162,39,0.15);
+      border-radius: 10px;
+      padding: 22px 24px;
+    }
+
+    .location-info-label {
+      font-size: 11px; font-weight: 700;
+      color: var(--gold); letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .location-info-text {
+      font-size: 13.5px; color: var(--gray-light);
+      line-height: 1.85;
+    }
+
+    .kakao-map-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #FEE500;
+      color: #1A1A1A;
+      font-weight: 700; font-size: 14px;
+      padding: 13px 24px; border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 8px;
+      border: none; cursor: pointer;
+    }
+    .kakao-map-btn:hover { background: #F0D800; transform: translateY(-1px); }
+
+    /* 지하철·버스 가로 한 줄 (지도 하단) */
+    .location-transport {
+      display: flex; gap: 20px;
+      margin-top: 20px;
+    }
+    .location-transport .location-info-block {
+      flex: 1;
+    }
+
+    @media (max-width: 900px) {
+      .location-grid { grid-template-columns: 1fr; }
+      .location-map-wrap { height: 280px; }
+      .location-transport { flex-direction: column; gap: 14px; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#hero" class="nav-brand">
+    <div class="nav-brand-icon">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+        <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+        <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+      </svg>
+    </div>
+    <div>
+      <div class="nav-brand-text">마이크온 스피치</div>
+      <div class="nav-brand-sub">MIC-ON SPEECH ACADEMY</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#hero">홈</a></li>
+    <li><a href="#programs">프로그램/강의분야</a></li>
+    <li><a href="#clients">주요수강생/후기</a></li>
+    <li><a href="#about">강사소개</a></li>
+    <li><a href="#awards">수상 및 성과</a></li>
+    <li><a href="#location">찾아오시는길</a></li>
+    <li><a href="#contact" class="nav-cta">상담신청</a></li>
+  </ul>
+
+  <!-- 햄버거 버튼 (모바일 전용) -->
+  <button class="nav-hamburger" id="navHamburger" aria-label="메뉴 열기">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- 모바일 드로어 메뉴 -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="#hero"     onclick="closeDrawer()">홈</a>
+  <a href="#programs" onclick="closeDrawer()">프로그램/강의분야</a>
+  <a href="#clients"  onclick="closeDrawer()">주요수강생/후기</a>
+  <a href="#about"    onclick="closeDrawer()">강사소개</a>
+  <a href="#awards"   onclick="closeDrawer()">수상 및 성과</a>
+  <a href="#location" onclick="closeDrawer()">찾아오시는길</a>
+  <a href="#contact"  onclick="closeDrawer()" class="drawer-cta">상담신청</a>
+</div>
+<div class="nav-drawer-overlay" id="navOverlay" onclick="closeDrawer()"></div>
+
+<!-- 테마 스위처 (우하단 고정) -->
+<div class="theme-switcher">
+  <div class="theme-picker" id="themePicker">
+    <button class="theme-dot theme-dot-3" onclick="setTheme(3)" title="아기자기한">
+      <span class="theme-dot-label">아기자기한</span>
+    </button>
+    <button class="theme-dot theme-dot-2" onclick="setTheme(2)" title="밝고 화사한">
+      <span class="theme-dot-label">밝고 화사한</span>
+    </button>
+    <button class="theme-dot theme-dot-1 active" onclick="setTheme(1)" title="신뢰감 (기본)">
+      <span class="theme-dot-label">신뢰감 (기본)</span>
+    </button>
+  </div>
+  <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleThemePicker()" title="테마 변경">🎨</button>
+</div>
+
+<!-- ── HERO ── -->
+<section id="hero">
+<div class="hero-inner">
+
+  <!-- 좌열: 텍스트 -->
+  <div class="hero-text-col">
+    <p class="hero-label">프리미엄 스피치 &amp; 보이스 코칭</p>
+    <h1 class="hero-title">
+      말의 품격이<br>
+      <span class="gold">신뢰의 결과를</span><br>
+      만듭니다
+    </h1>
+    <p class="hero-subtitle">
+      25년 경력 마이크온 출신 스피치 전문가가<br>
+      목소리, 전달력, 설득 구조까지<br>
+      결과가 달라지는 프리미엄 스피치 코칭을 제공합니다.
+    </p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">상담 예약하기</a>
+      <a href="#programs" class="btn-secondary">프로그램 보기</a>
+    </div>
+  </div>
+
+  <!-- 중열: 대표 사진 (배경 제거 투명 PNG) -->
+  <div class="hero-photo-col">
+    <img src="instructor_nobg.png" alt="조진희 대표">
+    <div class="hero-photo-bottom"></div>
+  </div>
+
+  <!-- 우열: 크레덴셜 세로 4개 -->
+  <div class="hero-cred-col">
+    <div class="hero-cred-item">
+      <div class="hero-cred-icon">👑</div>
+      <div class="hero-cred-text">
+        <div class="hero-cred-title">상위 1%를 위한<br>프리미엄 스피치 &amp; 보이스 코칭</div>
+        <div class="hero-cred-desc">CEO·배우·의사·법조인 대상<br>1대1 맞춤 코칭 다수 진행</div>
+      </div>
+    </div>
+
+    <div class="hero-cred-item">
+      <div class="hero-cred-icon">📡</div>
+      <div class="hero-cred-text">
+        <div class="hero-cred-title">언론사 기자·아나운서 등<br>전직 언론인 700여명 배출</div>
+        <div class="hero-cred-desc">KBS, MBC, SBS, JTBC, MBN<br>연합뉴스TV, 조선·중앙·동아일보</div>
+      </div>
+    </div>
+
+    <div class="hero-cred-item">
+      <div class="hero-cred-icon">🏢</div>
+      <div class="hero-cred-text">
+        <div class="hero-cred-title">중소·중견기업 CEO 대상<br>스피치 강의 102시간 진행</div>
+        <div class="hero-cred-desc">세종텔레콤·신한카드·롯데백화점<br>한국거래소·교보생명 등</div>
+      </div>
+    </div>
+
+    <div class="hero-cred-item">
+      <div class="hero-cred-icon">🎙</div>
+      <div class="hero-cred-text">
+        <div class="hero-cred-title">녹음·활동 서식을 통한<br>실전형 스피치 코칭</div>
+        <div class="hero-cred-desc">CBS 아나운서·TBS MC 출신<br>중앙대 언론고시반 전임강사 역임</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /hero-inner -->
+
+  <!-- 하단 프로그램 스트립 -->
+  <div class="hero-programs-strip">
+  <div class="hero-strip-inner">
+    <div class="hero-strip-label">마이크온 스피치<br>대표 프로그램</div>
+    <div class="hero-strip-items">
+      <a href="#programs" class="hero-strip-item">
+        <div class="strip-icon">🎙</div>
+        <div class="strip-title">프리미엄 1:1<br>보이스 코칭</div>
+      </a>
+      <a href="#programs" class="hero-strip-item">
+        <div class="strip-icon">📊</div>
+        <div class="strip-title">비즈니스 스피치<br>&amp; 발표 코칭</div>
+      </a>
+      <a href="#programs" class="hero-strip-item">
+        <div class="strip-icon">💼</div>
+        <div class="strip-title">면접 &amp; 입시<br>말하기 코칭</div>
+      </a>
+      <a href="#programs" class="hero-strip-item" style="border-right:none;">
+        <div class="strip-icon">👑</div>
+        <div class="strip-title">CEO·전문직<br>1대1 개인 코칭</div>
+      </a>
+    </div>
+  </div><!-- /hero-strip-inner -->
+  </div><!-- /hero-programs-strip -->
+
+</section>
+
+<!-- ── PROGRAMS ── -->
+<section id="programs">
+  <div class="section-inner">
+    <div class="section-label">PROGRAMS</div>
+    <h2 class="section-title">마이크온 스피치 프로그램</h2>
+    <div class="divider"></div>
+    <p class="section-desc">목소리부터 전달력, 설득 구조까지 — 상황과 목적에 맞는 맞춤형 스피치 코칭을 제공합니다.</p>
+    <div class="programs-grid">
+      <div class="program-card">
+        <div class="program-icon">🎙</div>
+        <div class="program-title">1:1 보이스 코칭</div>
+        <p class="program-desc">신뢰를 주는 목소리 만들기, 전달력을 높이는 발음법, 오랜 강의·발표에도 목이 아프지 않은 발성법까지 체계적으로 교정합니다.</p>
+        <div class="program-tags"><span class="tag">목소리 교정</span><span class="tag">발음법</span><span class="tag">발성법</span></div>
+      </div>
+      <div class="program-card">
+        <div class="program-icon">📊</div>
+        <div class="program-title">비즈니스 스피치 &amp; 발표 코칭</div>
+        <p class="program-desc">보고·PT·제안 등 비즈니스 상황에서 내용이 잘 전달되는 구조적 스피치와 설득력 있는 프레젠테이션 기법을 코칭합니다.</p>
+        <div class="program-tags"><span class="tag">프레젠테이션</span><span class="tag">대중 연설</span><span class="tag">설득 스피치</span></div>
+      </div>
+      <div class="program-card">
+        <div class="program-icon">💼</div>
+        <div class="program-title">면접 &amp; 입시 말하기 코칭</div>
+        <p class="program-desc">합격을 부르는 목소리 코칭, 기억에 남는 자기소개, 심사위원을 사로잡는 면접 전략. 취업·대학 입시 모두 커버합니다.</p>
+        <div class="program-tags"><span class="tag">취업 면접</span><span class="tag">자기소개서</span><span class="tag">입시 컨설팅</span></div>
+      </div>
+      <div class="program-card">
+        <div class="program-icon">📡</div>
+        <div class="program-title">미디어 트레이닝</div>
+        <p class="program-desc">방송 인터뷰, 대변인 훈련, 카메라 앞 스피치 — 언론 출신 전문가가 미디어 환경에 맞는 실전 트레이닝을 제공합니다.</p>
+        <div class="program-tags"><span class="tag">방송 인터뷰</span><span class="tag">대변인 훈련</span><span class="tag">카메라 스피치</span></div>
+      </div>
+      <div class="program-card">
+        <div class="program-icon">👑</div>
+        <div class="program-title">CEO · 전문직 1대1 개인 코칭</div>
+        <p class="program-desc">CEO, 의사, 변호사, 교수, 배우 등 각 분야 최정상 전문가를 위한 완전 맞춤형 1대1 스피치 트레이닝입니다.</p>
+        <div class="program-tags"><span class="tag">CEO 스피치</span><span class="tag">전문직 맞춤</span><span class="tag">1:1 집중</span></div>
+      </div>
+      <div class="program-card">
+        <div class="program-icon">📜</div>
+        <div class="program-title">자격증 과정</div>
+        <p class="program-desc">스피치 지도사 1급, 프레젠테이션 전문가 1급 자격증 취득 과정. 취준생을 위한 자기소개·면접 등 다양한 상황별 맞춤 강의 포함.</p>
+        <div class="program-tags"><span class="tag">스피치 지도사 1급</span><span class="tag">PT 전문가 1급</span><span class="tag">자격증 취득</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COURSE DETAILS ── -->
+<section id="courses" style="background:var(--navy);">
+  <div class="section-inner">
+    <div class="section-label">LECTURE DETAILS</div>
+    <h2 class="section-title">강의 분야 상세</h2>
+    <div class="divider"></div>
+    <div class="courses-grid">
+      <div class="course-section">
+        <div class="course-section-title">🎙 목소리 코칭</div>
+        <ul class="course-list">
+          <li>신뢰를 주는 목소리 만들기</li>
+          <li>전달력을 높이는 발음법</li>
+          <li>오랜 강의·발표에도 목이 아프지 않은 발성법</li>
+          <li>호감을 부르는 아나운서처럼 말하기</li>
+        </ul>
+      </div>
+      <div class="course-section">
+        <div class="course-section-title">📢 스피치 코칭</div>
+        <ul class="course-list">
+          <li>취업 면접 &amp; 합격을 부르는 자기소개</li>
+          <li>미디어 트레이닝 (방송 인터뷰·대변인)</li>
+          <li>프레젠테이션 발표의 기술</li>
+          <li>대중 연설 &amp; CEO 스피치</li>
+          <li>CEO·배우 등 1:1 개인 스피치 트레이닝</li>
+        </ul>
+      </div>
+      <div class="course-section">
+        <div class="course-section-title">🏢 기업 강의</div>
+        <ul class="course-list">
+          <li>신한카드 임직원·대학생 멘토단 발음 강의</li>
+          <li>세종텔레콤 임직원 — 리더의 목소리</li>
+          <li>한국거래소·교보생명 목소리 코칭</li>
+          <li>한국국제교류재단 프레젠테이션 코칭</li>
+          <li>전국 6개 중소기업연수원 CEO 보이스 &amp; 스피치</li>
+          <li>광주은행 신입사원 스피치를 통한 자기경영</li>
+        </ul>
+      </div>
+      <div class="course-section">
+        <div class="course-section-title">🎓 대학·공공기관 강의</div>
+        <ul class="course-list">
+          <li>연세대·시립대·경기대·전남대 취업 면접 특강</li>
+          <li>서울대 통계학과 석·박사 학술발표 코칭</li>
+          <li>경기도 인재개발원 6급 공무원 올바른 우리말</li>
+          <li>서울시 국공립 유치원 원장·교사 강의</li>
+          <li>강남서초교육지원청 초등교사 소통·말하기 연수</li>
+          <li>선거관리위원회 성공 인터뷰 방법 특강</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NOTABLE CLIENTS ── -->
+<section id="clients">
+  <div class="section-inner">
+    <div class="section-label">CLIENTS</div>
+    <h2 class="section-title">1대1 코칭 주요 수강생</h2>
+    <div class="divider"></div>
+    <p class="section-desc">각 분야 최정상에 있는 전문가들이 마이크온 스피치를 선택했습니다.</p>
+
+    <div class="clients-intro">
+      <div class="client-category">
+        <div class="client-cat-title">법조인</div>
+        <div class="client-names">
+          <span class="client-chip">광주지법 부장판사</span>
+          <span class="client-chip">변호사 (서울시 인권위원회)</span>
+          <span class="client-chip">한국여성변호사회 제9대 회장</span>
+          <span class="client-chip">현 강동구청장</span>
+          <span class="client-chip">법무법인 부유 변호사</span>
+        </div>
+      </div>
+
+      <div class="client-category">
+        <div class="client-cat-title">가수 및 배우</div>
+        <div class="client-names">
+          <span class="client-chip">정재은 (뮤지컬 '영웅' 주연)</span>
+          <span class="client-chip">정소영 배우 (야인시대·황금빛 내 인생)</span>
+          <span class="client-chip">트로트 가수 김신</span>
+          <span class="client-chip">국악인 양슬기</span>
+          <span class="client-chip">JTBC 클래식 총감독 김소형</span>
+        </div>
+      </div>
+
+      <div class="client-category">
+        <div class="client-cat-title">의사 및 교수</div>
+        <div class="client-names">
+          <span class="client-chip">서초좋은의원</span>
+          <span class="client-chip">바른마디의원 원장</span>
+          <span class="client-chip">성모안과 구리클리닉 원장</span>
+          <span class="client-chip">연세대 의대 교수</span>
+          <span class="client-chip">서울대 통계학과 교수</span>
+        </div>
+      </div>
+
+      <div class="client-category">
+        <div class="client-cat-title">언론인 (주요 배출 언론사)</div>
+        <div class="client-names">
+          <span class="client-chip">MBC 아나운서</span>
+          <span class="client-chip">SBS 저녁8시 앵커</span>
+          <span class="client-chip">KBS 기자</span>
+          <span class="client-chip">JTBC 기자</span>
+          <span class="client-chip">연합뉴스TV 아나운서</span>
+          <span class="client-chip">조선일보 기자</span>
+          <span class="client-chip">동아일보 기자</span>
+          <span class="client-chip">YTN 기자</span>
+          <span class="client-chip">MBN 기자</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="media-row">
+      <div class="media-label">강의 기업 · 기관</div>
+      <div class="media-logos">
+        <div class="media-logo-item">
+          <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=shinhancard.com&sz=32" alt="" onerror="this.style.display='none'">
+          <span class="media-logo-name">신한카드</span>
+        </div>
+        <div class="media-logo-item">
+          <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=lotteshopping.com&sz=32" alt="" onerror="this.style.display='none'">
+          <span class="media-logo-name">롯데백화점</span>
+        </div>
+        <div class="media-logo-item">
+          <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=thehyundai.com&sz=32" alt="" onerror="this.style.display='none'">
+          <span class="media-logo-name">현대백화점</span>
+        </div>
+        <div class="media-logo-item">
+          <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=krx.co.kr&sz=32" alt="" onerror="this.style.display='none'">
+          <span class="media-logo-name">한국거래소</span>
+        </div>
+        <div class="media-logo-item">
+          <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=kyobo.co.kr&sz=32" alt="" onerror="this.style.display='none'">
+          <span class="media-logo-name">교보생명</span>
+        </div>
+        <div class="media-logo-item">
+          <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=stn.co.kr&sz=32" alt="" onerror="this.style.display='none'">
+          <span class="media-logo-name">세종텔레콤</span>
+        </div>
+        <div class="media-logo-item">
+          <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=kjbank.com&sz=32" alt="" onerror="this.style.display='none'">
+          <span class="media-logo-name">광주은행</span>
+        </div>
+        <div class="media-logo-item">
+          <div class="media-logo-badge">중</div>
+          <span class="media-logo-name">중소벤처기업진흥공단</span>
+        </div>
+        <div class="media-logo-item">
+          <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=kf.or.kr&sz=32" alt="" onerror="this.style.display='none'">
+          <span class="media-logo-name">한국국제교류재단</span>
+        </div>
+        <div class="media-logo-item">
+          <div class="media-logo-badge">Y</div>
+          <span class="media-logo-name">서울YWCA</span>
+        </div>
+        <div class="media-logo-item">
+          <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=nicerating.com&sz=32" alt="" onerror="this.style.display='none'">
+          <span class="media-logo-name">나이스평가정보</span>
+        </div>
+        <div class="media-logo-item">
+          <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=daelimbath.com&sz=32" alt="" onerror="this.style.display='none'">
+          <span class="media-logo-name">대림바스</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── REVIEWS ── -->
+<section id="reviews" style="background:var(--section-bg); overflow:hidden;">
+  <div class="section-inner" style="overflow:visible;">
+    <div class="section-label">REVIEWS</div>
+    <h2 class="section-title">수강생 후기</h2>
+    <div class="divider"></div>
+    <p class="section-desc">"목소리 하나로 삶을 변화시킨 분들의 이야기입니다"</p>
+  </div>
+
+  <!-- 스크롤 마퀴 래퍼 -->
+  <div class="review-marquee-outer" style="margin-top:48px; position:relative;">
+    <!-- 좌우 페이드 그라데이션 -->
+    <div style="position:absolute;top:0;left:0;bottom:0;width:120px;background:linear-gradient(to right,var(--section-bg),transparent);z-index:2;pointer-events:none;"></div>
+    <div style="position:absolute;top:0;right:0;bottom:0;width:120px;background:linear-gradient(to left,var(--section-bg),transparent);z-index:2;pointer-events:none;"></div>
+
+    <div class="review-marquee-track" id="reviewTrack">
+      <!-- 원본 6개 -->
+      <div class="rv-card" data-idx="0">
+        <div class="rv-quote">"</div>
+        <p class="rv-text">판사로서 법정에서 많은 말을 하지만, 코칭 후 목소리에 무게감과 신뢰감이 생겼다는 피드백을 받기 시작했습니다. 단순한 발성 교정이 아니라 말의 본질을 다시 생각하게 해주셨습니다.</p>
+        <div class="rv-author">
+          <div class="rv-avatar">강</div>
+          <div><div class="rv-name">강OO</div><div class="rv-role">광주지법 부장판사</div></div>
+        </div>
+      </div>
+      <div class="rv-card" data-idx="1">
+        <div class="rv-quote">"</div>
+        <p class="rv-text">뮤지컬 영웅 주연 준비 중에 발음 코칭을 받았습니다. 조진희 선생님은 발음을 단순히 교정하는 것이 아니라, 감정과 음색이 조화롭게 전달되도록 섬세하게 이끌어 주셨습니다.</p>
+        <div class="rv-author">
+          <div class="rv-avatar">정</div>
+          <div><div class="rv-name">정재은</div><div class="rv-role">뮤지컬 배우 (뮤지컬 '영웅' 주연)</div></div>
+        </div>
+      </div>
+      <div class="rv-card" data-idx="2">
+        <div class="rv-quote">"</div>
+        <p class="rv-text">임원 프레젠테이션 코칭을 받았는데, 목소리 톤과 속도 조절만으로 회의실 분위기가 달라졌습니다. 설득력이 높아졌다는 피드백을 상사에게서 직접 들었을 때 정말 놀랐습니다.</p>
+        <div class="rv-author">
+          <div class="rv-avatar">박</div>
+          <div><div class="rv-name">박OO</div><div class="rv-role">대기업 임원 (비즈니스 스피치 수강)</div></div>
+        </div>
+      </div>
+      <div class="rv-card" data-idx="3">
+        <div class="rv-quote">"</div>
+        <p class="rv-text">목회자로서 설교 때 목소리가 떨리고 전달이 안 된다는 고민이 있었습니다. 발성부터 구조까지 체계적으로 배우고 나서, 성도들이 "말씀이 마음에 더 잘 닿는다"고 해주셨습니다.</p>
+        <div class="rv-author">
+          <div class="rv-avatar">이</div>
+          <div><div class="rv-name">이OO 목사</div><div class="rv-role">두란노 바이블칼리지 수강생</div></div>
+        </div>
+      </div>
+      <div class="rv-card" data-idx="4">
+        <div class="rv-quote">"</div>
+        <p class="rv-text">KBS 공채 준비를 하면서 선생님께 코칭을 받았습니다. 단순한 발음 교정이 아니라 방송인으로서의 마인드셋까지 짚어주셨고, 덕분에 합격 후에도 현장에서 든든한 기반이 되고 있습니다.</p>
+        <div class="rv-author">
+          <div class="rv-avatar">김</div>
+          <div><div class="rv-name">김민철</div><div class="rv-role">KBS 기자</div></div>
+        </div>
+      </div>
+      <div class="rv-card" data-idx="5">
+        <div class="rv-quote">"</div>
+        <p class="rv-text">서울대 입시를 앞두고 면접 코칭을 받았습니다. 짧은 시간 안에 제 말투의 문제점을 정확히 짚어내시고, 자신감 있게 말하는 방법을 알려주셨습니다. 합격 후 지금도 그 가르침이 살아있습니다.</p>
+        <div class="rv-author">
+          <div class="rv-avatar">최</div>
+          <div><div class="rv-name">최OO</div><div class="rv-role">서울대 합격생 (면접 코칭 수강)</div></div>
+        </div>
+      </div>
+      <!-- 무한루프를 위한 복제본 6개 (JS로 추가) -->
+    </div>
+  </div>
+</section>
+
+<!-- 후기 모달 -->
+<div id="reviewModal" style="display:none; position:fixed; inset:0; z-index:1000; background:rgba(0,0,0,0.75); backdrop-filter:blur(6px); align-items:center; justify-content:center;">
+  <div id="reviewModalBox" style="background:#122540; border:1px solid rgba(201,162,39,0.3); border-radius:20px; padding:48px; max-width:560px; width:90%; position:relative; box-shadow:0 24px 80px rgba(0,0,0,0.6);">
+    <button onclick="closeReviewModal()" style="position:absolute;top:16px;right:20px;background:none;border:none;color:#8B9BB4;font-size:24px;cursor:pointer;line-height:1;">×</button>
+    <div style="font-size:48px;color:#C9A227;font-family:'Noto Serif KR',serif;line-height:1;margin-bottom:20px;opacity:0.4;">"</div>
+    <p id="modalText" style="font-size:16px;color:#CBD5E1;line-height:1.9;margin-bottom:32px;"></p>
+    <div style="display:flex;align-items:center;gap:16px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.08);">
+      <div id="modalAvatar" style="width:52px;height:52px;background:rgba(201,162,39,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:#C9A227;flex-shrink:0;"></div>
+      <div><div id="modalName" style="font-size:15px;font-weight:700;color:#F5F3EE;margin-bottom:4px;"></div><div id="modalRole" style="font-size:12px;color:#8B9BB4;"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">ABOUT</div>
+    <h2 class="section-title">강사 소개 — 조진희</h2>
+    <div class="divider"></div>
+
+    <div class="about-grid">
+      <div class="about-photo-wrap">
+        <div class="about-photo-frame" style="
+          background: radial-gradient(ellipse at 50% 30%, rgba(30,58,95,0.55) 0%, #0C1B2E 65%);
+          border: 1px solid rgba(201,162,39,0.18);
+          display: block; aspect-ratio: auto; max-height: none;
+          overflow: hidden; border-radius: 16px;
+          padding-bottom: 12px;
+        ">
+          <img src="instructor_nobg.png" alt="조진희 대표" style="width:100%; display:block; filter:drop-shadow(0 8px 32px rgba(0,0,0,0.5));">
+        </div>
+        <div class="about-photo-badge">
+          마이크온 스피치<br>아카데미 대표<br>조진희
+        </div>
+      </div>
+
+      <div class="about-content">
+        <p style="font-size:15px; color:var(--gray-light); line-height:1.9; margin-bottom:32px;">
+          CBS 아나운서와 TBS 교통방송 전문 MC를 거친 언론인 출신 스피치 전문가입니다.
+          중앙대 언론고시반 전임강사로 재직하며 KBS·MBC·SBS·JTBC·연합뉴스TV 등
+          국내 주요 언론사 기자·아나운서 700여 명을 배출했습니다.
+          이후 두란노 바이블칼리지, 중국 랴오닝대학교에서도 전임강사로 활동하며
+          목소리와 스피치의 힘으로 사람들의 삶을 변화시키는 데 헌신해 왔습니다.
+        </p>
+
+        <ul class="career-timeline">
+          <li class="career-item">
+            <div class="career-period">2001 – 2003</div>
+            <div class="career-role">CBS 아나운서</div>
+            <div class="career-detail">방송 현장에서 쌓은 실전 아나운서 경력</div>
+          </li>
+          <li class="career-item">
+            <div class="career-period">2003 – 2008</div>
+            <div class="career-role">TBS 교통방송 전문 MC</div>
+            <div class="career-detail">5년간 생방송 진행으로 완성한 현장 스피치</div>
+          </li>
+          <li class="career-item">
+            <div class="career-period">2010 – 2016</div>
+            <div class="career-role">중앙대 언론고시반 전임강사</div>
+            <div class="career-detail">KBS·MBC·SBS 등 주요 언론사 기자·아나운서 700명+ 배출</div>
+          </li>
+          <li class="career-item">
+            <div class="career-period">2010 – 현재</div>
+            <div class="career-role">두란노 바이블칼리지 스피치학과 전임강사</div>
+            <div class="career-detail">목회자 500여 명 이상 스피치·목소리 코칭</div>
+          </li>
+          <li class="career-item">
+            <div class="career-period">2022 – 2025</div>
+            <div class="career-role">중국 랴오닝대학교 한국어학과 외국인 교수</div>
+            <div class="career-detail">중국 전국 한국어 말하기대회 2년 연속 1등 수상 지도</div>
+          </li>
+          <li class="career-item">
+            <div class="career-period">학력</div>
+            <div class="career-role">중앙대 신문방송대학원 언론학 석사</div>
+            <div class="career-detail">한국어 발음 교육 교사의 발음 자기 인식과 교수법 변화에 관한 질적 연구</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AWARDS ── -->
+<section id="awards" style="background:var(--alt-bg);">
+  <div class="section-inner">
+    <div class="section-label">AWARDS &amp; ACHIEVEMENTS</div>
+    <h2 class="section-title">주요 수상 및 성과</h2>
+    <div class="divider"></div>
+    <div class="awards-grid">
+      <div class="award-card">
+        <span class="award-emoji">🏅</span>
+        <div class="award-title">서울특별시장 공로상</div>
+        <div class="award-desc">2003년 8월 수상 — 방송·스피치 분야 탁월한 공헌 인정</div>
+      </div>
+      <div class="award-card">
+        <span class="award-emoji">🎖</span>
+        <div class="award-title">랴오닝대학교 3년 연속 우수 지도상</div>
+        <div class="award-desc">2022–2024 중국 랴오닝대학교 수상 — 탁월한 한국어 교육 성과</div>
+      </div>
+      <div class="award-card">
+        <span class="award-emoji">🥇</span>
+        <div class="award-title">중국 전국 한국어 말하기대회 2년 연속 1등</div>
+        <div class="award-desc">랴오닝대학교 학생 지도로 전국 대회 2년 연속 최우수상 수상</div>
+      </div>
+      <div class="award-card">
+        <span class="award-emoji">🏛</span>
+        <div class="award-title">서울대 창의연구단 스피치 자문위원</div>
+        <div class="award-desc">주요 학술대회 발표 지도 및 스피치 자문 역할 수행</div>
+      </div>
+      <div class="award-card">
+        <span class="award-emoji">🗳</span>
+        <div class="award-title">18대 대선캠프 미디어 본부 전문위원</div>
+        <div class="award-desc">대선 미디어 커뮤니케이션 전략 자문 및 스피치 코칭</div>
+      </div>
+      <div class="award-card">
+        <span class="award-emoji">🎓</span>
+        <div class="award-title">서울대·연세대·고려대 등 최상위 대학 합격 지도</div>
+        <div class="award-desc">서울대·연세대·고려대·서강대·성균관대·한동대 등 자소서 컨설팅</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LOCATION ── -->
+<section id="location">
+  <div class="section-inner">
+    <div class="section-label">LOCATION</div>
+    <h2 class="section-title">찾아오시는 길</h2>
+    <div class="divider"></div>
+    <p class="section-desc">사전 예약 후 방문해 주세요. 주차 공간이 협소하오니 대중교통을 이용하시길 권장드립니다.</p>
+
+    <div class="location-grid">
+      <!-- 지도 -->
+      <div class="location-map-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=서울특별시+은평구+진관3로21길&hl=ko&z=16&output=embed"
+          title="마이크온 스피치 아카데미 위치"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <!-- 정보 (주소 + 방문 예약) -->
+      <div class="location-info-wrap">
+        <div class="location-info-block">
+          <div class="location-info-label">📍 주소</div>
+          <div class="location-info-text">
+            서울특별시 은평구 진관3로21길<br>
+            101동 125호
+          </div>
+          <a href="https://map.kakao.com/link/map/마이크온스피치,37.6356,126.9218"
+             target="_blank" rel="noopener" class="kakao-map-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#1A1A1A">
+              <path d="M12 2C7.03 2 3 5.58 3 10c0 2.74 1.57 5.15 4 6.74V20l3.5-2.14c.49.07.99.14 1.5.14 4.97 0 9-3.58 9-8S16.97 2 12 2z"/>
+            </svg>
+            카카오맵으로 보기
+          </a>
+        </div>
+
+        <div class="location-info-block">
+          <div class="location-info-label">📞 방문 예약</div>
+          <div class="location-info-text">
+            사전 예약 필수<br>
+            <a href="tel:02-356-6508" style="color:var(--gold); text-decoration:none; font-weight:700;">02-356-6508</a>
+            &nbsp;/&nbsp;
+            <a href="tel:010-4262-2787" style="color:var(--gold); text-decoration:none; font-weight:700;">010-4262-2787</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 지하철·버스 — 지도 하단 가로 한 줄 -->
+    <div class="location-transport">
+      <div class="location-info-block">
+        <div class="location-info-label">🚇 지하철</div>
+        <div class="location-info-text">
+          <strong style="color:var(--white);">3호선 삼송역</strong> 3번 출구 &nbsp;·&nbsp; 도보 약 10분 / 마을버스 이용 가능
+        </div>
+      </div>
+      <div class="location-info-block">
+        <div class="location-info-label">🚌 버스</div>
+        <div class="location-info-text">
+          은평뉴타운 진관3단지 정류장 하차 &nbsp;·&nbsp; 702, 7723, 마을버스 은평10 등
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label" style="text-align:center">CONTACT</div>
+    <h2 class="section-title" style="text-align:center; max-width:600px">
+      지금 바로 상담 예약을 시작하세요
+    </h2>
+    <p class="section-desc" style="text-align:center">
+      목소리와 스피치의 변화가 당신의 삶을 바꿉니다.<br>
+      맞춤형 1:1 코칭 상담을 통해 나에게 맞는 프로그램을 안내받으세요.
+    </p>
+
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="contact-card-icon">📞</div>
+        <div class="contact-card-label">전화 상담</div>
+        <div class="contact-card-value">010-4262-2787</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">✉️</div>
+        <div class="contact-card-label">이메일 문의</div>
+        <div class="contact-card-value">cleeprin@naver.com</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">🕐</div>
+        <div class="contact-card-label">상담 가능 시간</div>
+        <div class="contact-card-value">평일 09:00 – 18:00</div>
+      </div>
+    </div>
+
+    <div class="contact-cta-wrap">
+      <a href="tel:010-4262-2787" class="btn-primary btn-lg">📞 전화로 바로 상담</a>
+      <a href="mailto:cleeprin@naver.com" class="btn-secondary btn-lg">✉️ 이메일 문의</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer style="background:#080F1C; padding:28px 48px 24px; border-top:1px solid rgba(255,255,255,0.06);">
+  <div style="max-width:1400px; margin:0 auto;">
+
+    <!-- 4열: 브랜드 | 사업자 정보 | Contact | 개인정보 및 정책 -->
+    <div class="footer-grid" style="display:grid; grid-template-columns:0.8fr 1.4fr 1.2fr 1.2fr; gap:32px; align-items:center; margin-bottom:20px;">
+
+      <!-- 브랜드 -->
+      <div>
+        <div style="font-family:'Noto Serif KR',serif; font-size:14px; font-weight:700; color:var(--gold); line-height:1.4;">마이크온 스피치 아카데미</div>
+        <div style="font-size:10px; color:var(--gray); letter-spacing:1.2px; margin-top:5px;">MIC-ON SPEECH ACADEMY</div>
+      </div>
+
+      <!-- 사업자 정보 -->
+      <div>
+        <div style="font-size:10px; font-weight:700; color:var(--gold); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px; padding-bottom:7px; border-bottom:1px solid rgba(201,162,39,0.2);">사업자 정보</div>
+        <div style="font-size:11.5px; color:var(--gray-light); line-height:1.9;">
+          상호명: 마이크온 스피치 &nbsp;/&nbsp; 대표자: 조진희<br>
+          사업장 주소: 서울특별시 은평구 진관3로21길 101동 125호
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <div style="font-size:10px; font-weight:700; color:var(--gold); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px; padding-bottom:7px; border-bottom:1px solid rgba(201,162,39,0.2);">Contact</div>
+        <div style="font-size:11.5px; color:var(--gray-light); line-height:1.9;">
+          연락처: <a href="tel:02-356-6508" style="color:var(--gray-light); text-decoration:none;">02-356-6508</a> &nbsp;/&nbsp; <a href="tel:010-4262-2787" style="color:var(--gray-light); text-decoration:none;">010-4262-2787</a><br>
+          이메일: <a href="mailto:cleeprin@naver.com" style="color:var(--gray-light); text-decoration:none;">cleeprin@naver.com</a>
+        </div>
+      </div>
+
+      <!-- 개인정보 및 정책 -->
+      <div>
+        <div style="font-size:10px; font-weight:700; color:var(--gold); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px; padding-bottom:7px; border-bottom:1px solid rgba(201,162,39,0.2);">개인정보 및 정책</div>
+        <div style="font-size:11.5px; color:var(--gray-light); line-height:1.9;">
+          보호 책임자: 조진희 &nbsp;/&nbsp; 처리 문의: cleeprin@naver.com<br>
+          <a href="#" style="color:var(--gray); text-decoration:underline;" onmouseover="this.style.color='#C9A227'" onmouseout="this.style.color='#8B9BB4'">개인정보처리방침</a>
+          &nbsp;|&nbsp;
+          <a href="#" style="color:var(--gray); text-decoration:underline;" onmouseover="this.style.color='#C9A227'" onmouseout="this.style.color='#8B9BB4'">이용약관</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 저작권 -->
+    <div style="font-size:11px; color:var(--gray); padding-top:16px; border-top:1px solid rgba(255,255,255,0.05);">
+      © 2025 마이크온 스피치 아카데미. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── 테마 스위처 ──
+  const themeLabels = { 1: '신뢰감 (기본)', 2: '밝고 화사한', 3: '아기자기한' };
+
+  function setTheme(n) {
+    if (n === 1) {
+      document.documentElement.removeAttribute('data-theme');
+    } else {
+      document.documentElement.setAttribute('data-theme', String(n));
+    }
+    localStorage.setItem('mikon-theme', n);
+    document.querySelectorAll('.theme-dot').forEach(d => d.classList.remove('active'));
+    document.querySelector(`.theme-dot-${n}`)?.classList.add('active');
+    // 드로어 색상 동기화
+    const themeMap = { 1: '#0C1B2E', 2: '#FFF6EE', 3: '#FFF8E8' };
+    document.getElementById('navDrawer').style.background = themeMap[n] || '#0C1B2E';
+  }
+
+  function toggleThemePicker() {
+    document.getElementById('themePicker').classList.toggle('open');
+  }
+
+  // 저장된 테마 복원
+  (function() {
+    const saved = parseInt(localStorage.getItem('mikon-theme') || '1');
+    if (saved !== 1) setTheme(saved);
+  })();
+
+  // 외부 클릭 시 테마 팔레트 닫기
+  document.addEventListener('click', e => {
+    const sw = document.querySelector('.theme-switcher');
+    if (sw && !sw.contains(e.target)) {
+      document.getElementById('themePicker')?.classList.remove('open');
+    }
+  });
+
+  // ── 햄버거 메뉴 ──
+  const hamburger = document.getElementById('navHamburger');
+  const drawer    = document.getElementById('navDrawer');
+  const overlay   = document.getElementById('navOverlay');
+
+  function openDrawer() {
+    hamburger.classList.add('open');
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    hamburger.classList.remove('open');
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  hamburger.addEventListener('click', () =>
+    drawer.classList.contains('open') ? closeDrawer() : openDrawer()
+  );
+
+  // ── Smooth scroll ──
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // ── Nav active highlight ──
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+    navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : ''; });
+  });
+
+  // ── Review Marquee: 카드 복제로 무한 루프 ──
+  (function() {
+    const track = document.getElementById('reviewTrack');
+    if (!track) return;
+    const cards = Array.from(track.querySelectorAll('.rv-card'));
+    // 카드 복제 (2배 = 한 사이클)
+    cards.forEach(c => track.appendChild(c.cloneNode(true)));
+    // 복제본에도 클릭 이벤트 재연결은 이벤트 위임으로 처리
+  })();
+
+  // ── Review 모달 ──
+  const reviewData = [
+    { avatar:'강', name:'강OO', role:'광주지법 부장판사',
+      text:'판사로서 법정에서 많은 말을 하지만, 코칭 후 목소리에 무게감과 신뢰감이 생겼다는 피드백을 받기 시작했습니다. 단순한 발성 교정이 아니라 말의 본질을 다시 생각하게 해주셨습니다.' },
+    { avatar:'정', name:'정재은', role:'뮤지컬 배우 (뮤지컬 \'영웅\' 주연)',
+      text:'뮤지컬 영웅 주연 준비 중에 발음 코칭을 받았습니다. 조진희 선생님은 발음을 단순히 교정하는 것이 아니라, 감정과 음색이 조화롭게 전달되도록 섬세하게 이끌어 주셨습니다.' },
+    { avatar:'박', name:'박OO', role:'대기업 임원 (비즈니스 스피치 수강)',
+      text:'임원 프레젠테이션 코칭을 받았는데, 목소리 톤과 속도 조절만으로 회의실 분위기가 달라졌습니다. 설득력이 높아졌다는 피드백을 상사에게서 직접 들었을 때 정말 놀랐습니다.' },
+    { avatar:'이', name:'이OO 목사', role:'두란노 바이블칼리지 수강생',
+      text:'목회자로서 설교 때 목소리가 떨리고 전달이 안 된다는 고민이 있었습니다. 발성부터 구조까지 체계적으로 배우고 나서, 성도들이 "말씀이 마음에 더 잘 닿는다"고 해주셨습니다.' },
+    { avatar:'김', name:'김민철', role:'KBS 기자',
+      text:'KBS 공채 준비를 하면서 선생님께 코칭을 받았습니다. 단순한 발음 교정이 아니라 방송인으로서의 마인드셋까지 짚어주셨고, 덕분에 합격 후에도 현장에서 든든한 기반이 되고 있습니다.' },
+    { avatar:'최', name:'최OO', role:'서울대 합격생 (면접 코칭 수강)',
+      text:'서울대 입시를 앞두고 면접 코칭을 받았습니다. 짧은 시간 안에 제 말투의 문제점을 정확히 짚어내시고, 자신감 있게 말하는 방법을 알려주셨습니다. 합격 후 지금도 그 가르침이 살아있습니다.' }
+  ];
+
+  // 이벤트 위임 — 원본 + 복제 모두 처리
+  document.getElementById('reviewTrack').addEventListener('click', e => {
+    const card = e.target.closest('.rv-card');
+    if (!card) return;
+    const idx = parseInt(card.dataset.idx);
+    if (isNaN(idx)) return;
+    const d = reviewData[idx];
+    document.getElementById('modalText').textContent = d.text;
+    document.getElementById('modalAvatar').textContent = d.avatar;
+    document.getElementById('modalName').textContent = d.name;
+    document.getElementById('modalRole').textContent = d.role;
+    const modal = document.getElementById('reviewModal');
+    modal.classList.add('open');
+    // 마퀴 일시정지
+    document.getElementById('reviewTrack').style.animationPlayState = 'paused';
+  });
+
+  function closeReviewModal() {
+    document.getElementById('reviewModal').classList.remove('open');
+    document.getElementById('reviewTrack').style.animationPlayState = '';
+  }
+
+  // 모달 배경 클릭 시 닫기
+  document.getElementById('reviewModal').addEventListener('click', e => {
+    if (e.target === document.getElementById('reviewModal')) closeReviewModal();
+  });
+
+  // ESC 키로 닫기
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeReviewModal(); });
+</script>
+</body>
+</html>
