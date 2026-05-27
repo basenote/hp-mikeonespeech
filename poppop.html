@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마이크온 팝업 관리</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #0c1b2e;
+      color: #f5f3ee;
+      font-family: 'Noto Sans KR', sans-serif;
+      line-height: 1.6;
+    }
+    .shell {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 48px 0 80px;
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-size: 28px;
+      letter-spacing: -0.02em;
+    }
+    .muted { color: #8b9bb4; font-size: 14px; }
+    .panel {
+      border: 1px solid rgba(201, 162, 39, 0.22);
+      border-radius: 10px;
+      background: #122540;
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
+    }
+    .login-panel {
+      width: min(420px, 100%);
+      margin-top: 64px;
+      padding: 28px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 380px;
+      gap: 22px;
+      align-items: start;
+    }
+    .list-panel, .form-panel { padding: 24px; }
+    .form-panel { position: sticky; top: 24px; }
+    label {
+      display: block;
+      margin: 0 0 6px;
+      color: #cbd5e1;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    input, textarea {
+      width: 100%;
+      border: 1px solid rgba(203, 213, 225, 0.2);
+      border-radius: 6px;
+      background: #081421;
+      color: #f5f3ee;
+      font: inherit;
+      outline: none;
+      padding: 11px 12px;
+    }
+    textarea { min-height: 140px; resize: vertical; }
+    input:focus, textarea:focus { border-color: #c9a227; }
+    .field { margin-bottom: 16px; }
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .check-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+    .check-row input { width: auto; }
+    button {
+      border: 0;
+      border-radius: 6px;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 800;
+      min-height: 42px;
+      padding: 0 16px;
+    }
+    .primary { background: #c9a227; color: #0c1b2e; }
+    .secondary { background: rgba(255, 255, 255, 0.08); color: #f5f3ee; }
+    .danger { background: rgba(239, 68, 68, 0.16); color: #fecaca; }
+    .button-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .popup-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      padding: 18px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .popup-item:first-child { border-top: 0; padding-top: 0; }
+    .popup-title {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .popup-body {
+      color: #cbd5e1;
+      font-size: 14px;
+      white-space: pre-line;
+      margin-bottom: 10px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 0 9px;
+      border-radius: 999px;
+      background: rgba(201, 162, 39, 0.12);
+      color: #e8c54a;
+      font-size: 12px;
+      font-weight: 800;
+      margin-right: 6px;
+    }
+    .pill.off { background: rgba(148, 163, 184, 0.12); color: #94a3b8; }
+    .actions {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .status {
+      min-height: 22px;
+      margin-top: 14px;
+      color: #e8c54a;
+      font-size: 13px;
+    }
+    .hidden { display: none; }
+    @media (max-width: 860px) {
+      .grid { grid-template-columns: 1fr; }
+      .form-panel { position: static; }
+      .topbar { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 520px) {
+      .shell { width: min(100% - 28px, 1120px); padding-top: 32px; }
+      .field-row { grid-template-columns: 1fr; }
+      .popup-item { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section id="loginView" class="panel login-panel">
+      <h1>팝업 관리</h1>
+      <p class="muted">관리자 비밀번호를 입력하세요.</p>
+      <form id="loginForm">
+        <div class="field">
+          <label for="password">관리자 비밀번호</label>
+          <input id="password" type="password" autocomplete="current-password" required>
+        </div>
+        <button class="primary" type="submit">로그인</button>
+        <div id="loginStatus" class="status"></div>
+      </form>
+    </section>
+
+    <section id="adminView" class="hidden">
+      <div class="topbar">
+        <div>
+          <h1>마이크온 팝업 관리</h1>
+          <div class="muted">공지, 신규 강좌, 이벤트 팝업을 추가·수정·삭제합니다.</div>
+        </div>
+        <div class="button-row">
+          <a href="/" style="text-decoration:none"><button class="secondary" type="button">홈페이지 보기</button></a>
+          <button id="logoutBtn" class="secondary" type="button">로그아웃</button>
+        </div>
+      </div>
+
+      <div class="grid">
+        <section class="panel list-panel">
+          <div class="topbar" style="margin-bottom:16px">
+            <h2 style="margin:0;font-size:20px">팝업 목록</h2>
+            <button id="reloadBtn" class="secondary" type="button">새로고침</button>
+          </div>
+          <div id="popupList"></div>
+          <div id="emptyState" class="muted hidden">등록된 팝업이 없습니다.</div>
+        </section>
+
+        <section class="panel form-panel">
+          <h2 id="formTitle" style="margin:0 0 18px;font-size:20px">새 팝업</h2>
+          <form id="popupForm">
+            <div class="field">
+              <label for="id">ID</label>
+              <input id="id" placeholder="예: new-course-2026-06" required>
+            </div>
+            <div class="field">
+              <label for="title">제목</label>
+              <input id="title" placeholder="신규 강좌 오픈" required>
+            </div>
+            <div class="field">
+              <label for="body">본문</label>
+              <textarea id="body" placeholder="방문자에게 보여줄 공지 내용을 입력하세요." required></textarea>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="buttonText">버튼 문구</label>
+                <input id="buttonText" placeholder="상담 예약하기">
+              </div>
+              <div class="field">
+                <label for="buttonUrl">버튼 링크</label>
+                <input id="buttonUrl" placeholder="#contact 또는 https://...">
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="startDate">시작일</label>
+                <input id="startDate" type="date">
+              </div>
+              <div class="field">
+                <label for="endDate">종료일</label>
+                <input id="endDate" type="date">
+              </div>
+            </div>
+            <div class="field">
+              <label for="priority">우선순위</label>
+              <input id="priority" type="number" value="0">
+            </div>
+            <label class="check-row">
+              <input id="active" type="checkbox" checked>
+              활성화
+            </label>
+            <div class="button-row">
+              <button class="primary" type="submit">저장</button>
+              <button id="newBtn" class="secondary" type="button">새 팝업 작성</button>
+            </div>
+            <div id="formStatus" class="status"></div>
+          </form>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const AUTH_URL = '/.netlify/functions/auth';
+    const POPUPS_URL = '/.netlify/functions/popups';
+    const TOKEN_KEY = 'mikeone-popup-admin-token';
+
+    let popups = [];
+
+    const $ = (id) => document.getElementById(id);
+    const token = () => sessionStorage.getItem(TOKEN_KEY) || '';
+
+    function setStatus(id, message) {
+      $(id).textContent = message || '';
+    }
+
+    function showAdmin() {
+      $('loginView').classList.add('hidden');
+      $('adminView').classList.remove('hidden');
+      loadPopups();
+    }
+
+    function showLogin() {
+      $('adminView').classList.add('hidden');
+      $('loginView').classList.remove('hidden');
+    }
+
+    async function api(action, payload = {}) {
+      const response = await fetch(POPUPS_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token()}`
+        },
+        body: JSON.stringify({ action, ...payload })
+      });
+
+      if (response.status === 401) {
+        sessionStorage.removeItem(TOKEN_KEY);
+        showLogin();
+        throw new Error('인증이 만료되었습니다. 다시 로그인하세요.');
+      }
+
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.message || data.error || '요청에 실패했습니다.');
+      return data;
+    }
+
+    async function loadPopups() {
+      setStatus('formStatus', '불러오는 중...');
+      try {
+        const data = await api('list');
+        popups = data.popups || [];
+        renderList();
+        setStatus('formStatus', '');
+      } catch (error) {
+        setStatus('formStatus', error.message);
+      }
+    }
+
+    function renderList() {
+      const list = $('popupList');
+      list.innerHTML = '';
+      $('emptyState').classList.toggle('hidden', popups.length > 0);
+
+      popups.forEach((popup) => {
+        const item = document.createElement('div');
+        item.className = 'popup-item';
+        item.innerHTML = `
+          <div>
+            <div class="popup-title">${escapeHtml(popup.title)}</div>
+            <div class="popup-body">${escapeHtml(popup.body)}</div>
+            <span class="pill ${popup.active ? '' : 'off'}">${popup.active ? '활성' : '비활성'}</span>
+            <span class="pill">우선순위 ${Number(popup.priority || 0)}</span>
+            ${popup.startDate ? `<span class="pill">시작 ${escapeHtml(popup.startDate)}</span>` : ''}
+            ${popup.endDate ? `<span class="pill">종료 ${escapeHtml(popup.endDate)}</span>` : ''}
+          </div>
+          <div class="actions">
+            <button class="secondary" type="button" data-edit="${escapeAttribute(popup.id)}">수정</button>
+            <button class="danger" type="button" data-delete="${escapeAttribute(popup.id)}">삭제</button>
+          </div>
+        `;
+        list.appendChild(item);
+      });
+    }
+
+    function fillForm(popup) {
+      $('formTitle').textContent = popup ? '팝업 수정' : '새 팝업';
+      $('id').value = popup?.id || `popup-${new Date().toISOString().slice(0, 10)}`;
+      $('title').value = popup?.title || '';
+      $('body').value = popup?.body || '';
+      $('buttonText').value = popup?.buttonText || '상담 예약하기';
+      $('buttonUrl').value = popup?.buttonUrl || '#contact';
+      $('startDate').value = popup?.startDate || '';
+      $('endDate').value = popup?.endDate || '';
+      $('priority').value = popup?.priority || 0;
+      $('active').checked = popup ? Boolean(popup.active) : true;
+      setStatus('formStatus', '');
+    }
+
+    function readForm() {
+      return {
+        id: $('id').value.trim(),
+        title: $('title').value.trim(),
+        body: $('body').value.trim(),
+        buttonText: $('buttonText').value.trim(),
+        buttonUrl: $('buttonUrl').value.trim(),
+        startDate: $('startDate').value,
+        endDate: $('endDate').value,
+        priority: Number($('priority').value || 0),
+        active: $('active').checked
+      };
+    }
+
+    $('loginForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      setStatus('loginStatus', '확인 중...');
+
+      try {
+        const response = await fetch(AUTH_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ password: $('password').value })
+        });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.message || data.error || '로그인 실패');
+        sessionStorage.setItem(TOKEN_KEY, data.token);
+        $('password').value = '';
+        setStatus('loginStatus', '');
+        showAdmin();
+      } catch (error) {
+        setStatus('loginStatus', '비밀번호를 확인하세요.');
+      }
+    });
+
+    $('popupForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      setStatus('formStatus', '저장 중...');
+
+      try {
+        const data = await api('save', { popup: readForm() });
+        popups = data.popups || [];
+        renderList();
+        fillForm(null);
+        setStatus('formStatus', '저장했습니다.');
+      } catch (error) {
+        setStatus('formStatus', error.message);
+      }
+    });
+
+    $('popupList').addEventListener('click', async (event) => {
+      const editId = event.target.dataset.edit;
+      const deleteId = event.target.dataset.delete;
+
+      if (editId) {
+        fillForm(popups.find((popup) => popup.id === editId));
+      }
+
+      if (deleteId && confirm('이 팝업을 삭제할까요?')) {
+        setStatus('formStatus', '삭제 중...');
+        try {
+          const data = await api('delete', { id: deleteId });
+          popups = data.popups || [];
+          renderList();
+          fillForm(null);
+          setStatus('formStatus', '삭제했습니다.');
+        } catch (error) {
+          setStatus('formStatus', error.message);
+        }
+      }
+    });
+
+    $('newBtn').addEventListener('click', () => fillForm(null));
+    $('reloadBtn').addEventListener('click', loadPopups);
+    $('logoutBtn').addEventListener('click', () => {
+      sessionStorage.removeItem(TOKEN_KEY);
+      showLogin();
+    });
+
+    function escapeHtml(value) {
+      return String(value || '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+
+    function escapeAttribute(value) {
+      return escapeHtml(value).replaceAll('`', '&#096;');
+    }
+
+    fillForm(null);
+    if (token()) showAdmin();
+  </script>
+</body>
+</html>

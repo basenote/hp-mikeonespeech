@@ -390,6 +390,17 @@
       line-height: 1.7;
     }
 
+    .program-message {
+      margin-top: 18px;
+      padding-left: 14px;
+      border-left: 2px solid rgba(201,162,39,0.45);
+      color: var(--gold-light);
+      font-family: 'Noto Serif KR', serif;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.65;
+    }
+
     .program-tags {
       display: flex; flex-wrap: wrap; gap: 6px;
       margin-top: 18px;
@@ -496,6 +507,91 @@
     .career-detail {
       font-size: 12px; color: var(--gray);
       line-height: 1.6;
+    }
+
+    .faculty-statement {
+      margin: 0 auto 54px;
+      max-width: 760px;
+      text-align: center;
+      font-family: 'Noto Serif KR', serif;
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--white);
+      word-break: keep-all;
+      overflow-wrap: normal;
+    }
+    .faculty-statement::before,
+    .faculty-statement::after {
+      content: '"';
+      color: var(--gold);
+      opacity: 0.65;
+    }
+    .faculty-statement strong { color: var(--gold-light); }
+
+    .faculty-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .faculty-card {
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(201,162,39,0.18);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .faculty-photo {
+      width: 100%;
+      height: 320px;
+      aspect-ratio: 4 / 5;
+      background: rgba(255,255,255,0.04);
+      display: block;
+      object-fit: contain;
+      object-position: top center;
+      padding: 14px 14px 0;
+      border-bottom: 1px solid rgba(201,162,39,0.12);
+    }
+    .faculty-body { padding: 24px; }
+    .faculty-name {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .faculty-quote {
+      color: var(--gold-light);
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+    .faculty-detail-title {
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      margin: 18px 0 8px;
+    }
+    .faculty-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .faculty-list li {
+      color: var(--gray-light);
+      font-size: 13px;
+      line-height: 1.55;
+      padding-left: 14px;
+      position: relative;
+    }
+    .faculty-list li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
     }
 
     /* ── NOTABLE CLIENTS ── */
@@ -612,6 +708,60 @@
     .media-logo-chip:hover {
       opacity: 1; color: var(--gold-light);
       border-color: rgba(201,162,39,0.4);
+    }
+
+    .client-message {
+      margin-top: 48px;
+      padding: 42px;
+      background: linear-gradient(135deg, rgba(201,162,39,0.12), rgba(255,255,255,0.03));
+      border: 1px solid rgba(201,162,39,0.25);
+      border-radius: 14px;
+      text-align: center;
+    }
+    .client-message-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+    .client-message-body {
+      color: var(--gray-light);
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .record-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+    .record-heading {
+      font-family: 'Noto Serif KR', serif;
+      color: var(--white);
+      font-size: clamp(22px, 2.4vw, 30px);
+      font-weight: 700;
+      line-height: 1.35;
+      margin-top: 54px;
+    }
+    .record-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,162,39,0.16);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .record-year {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .record-text {
+      color: var(--gray-light);
+      font-size: 14px;
+      line-height: 1.7;
     }
 
     /* ── AWARDS ── */
@@ -739,6 +889,61 @@
 
     .btn-lg {
       padding: 18px 40px; font-size: 16px; border-radius: 6px;
+    }
+
+    .contact-form-wrap {
+      max-width: 760px;
+      margin: 42px auto 0;
+      padding: 32px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,162,39,0.18);
+      border-radius: 12px;
+      text-align: left;
+    }
+    .contact-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .contact-form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .contact-form-field.full { grid-column: 1 / -1; }
+    .contact-form-field label {
+      color: var(--gold-light);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .contact-form-field input,
+    .contact-form-field textarea,
+    .contact-form-field select {
+      width: 100%;
+      border: 1px solid rgba(203,213,225,0.2);
+      border-radius: 6px;
+      background: rgba(8,20,33,0.72);
+      color: var(--white);
+      font: inherit;
+      padding: 12px 13px;
+      outline: none;
+    }
+    .contact-form-field textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+    .contact-form-field input:focus,
+    .contact-form-field textarea:focus,
+    .contact-form-field select:focus {
+      border-color: var(--gold);
+    }
+    .contact-helper {
+      color: var(--gray);
+      font-size: 12px;
+      line-height: 1.6;
+      margin-top: 12px;
     }
 
     /* ── REVIEWS MARQUEE ── */
@@ -944,6 +1149,7 @@
         grid-template-columns: 1fr 1fr !important;
         gap: 28px !important;
       }
+      .contact-form-grid { grid-template-columns: 1fr; }
     }
 
     /* ════════════════════════════════
@@ -972,6 +1178,16 @@
       /* 후기 마퀴 */
       .rv-card { width: 280px; }
       .review-marquee-outer { padding: 4px 0 16px; }
+      .client-message { padding: 30px 22px; }
+      .contact-form-wrap { padding: 24px 20px; }
+      .faculty-statement {
+        max-width: 340px;
+        font-size: 23px;
+      }
+      .faculty-photo {
+        height: 280px;
+        padding: 12px 12px 0;
+      }
 
       /* footer: 2열 → 1열 */
       .footer-grid {
@@ -1294,7 +1510,7 @@
     <li><a href="#hero">홈</a></li>
     <li><a href="#programs">프로그램/강의분야</a></li>
     <li><a href="#clients">주요수강생/후기</a></li>
-    <li><a href="#about">강사소개</a></li>
+    <li><a href="#about">강사진 소개</a></li>
     <li><a href="#awards">수상 및 성과</a></li>
     <li><a href="#location">찾아오시는길</a></li>
     <li><a href="#contact" class="nav-cta">상담신청</a></li>
@@ -1311,7 +1527,7 @@
   <a href="#hero"     onclick="closeDrawer()">홈</a>
   <a href="#programs" onclick="closeDrawer()">프로그램/강의분야</a>
   <a href="#clients"  onclick="closeDrawer()">주요수강생/후기</a>
-  <a href="#about"    onclick="closeDrawer()">강사소개</a>
+  <a href="#about"    onclick="closeDrawer()">강사진 소개</a>
   <a href="#awards"   onclick="closeDrawer()">수상 및 성과</a>
   <a href="#location" onclick="closeDrawer()">찾아오시는길</a>
   <a href="#contact"  onclick="closeDrawer()" class="drawer-cta">상담신청</a>
@@ -1347,7 +1563,7 @@
       만듭니다
     </h1>
     <p class="hero-subtitle">
-      25년 경력 마이크온 출신 스피치 전문가가<br>
+      25년 경력 아나운서 출신 전문가가<br>
       목소리, 전달력, 설득 구조까지<br>
       결과가 달라지는 프리미엄 스피치 코칭을 제공합니다.
     </p>
@@ -1376,7 +1592,7 @@
     <div class="hero-cred-item">
       <div class="hero-cred-icon">📡</div>
       <div class="hero-cred-text">
-        <div class="hero-cred-title">언론사 기자·아나운서 등<br>전직 언론인 700여명 배출</div>
+        <div class="hero-cred-title">언론사 기자·아나운서 등<br>현직 언론인 70여명 배출</div>
         <div class="hero-cred-desc">KBS, MBC, SBS, JTBC, MBN<br>연합뉴스TV, 조선·중앙·동아일보</div>
       </div>
     </div>
@@ -1407,19 +1623,19 @@
     <div class="hero-strip-items">
       <a href="#programs" class="hero-strip-item">
         <div class="strip-icon">🎙</div>
-        <div class="strip-title">프리미엄 1:1<br>보이스 코칭</div>
+        <div class="strip-title">보이스 브랜딩<br>&amp; 전달력 코칭</div>
       </a>
       <a href="#programs" class="hero-strip-item">
         <div class="strip-icon">📊</div>
-        <div class="strip-title">비즈니스 스피치<br>&amp; 발표 코칭</div>
+        <div class="strip-title">비즈니스 스피치<br>&amp; 설득 커뮤니케이션</div>
       </a>
       <a href="#programs" class="hero-strip-item">
-        <div class="strip-icon">💼</div>
-        <div class="strip-title">면접 &amp; 입시<br>말하기 코칭</div>
+        <div class="strip-icon">🎓</div>
+        <div class="strip-title">교수법 &amp; 스피치<br>전문가 강사 양성</div>
       </a>
       <a href="#programs" class="hero-strip-item" style="border-right:none;">
-        <div class="strip-icon">👑</div>
-        <div class="strip-title">CEO·전문직<br>1대1 개인 코칭</div>
+        <div class="strip-icon">🎥</div>
+        <div class="strip-title">리더를 위한<br>미디어 트레이닝</div>
       </a>
     </div>
   </div><!-- /hero-strip-inner -->
@@ -1433,94 +1649,85 @@
     <div class="section-label">PROGRAMS</div>
     <h2 class="section-title">마이크온 스피치 프로그램</h2>
     <div class="divider"></div>
-    <p class="section-desc">목소리부터 전달력, 설득 구조까지 — 상황과 목적에 맞는 맞춤형 스피치 코칭을 제공합니다.</p>
+    <p class="section-desc">목소리 브랜딩부터 설득 커뮤니케이션, 강사 양성, 미디어 트레이닝까지 — 결정적인 순간에 실력이 드러나도록 훈련합니다.</p>
     <div class="programs-grid">
       <div class="program-card">
         <div class="program-icon">🎙</div>
-        <div class="program-title">1:1 보이스 코칭</div>
-        <p class="program-desc">신뢰를 주는 목소리 만들기, 전달력을 높이는 발음법, 오랜 강의·발표에도 목이 아프지 않은 발성법까지 체계적으로 교정합니다.</p>
-        <div class="program-tags"><span class="tag">목소리 교정</span><span class="tag">발음법</span><span class="tag">발성법</span></div>
+        <div class="program-title">보이스 브랜딩 &amp; 전달력 코칭</div>
+        <p class="program-desc">발성·발음·호흡·말투·음색을 교정하고, 한 문장만 들어도 신뢰가 느껴지는 목소리와 전달력을 만듭니다.</p>
+        <p class="program-message">한 문장만 들어도 신뢰가 가는 사람이 있습니다. 목소리도 명함입니다.</p>
+        <div class="program-tags"><span class="tag">발성</span><span class="tag">발음</span><span class="tag">보이스 브랜딩</span></div>
       </div>
       <div class="program-card">
         <div class="program-icon">📊</div>
-        <div class="program-title">비즈니스 스피치 &amp; 발표 코칭</div>
-        <p class="program-desc">보고·PT·제안 등 비즈니스 상황에서 내용이 잘 전달되는 구조적 스피치와 설득력 있는 프레젠테이션 기법을 코칭합니다.</p>
-        <div class="program-tags"><span class="tag">프레젠테이션</span><span class="tag">대중 연설</span><span class="tag">설득 스피치</span></div>
+        <div class="program-title">비즈니스 스피치 &amp; 설득 커뮤니케이션</div>
+        <p class="program-desc">보고·PT·IR 피칭·임원 스피치에 필요한 핵심 메시지 구조와 논리·감정을 연결하는 전달 전략을 코칭합니다.</p>
+        <p class="program-message">짧게 말해도 설득력 있게. 결과를 만드는 비즈니스 스피치를 완성합니다.</p>
+        <div class="program-tags"><span class="tag">보고</span><span class="tag">IR 피칭</span><span class="tag">설득 전략</span></div>
       </div>
       <div class="program-card">
-        <div class="program-icon">💼</div>
-        <div class="program-title">면접 &amp; 입시 말하기 코칭</div>
-        <p class="program-desc">합격을 부르는 목소리 코칭, 기억에 남는 자기소개, 심사위원을 사로잡는 면접 전략. 취업·대학 입시 모두 커버합니다.</p>
-        <div class="program-tags"><span class="tag">취업 면접</span><span class="tag">자기소개서</span><span class="tag">입시 컨설팅</span></div>
+        <div class="program-icon">🎓</div>
+        <div class="program-title">교수법 &amp; 스피치 전문가 강사 양성</div>
+        <p class="program-desc">강의 설계, 전달 스킬, 무대 스피치, 전문 강사 브랜딩까지 가르치는 사람의 말하기 역량을 강화합니다.</p>
+        <p class="program-message">가르치는 사람의 말은 곧 브랜드입니다.</p>
+        <div class="program-tags"><span class="tag">강의 설계</span><span class="tag">강사 브랜딩</span><span class="tag">청중 몰입</span></div>
       </div>
       <div class="program-card">
-        <div class="program-icon">📡</div>
-        <div class="program-title">미디어 트레이닝</div>
-        <p class="program-desc">방송 인터뷰, 대변인 훈련, 카메라 앞 스피치 — 언론 출신 전문가가 미디어 환경에 맞는 실전 트레이닝을 제공합니다.</p>
-        <div class="program-tags"><span class="tag">방송 인터뷰</span><span class="tag">대변인 훈련</span><span class="tag">카메라 스피치</span></div>
+        <div class="program-icon">🧭</div>
+        <div class="program-title">프레젠테이션 &amp; 발표 스피치 코칭</div>
+        <p class="program-desc">준비한 내용을 가장 효과적으로 전달할 수 있도록 발표 구성 전략, 핵심 메시지 설계, 실전 발표 훈련을 진행합니다.</p>
+        <p class="program-message">준비한 내용을 가장 효과적으로 전달하는 설득력 있는 발표를 완성합니다.</p>
+        <div class="program-tags"><span class="tag">발표 구조</span><span class="tag">메시지 설계</span><span class="tag">피드백</span></div>
       </div>
       <div class="program-card">
-        <div class="program-icon">👑</div>
-        <div class="program-title">CEO · 전문직 1대1 개인 코칭</div>
-        <p class="program-desc">CEO, 의사, 변호사, 교수, 배우 등 각 분야 최정상 전문가를 위한 완전 맞춤형 1대1 스피치 트레이닝입니다.</p>
-        <div class="program-tags"><span class="tag">CEO 스피치</span><span class="tag">전문직 맞춤</span><span class="tag">1:1 집중</span></div>
-      </div>
-      <div class="program-card">
-        <div class="program-icon">📜</div>
-        <div class="program-title">자격증 과정</div>
-        <p class="program-desc">스피치 지도사 1급, 프레젠테이션 전문가 1급 자격증 취득 과정. 취준생을 위한 자기소개·면접 등 다양한 상황별 맞춤 강의 포함.</p>
-        <div class="program-tags"><span class="tag">스피치 지도사 1급</span><span class="tag">PT 전문가 1급</span><span class="tag">자격증 취득</span></div>
+        <div class="program-icon">🎥</div>
+        <div class="program-title">리더를 위한 미디어 트레이닝</div>
+        <p class="program-desc">카메라 앞 표정·시선 처리, 기자 인터뷰 대응, 돌발 질문과 위기 대응 커뮤니케이션을 훈련합니다.</p>
+        <p class="program-message">카메라 앞의 1초가 이미지를 결정합니다.</p>
+        <div class="program-tags"><span class="tag">인터뷰 대응</span><span class="tag">카메라 스피치</span><span class="tag">위기 대응</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── COURSE DETAILS ── -->
+<!-- ── MIC-ON INTRO ── -->
 <section id="courses" style="background:var(--navy);">
   <div class="section-inner">
-    <div class="section-label">LECTURE DETAILS</div>
-    <h2 class="section-title">강의 분야 상세</h2>
+    <div class="section-label">MIC-ON SPEECH</div>
+    <h2 class="section-title">왜 마이크온일까요?</h2>
     <div class="divider"></div>
+    <p class="section-desc">면접장, 발표장, 입찰 PT처럼 준비한 모든 것을 보여줘야 하는 순간은 마치 마이크가 켜지는 순간과 닮아 있습니다.</p>
     <div class="courses-grid">
       <div class="course-section">
-        <div class="course-section-title">🎙 목소리 코칭</div>
+        <div class="course-section-title">🎙 MIC ON</div>
         <ul class="course-list">
-          <li>신뢰를 주는 목소리 만들기</li>
-          <li>전달력을 높이는 발음법</li>
-          <li>오랜 강의·발표에도 목이 아프지 않은 발성법</li>
-          <li>호감을 부르는 아나운서처럼 말하기</li>
+          <li>숨소리까지 들릴 것 같은 긴장과 작은 떨림이 커지는 순간</li>
+          <li>누군가는 그 순간 자신 있게 자신의 실력을 증명합니다</li>
+          <li>마이크온은 말하기 기술을 넘어 결정적인 순간의 전달력을 훈련합니다</li>
         </ul>
       </div>
       <div class="course-section">
-        <div class="course-section-title">📢 스피치 코칭</div>
+        <div class="course-section-title">🧠 커뮤니케이션의 힘</div>
         <ul class="course-list">
-          <li>취업 면접 &amp; 합격을 부르는 자기소개</li>
-          <li>미디어 트레이닝 (방송 인터뷰·대변인)</li>
-          <li>프레젠테이션 발표의 기술</li>
-          <li>대중 연설 &amp; CEO 스피치</li>
-          <li>CEO·배우 등 1:1 개인 스피치 트레이닝</li>
+          <li>준비한 자신의 실력을 온전히 보여주는 목소리</li>
+          <li>핵심을 놓치지 않는 전달력</li>
+          <li>사람의 마음을 움직이는 설득 커뮤니케이션</li>
         </ul>
       </div>
       <div class="course-section">
-        <div class="course-section-title">🏢 기업 강의</div>
+        <div class="course-section-title">🧩 실전형 훈련 설계</div>
         <ul class="course-list">
-          <li>신한카드 임직원·대학생 멘토단 발음 강의</li>
-          <li>세종텔레콤 임직원 — 리더의 목소리</li>
-          <li>한국거래소·교보생명 목소리 코칭</li>
-          <li>한국국제교류재단 프레젠테이션 코칭</li>
-          <li>전국 6개 중소기업연수원 CEO 보이스 &amp; 스피치</li>
-          <li>광주은행 신입사원 스피치를 통한 자기경영</li>
+          <li>개인의 말하기 습관을 진단하고 개선 포인트를 구체화합니다</li>
+          <li>발표·면접·강의·인터뷰 상황에 맞춰 말의 구조를 다시 설계합니다</li>
+          <li>녹음과 실습, 피드백을 통해 변화가 체감되는 훈련을 진행합니다</li>
         </ul>
       </div>
       <div class="course-section">
-        <div class="course-section-title">🎓 대학·공공기관 강의</div>
+        <div class="course-section-title">✨ 나답게 전달하는 힘</div>
         <ul class="course-list">
-          <li>연세대·시립대·경기대·전남대 취업 면접 특강</li>
-          <li>서울대 통계학과 석·박사 학술발표 코칭</li>
-          <li>경기도 인재개발원 6급 공무원 올바른 우리말</li>
-          <li>서울시 국공립 유치원 원장·교사 강의</li>
-          <li>강남서초교육지원청 초등교사 소통·말하기 연수</li>
-          <li>선거관리위원회 성공 인터뷰 방법 특강</li>
+          <li>좋은 말하기는 화려한 기술보다 결정적인 순간에 나답게 전달하는 힘입니다</li>
+          <li>청중의 시선 앞에서도 흔들리지 않는 호흡과 태도를 만듭니다</li>
+          <li>마이크가 켜지는 순간, 준비한 실력이 가장 잘 드러나도록 돕습니다</li>
         </ul>
       </div>
     </div>
@@ -1638,6 +1845,43 @@
         </div>
       </div>
     </div>
+
+    <div class="client-message">
+      <div class="client-message-title">수강생은 설명보다 경험을 기억합니다.</div>
+      <div class="client-message-body">
+        단순한 말하기 교육이 아닌,<br>
+        전달력 · 몰입감 · 자신감을 완성하는<br>
+        실전형 커뮤니케이션 코칭을 진행하고 있습니다.
+      </div>
+    </div>
+
+    <h3 class="record-heading">누적 강의 기록</h3>
+    <div class="record-grid">
+      <div class="record-card">
+        <div class="record-year">2010-현재</div>
+        <div class="record-text">목회자 1대1 스피치 &amp; 목소리 코칭 500여 명 이상</div>
+      </div>
+      <div class="record-card">
+        <div class="record-year">2010-2016</div>
+        <div class="record-text">신문·방송기자·아나운서·기상캐스터 등 현직 진출 언론인 70여 명 이상</div>
+      </div>
+      <div class="record-card">
+        <div class="record-year">2011-2015</div>
+        <div class="record-text">전국 중소·중견기업 CEO 대상 명품스피치 강의 5년 연속 진행</div>
+      </div>
+      <div class="record-card">
+        <div class="record-year">2016-현재</div>
+        <div class="record-text">스피치지도사 1급, 프레젠테이션 전문가 1급 자격증 과정 온라인 누적 수강생 10,000명 이상</div>
+      </div>
+      <div class="record-card">
+        <div class="record-year">2017-현재</div>
+        <div class="record-text">서울대, 고려대, 연세대, 서강대, 중앙대, 시립대, 한동대 등 매년 전국 주요대학 합격자 배출</div>
+      </div>
+      <div class="record-card">
+        <div class="record-year">2022-2025</div>
+        <div class="record-text">중국 정부 주최 한국어 말하기대회 3년 연속 전국 1·2등 수상 지도</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1728,67 +1972,112 @@
 <section id="about">
   <div class="section-inner">
     <div class="section-label">ABOUT</div>
-    <h2 class="section-title">강사 소개 — 조진희</h2>
+    <h2 class="section-title">강사진 소개</h2>
     <div class="divider"></div>
+    <div class="faculty-statement">
+      스피치 전문가들의 전문가,<br><strong>상위 1%</strong>를 위한 목소리&nbsp;코칭&nbsp;전문가
+    </div>
 
-    <div class="about-grid">
-      <div class="about-photo-wrap">
-        <div class="about-photo-frame" style="
-          background: radial-gradient(ellipse at 50% 30%, rgba(30,58,95,0.55) 0%, #0C1B2E 65%);
-          border: 1px solid rgba(201,162,39,0.18);
-          display: block; aspect-ratio: auto; max-height: none;
-          overflow: hidden; border-radius: 16px;
-          padding-bottom: 12px;
-        ">
-          <img src="instructor_nobg.png" alt="조진희 대표" style="width:100%; display:block; filter:drop-shadow(0 8px 32px rgba(0,0,0,0.5));">
+    <div class="faculty-grid">
+      <article class="faculty-card">
+        <img class="faculty-photo" src="assets/instructors/cho-jinhee.png" alt="조진희 대표강사">
+        <div class="faculty-body">
+          <div class="faculty-name">조진희 <span>대표강사</span></div>
+          <p class="faculty-quote">스피치 전문가들의 전문가, 상위 1%를 위한 목소리 코칭 전문가</p>
+          <div class="faculty-detail-title">학력</div>
+          <ul class="faculty-list">
+            <li>중앙대 신문방송대학원 언론학 석사</li>
+            <li>논문: 한국어 발음 교육 교사의 발음 자기 인식과 교수법 변화에 관한 질적 연구</li>
+          </ul>
+          <div class="faculty-detail-title">주요 경력</div>
+          <ul class="faculty-list">
+            <li>CBS 아나운서 및 TBS 교통방송 전문 MC</li>
+            <li>중앙대 언론고시반 전임강사</li>
+            <li>중국 랴오닝대학교 한국어학과 외국인 교수</li>
+            <li>서울대 창의연구단 스피치 자문위원</li>
+            <li>두란노 바이블칼리지 스피치학과 전임강사</li>
+          </ul>
+          <div class="faculty-detail-title">주요 성과</div>
+          <ul class="faculty-list">
+            <li>CEO·변호사·의사 등 전문직 대상 1:1 코칭 1,000명 이상</li>
+            <li>KBS, MBC, SBS, JTBC, 조선·동아일보 등 현직 언론인 70명 이상 배출</li>
+            <li>뮤지컬 &lt;영웅&gt; 주연배우 및 서울대 석·박사 학술 발표 코칭</li>
+            <li>스피치지도사 1급 및 프레젠테이션 전문가 1급 온라인 누적 수강생 10,000명 이상</li>
+            <li>중국 정부 주최 한국어 말하기 대회 3년 연속 전국 1·2등 수상 지도</li>
+          </ul>
         </div>
-        <div class="about-photo-badge">
-          마이크온 스피치<br>아카데미 대표<br>조진희
+      </article>
+
+      <article class="faculty-card">
+        <img class="faculty-photo" src="assets/instructors/kim-heejung.png" alt="김희정 교수">
+        <div class="faculty-body">
+          <div class="faculty-name">김희정 <span>교수</span></div>
+          <p class="faculty-quote">KBS 아나운서 출신, 설득 스피치와 미디어 트레이닝의 정석</p>
+          <div class="faculty-detail-title">학력</div>
+          <ul class="faculty-list">
+            <li>중앙대학교 언론학 석사</li>
+            <li>경기대학교 미디어영상대학원 박사과정 수료</li>
+          </ul>
+          <div class="faculty-detail-title">주요 경력</div>
+          <ul class="faculty-list">
+            <li>현 세종대학교 대양휴머니티칼리지 겸임교수</li>
+            <li>KBS 아나운서 및 TBS 서울시 교통방송 아나운서</li>
+            <li>백지연 스피치코리아 강사 및 숭실대·중앙대 강사</li>
+            <li>한국 아나운서회 아나운서 대상 수상</li>
+          </ul>
+          <div class="faculty-detail-title">전문 분야</div>
+          <ul class="faculty-list">
+            <li>CEO·전문직 미디어 트레이닝</li>
+            <li>기업 발표/PT 코칭</li>
+            <li>설득 스피치</li>
+          </ul>
         </div>
-      </div>
+      </article>
 
-      <div class="about-content">
-        <p style="font-size:15px; color:var(--gray-light); line-height:1.9; margin-bottom:32px;">
-          CBS 아나운서와 TBS 교통방송 전문 MC를 거친 언론인 출신 스피치 전문가입니다.
-          중앙대 언론고시반 전임강사로 재직하며 KBS·MBC·SBS·JTBC·연합뉴스TV 등
-          국내 주요 언론사 기자·아나운서 700여 명을 배출했습니다.
-          이후 두란노 바이블칼리지, 중국 랴오닝대학교에서도 전임강사로 활동하며
-          목소리와 스피치의 힘으로 사람들의 삶을 변화시키는 데 헌신해 왔습니다.
-        </p>
+      <article class="faculty-card">
+        <img class="faculty-photo" src="assets/instructors/sim-jaeheun.png" alt="심재흔 교수">
+        <div class="faculty-body">
+          <div class="faculty-name">심재흔 <span>교수</span></div>
+          <p class="faculty-quote">방송 제작 현장과 교육을 아우르는 실전형 미디어 전문가</p>
+          <div class="faculty-detail-title">주요 경력</div>
+          <ul class="faculty-list">
+            <li>현 세종대학교 겸임교수</li>
+            <li>KBS 프로듀서(PD)</li>
+            <li>경기시청자미디어센터장 역임</li>
+          </ul>
+          <div class="faculty-detail-title">전문 분야</div>
+          <ul class="faculty-list">
+            <li>미디어 인터뷰 기획 및 대응 훈련</li>
+            <li>방송 커뮤니케이션</li>
+            <li>메시지 구성 전략</li>
+          </ul>
+        </div>
+      </article>
 
-        <ul class="career-timeline">
-          <li class="career-item">
-            <div class="career-period">2001 – 2003</div>
-            <div class="career-role">CBS 아나운서</div>
-            <div class="career-detail">방송 현장에서 쌓은 실전 아나운서 경력</div>
-          </li>
-          <li class="career-item">
-            <div class="career-period">2003 – 2008</div>
-            <div class="career-role">TBS 교통방송 전문 MC</div>
-            <div class="career-detail">5년간 생방송 진행으로 완성한 현장 스피치</div>
-          </li>
-          <li class="career-item">
-            <div class="career-period">2010 – 2016</div>
-            <div class="career-role">중앙대 언론고시반 전임강사</div>
-            <div class="career-detail">KBS·MBC·SBS 등 주요 언론사 기자·아나운서 700명+ 배출</div>
-          </li>
-          <li class="career-item">
-            <div class="career-period">2010 – 현재</div>
-            <div class="career-role">두란노 바이블칼리지 스피치학과 전임강사</div>
-            <div class="career-detail">목회자 500여 명 이상 스피치·목소리 코칭</div>
-          </li>
-          <li class="career-item">
-            <div class="career-period">2022 – 2025</div>
-            <div class="career-role">중국 랴오닝대학교 한국어학과 외국인 교수</div>
-            <div class="career-detail">중국 전국 한국어 말하기대회 2년 연속 1등 수상 지도</div>
-          </li>
-          <li class="career-item">
-            <div class="career-period">학력</div>
-            <div class="career-role">중앙대 신문방송대학원 언론학 석사</div>
-            <div class="career-detail">한국어 발음 교육 교사의 발음 자기 인식과 교수법 변화에 관한 질적 연구</div>
-          </li>
-        </ul>
-      </div>
+      <article class="faculty-card">
+        <img class="faculty-photo" src="assets/instructors/yoon-hyungsun.png" alt="윤형선 교수">
+        <div class="faculty-body">
+          <div class="faculty-name">윤형선 <span>교수</span></div>
+          <p class="faculty-quote">13,000회의 임상이 증명하는 목소리의 과학, 발성 교정 전문가</p>
+          <div class="faculty-detail-title">학력</div>
+          <ul class="faculty-list">
+            <li>한양대학교 성악과 졸업</li>
+            <li>독일 아헨음대 석사·최고연주자 과정 졸업</li>
+          </ul>
+          <div class="faculty-detail-title">주요 경력</div>
+          <ul class="faculty-list">
+            <li>현 보이스솔루션 대표 및 한양대·성신여대 겸임교수</li>
+            <li>13,000회 이상의 발성 교정 및 강의 이력</li>
+            <li>삼성전자, 세종문화회관, 예술의전당, 서울시교육청 등 주요 기관 출강</li>
+          </ul>
+          <div class="faculty-detail-title">전문 분야</div>
+          <ul class="faculty-list">
+            <li>기업 비즈니스 보이스 트레이닝</li>
+            <li>예술단 발성 교육</li>
+            <li>공공기관·교사 연수</li>
+          </ul>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -1812,8 +2101,8 @@
       </div>
       <div class="award-card">
         <span class="award-emoji">🥇</span>
-        <div class="award-title">중국 전국 한국어 말하기대회 2년 연속 1등</div>
-        <div class="award-desc">랴오닝대학교 학생 지도로 전국 대회 2년 연속 최우수상 수상</div>
+        <div class="award-title">중국 정부 주최 한국어 말하기대회 3년 연속 수상</div>
+        <div class="award-desc">랴오닝대학교 학생 지도로 전국 대회 1·2등 수상 지도</div>
       </div>
       <div class="award-card">
         <span class="award-emoji">🏛</span>
@@ -1928,12 +2217,58 @@
         <div class="contact-card-label">상담 가능 시간</div>
         <div class="contact-card-value">평일 09:00 – 18:00</div>
       </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">💬</div>
+        <div class="contact-card-label">카카오톡 상담</div>
+        <div class="contact-card-value">채널 상담 가능</div>
+      </div>
     </div>
 
     <div class="contact-cta-wrap">
       <a href="tel:010-4262-2787" class="btn-primary btn-lg">📞 전화로 바로 상담</a>
       <a href="mailto:cleeprin@naver.com" class="btn-secondary btn-lg">✉️ 이메일 문의</a>
+      <a href="https://pf.kakao.com/" target="_blank" rel="noopener" class="btn-secondary btn-lg">💬 카카오톡 상담</a>
     </div>
+
+    <form name="consultation" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form-wrap" id="contactForm">
+      <input type="hidden" name="form-name" value="consultation">
+      <p style="display:none;">
+        <label>비워두세요 <input name="bot-field"></label>
+      </p>
+      <div class="contact-form-grid">
+        <div class="contact-form-field">
+          <label for="contactName">이름</label>
+          <input id="contactName" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="contact-form-field">
+          <label for="contactPhone">연락처</label>
+          <input id="contactPhone" name="phone" type="tel" autocomplete="tel" required>
+        </div>
+        <div class="contact-form-field full">
+          <label for="contactCourse">관심 프로그램</label>
+          <select id="contactCourse" name="course" required>
+            <option value="">선택해 주세요</option>
+            <option>보이스 브랜딩 & 전달력 코칭</option>
+            <option>비즈니스 스피치 & 설득 커뮤니케이션</option>
+            <option>교수법 & 스피치 전문가 강사 양성</option>
+            <option>프레젠테이션 & 발표 스피치 코칭</option>
+            <option>리더를 위한 미디어 트레이닝</option>
+          </select>
+        </div>
+        <div class="contact-form-field full">
+          <label for="contactMessage">상담 내용</label>
+          <textarea id="contactMessage" name="message" placeholder="현재 고민, 희망 일정, 코칭 목적을 남겨주세요." required></textarea>
+        </div>
+        <div class="contact-form-field full">
+          <label style="display:flex; gap:10px; align-items:flex-start; font-size:13px; line-height:1.7; color:var(--gray-light);">
+            <input type="checkbox" name="privacy_agree" required style="width:auto; margin-top:4px;">
+            개인정보 수집 및 상담 목적의 연락에 동의합니다.
+          </label>
+        </div>
+      </div>
+      <div class="contact-helper">Netlify Forms로 접수되며, 상담 목적 외 용도로 사용하지 않습니다.</div>
+      <button type="submit" class="btn-primary btn-lg" style="border:0; margin-top:18px;">상담 내용 보내기</button>
+    </form>
   </div>
 </section>
 
@@ -2065,31 +2400,92 @@
     navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : ''; });
   });
 
-  // ── Review Marquee: 카드 복제로 무한 루프 ──
+  // ── Review 모달 ──
+  const reviewData = [
+    { avatar:'최', name:'최O영', role:'이대목동병원 가정의학과 전문의',
+      text:'이론만이 아니라 실습을 많이 병행하여 실제적인 도움이 됐습니다. 발표할 때마다 개인적으로 코멘트를 해주셔서 평소 깨닫지 못했던 말하기 습관을 발견하고 개선할 수 있었습니다.',
+      fullText:`이론만이 아니라 실습을 많이 병행하여 실제적인 도움이 됐습니다. 발표할 때마다 개인적으로 코멘트를 해주셔서 평소 잘 깨닫지 못했던 좋지 않은 말하기 습관들을 발견하고 개선할 수 있었습니다.
+
+자신만의 콘텐츠를 분명하고 자신있게 세상에 전하고 싶은 모든 분들에게 적극 추천하며 따스한 격려와 칭찬을 아끼지 않으시고 정확한 코멘트 날려주셨던 선생님께 다시 한번 감사드립니다.` },
+    { avatar:'김', name:'김O석', role:'OO대 박사과정',
+      text:'일단 무조건 선생님한테 배우세요. 학술대회만 앞두면 스트레스가 심했는데, 발표 능력뿐 아니라 실력을 인정받고 강점까지 드러낼 수 있게 도와주셨습니다.',
+      fullText:`일단 무조건 선생님한테 배우세요. 선생님을 만난 것 자체가 행운입니다.
+
+저는 이공계 인재란 말을 들었지만 막상 학술대회만 앞두면 너무 스트레스가 심했습니다. 연구에 익숙한 제가 발표의 힘과 그 중요성을 모르고 살다가 숱하게 긴장하고 질책받고 실패하면서 더 이상 이런 상태를 방치할 수 없다고 느껴서 선생님을 만나게 됐습니다.
+
+단순히 발표 능력만 키워주는 것이 아니라 실력을 그대로 인정 받으면서 강점까지도 잘 드러내 주셔서 피폐해진 제 마음까지 위로받았습니다. 엄청난 힘을 가진 분이십니다. 수강료가 절대로 아깝지 않을 거예요. 그리고 꼭 변화된 모습과 자신감을 채워 원하는 목표를 이루세요.` },
+    { avatar:'조', name:'조O미', role:'경찰공무원',
+      text:'첫 수업을 받고 그냥 얻어진 이력이 아니구나 싶었습니다. 저도 몰랐던 진짜 장점과 본모습을 알게 되었고, 실전 면접에서 당당하게 어필할 수 있었습니다.',
+      fullText:`제가 선생님을 선택하는 기준은 그 분야에서 분명한 성과가 있어야 한다는 것입니다. 우선 경력에서 오는 믿음이 있었습니다. 그런데 막상 선생님과 첫 수업을 받고 와!! 그냥 얻어진 이력이 아니구나 싶었습니다.
+
+진정성 200%고요. 수업을 하면서 저도 몰랐던 제 진짜 장점과 본모습에 대해서도 많이 알게 되었습니다. 25년 인생보다 한 달 동안 제가 저를 더 많이 알게 된 것 같습니다. 그래서 실전 면접에서 짧은 시간 안에 제가 왜 꼭 필요한 인재인지 당당하게 어필할 수 있었습니다. 스피치 최고의 선생님을 꼭 만나세요. 진심 강추합니다.` },
+    { avatar:'최', name:'최O현', role:'OO전자',
+      text:'최고 스펙이었지만 늘 취업에는 실패했습니다. 촬영 영상을 통해 약점을 확인하고 전달력과 보이스를 훈련하며, 실제 면접장에서 당당하게 합격의 순간을 맞았습니다.',
+      fullText:`남들이 소위 말하는 최고 스펙의 소유자, 바로 저입니다. 그런데 왜 늘 취업에는 실패할까? 제가 몰랐던 취약점, 바로 웅얼웅얼 뭘 말해도 자신이 없어보였다는 것입니다.
+
+처음 선생님과 수업한 날, 촬영된 영상을 통해 바라본 저는 면접관이 왜 뽑지 않았는지 너무 명확히 보이더라구요. 그래서 스펙에 대한 교만함을 내려놓고 전달력 강화를 위한 보이스 트레이닝부터 시작했어요.
+
+그리고 나열된 스펙들 중에서도 뽑고 싶은 인재상에 걸맞게 스펙의 순위를 나열하는 작업을 해보니, 제가 어떤 인재상이고 어떤 곳에서 나를 원하는지가 명확히 보였습니다. 그렇게 허울 좋았던 스펙이 진짜 내면에 자신감으로 채워지니까 실제 면접장에서 저 스스로도 많이 놀랄만큼 당당하고 여유롭게 합격의 순간을 맞았습니다.` },
+    { avatar:'이', name:'이O준', role:'OO일보 기자',
+      text:'기자 지망생일 때 수업을 받았습니다. 면접에서 꺼내지 못했던 강점을 찾아 제 무기로 만들어주셨고, 면접장이 이렇게 편했던 적이 없었습니다.',
+      fullText:`기자 지망생일 때 선생님께 수업을 받았습니다. 글 쓰는 걸 좋아해 신문기자를 준비하다가 매번 최종 면접에서 고배를 마셨습니다. 같이 언론고시를 준비하는 친구를 통해 선생님을 소개받고 선생님을 만났습니다.
+
+이미 수많은 언론인 대선배들의 선생님이시더라고요. 너무 명확했습니다. 그동안 글을 정말 잘 쓴다고 생각해 왔는데 면접에서 단 한 번도 꺼내지 못한 제 강점을 찾아내 주셨고, 그게 저의 무기가 되어서 면접장이 이렇게 편했던 적이 없습니다.
+
+꼭 선생님과 면접 준비하세요. 그리고 방송기자 준비하는 친구들도 선생님을 만나세요. 아주 딕션이 끝내주십니다. 정말 제 인생 은인이세요.` },
+    { avatar:'최', name:'최O훈', role:'OO항공',
+      text:'스펙은 좋았지만 낙방이 이어졌습니다. 첫 만남에서 표현력 문제를 명확히 진단받았고, 그 한끗 덕분에 원하는 항공사에서 전공을 살리고 있습니다.',
+      fullText:`모 항공사에 입사했습니다. 스펙 아주 좋습니다. 왜냐하면 주변에서 다 네 스펙이면 못 들어가는 게 이상한 일이라고 해서 출발은 늘 자신감으로 가득찼습니다. 그런데 끊임없는 낙방, 또 낙방.
+
+갈수록 스펙은 더 업그레이드되는데 도대체 뭐가 문제인지 정말 몰랐습니다. 그러다 선생님을 만났고 첫 만남에서 아주 명확하게 진단을 받았습니다. 스펙에 비해 한참 모자란 표현력. 늘 스펙쌓기에 열만 올리다 뭔가 정말 중요한 한끗을 만난 기분이었습니다.
+
+결국 그 한끗 덕분에 제가 원하는 항공사에서 당당하게 전공을 살리고 있습니다. 객관적으로 자신을 점검하고 싶다면 선생님을 만나세요. 답이 보일 것입니다.` },
+    { avatar:'김', name:'김O현', role:'변호사',
+      text:'보이스 트레이닝의 진짜 전문가를 만나고 싶었습니다. 첫 마디에서 이미 끝납니다. 상위 1%의 목소리, 좋은 목소리를 만들어주는 전문성이 다릅니다.',
+      fullText:`보이스 트레이닝의 진짜 전문가를 만나고 싶었어요. 그런데 선생님을 만나는 날, 바로 알게 될 거예요. 첫 마디에서 이미 끝납니다. 상위 1%의 목소리! 아나운서 출신이라 딕션이 좋은 건 알겠는데, 이미 발성 자체가 다릅니다. 정말 닮고 싶은 목소리를 찾았다고나 할까요.
+
+그런데 어떻게 하면 닮아갈 수 있는지 너무나 체계적이고 전문적이어서 길 안내만 잘 따라가면 내가 원하는 좋은 목소리를 가질 수 있겠다는 자신감이 생겼습니다.
+
+첫 수업 끝내고 이렇게까지 전문적인 선생님을 만난 적이 없어서 우리 선생님을 널리 알리고 싶다는 생각에 후기부터 남깁니다. 세상에 좋은 목소리 가진 분은 많지만 좋은 목소리를 만들어주는데 선생님처럼 전문적인 분은 손에 꼽을 거예요. 최고세요. 목소리 때문에 고민인 분이라면 꼭 선생님을 만나세요. 절대 후회 없을 거예요.` },
+    { avatar:'최', name:'최O영', role:'OO병원 가정의학과 전문의',
+      text:'실습을 병행하며 실제적인 도움을 많이 받을 수 있었습니다. 개인별 코멘트로 부족한 부분을 정확히 알 수 있었고, 말하기 습관을 단계적으로 개선했습니다.',
+      fullText:`이론만이 아니라 실습을 병행하며 실제적인 도움을 많이 받을 수 있었습니다. 발표를 할 때마다 개인별로 세심한 코멘트를 해주셔서 어떤 부분이 부족한지 정확히 알 수 있었고, 말하기 습관을 한 단계씩 개선해나갈 수 있었습니다.
+
+또한 자신의 콘텐츠를 세상에 알리고 싶은 분들에게도 적극 추천드리고 싶습니다. 따뜻한 격려와 아낌없는 칭찬으로 자신감을 심어주시면서도, 꼭 필요한 부분은 정확하게 짚어주시는 진정한 전문가이십니다. 다시 한 번 선생님께 감사드립니다.` },
+    { avatar:'박', name:'박O성', role:'OO대 OO학과 교수',
+      text:'정확한 발음 훈련이 시급하다는 것을 알고 코칭을 받았습니다. 6주 후 제 강의와 학생들의 발표력이 다르게 보이기 시작했습니다.',
+      fullText:`늘 학술대회를 함께 참여하는 동료교수가 있었는데, 어느 날 저에게 돌직구를 날리더군요. 교수님은 해외학술대회만 나가면 정말 멋있는데 국내학술대회에서는 어딘가 좀 부족해 보인다고요.
+
+그래서 그 원인이 무엇일까 고민하다가, 한국어는 익숙해 연습하지 않아도 되는 언어라고 생각하며 늘 웅얼웅얼거리던 제 언어습관이 문제라는 것을 알게 되었습니다. 목소리, 그 중에서도 정확한 발음 훈련이 시급했기 때문에 선생님을 만나 체계적인 훈련을 받게 되었습니다.
+
+6주 코칭 후 어느 날, 늘 제 강의 때마다 졸던 학부생이 더 이상 졸지 않는다는 걸 알게 되었습니다. 그 이후로 저는 제 연구실의 석·박사 학생들의 발표력이 보이기 시작했습니다. 똑같은 주제의 논문도 누가 발표하느냐에 따라 이렇게 다른 느낌으로 전달된다는 것을 알고 학생들에게 적극적으로 발음과 스피치 훈련을 받을 것을 권유했습니다. 유능한 제자들의 능력을 잘 발휘할 수 있도록 도와주고 성장시키는 일이 교수의 또 다른 역할이라는 것을 알게 된 귀한 경험이었습니다.` },
+    { avatar:'김', name:'김OO', role:'대변인',
+      text:'10주 수업이 제 말의 격을 바꿔놓았습니다. 발음과 호흡을 진단받고, 대본에 매몰되지 않으며 청중과 기자에게 논리적으로 대응하는 법을 배웠습니다.',
+      fullText:`말 한마디로 사람의 마음을 움직여야 하는 순간들이 있습니다. 저는 아나운서는 아니지만, 많은 사람 앞에서 조직을 대표해 메시지를 전달해야 하는 위치에 있습니다.
+
+기존의 저는 원고를 읽었고, 예상치 못한 질문에는 눈동자가 흔들리는 평범한 사람이었습니다. 하지만 10주 수업이 제 말의 격을 바꿔놓았습니다. 단순히 크게 말하세요가 아니었습니다. 제가 가진 고질적인 문제였던 발음의 부정확함을 정밀하게 진단받았고, 비강과 흉식에 머물던 얕은 호흡을 깊은 복식호흡으로 끌어내리는 훈련을 반복했습니다.
+
+덕분에 이제는 장시간 스피치에도 목이 잠기지 않고, 듣는 사람의 귀에 꽂히는 단단하고 신뢰감 있는 톤을 갖게 되었습니다. 가장 큰 수확은 대본에 매몰되지 않는 법을 배운 것입니다. 원고를 보지 않고도 기자나 청중의 눈을 맞추며 응대하는 법, 준비되지 않은 질문에도 당황하지 않고 논리적으로 대응하는 프로의 화법을 익혔습니다.
+
+이제는 긴장감에 쫓기는 발표자가 아니라 여유롭게 상황을 리드하는 여유를 갖추게 되었습니다. 말의 내용만큼 중요한 것이 태도라는 것을 깨달았습니다. 가벼워 보이지 않으면서도 확신을 주는 제스처, 시선 처리, 당당한 자세까지. 스피치가 아니라 리더십 컨설팅을 받은 기분입니다. 강의나 목소리가 필요하면 조직에서 저를 찾습니다. 조직의 리더와 대변인 분들에게도 꼭 추천합니다.` }
+  ];
+
+  // ── Review Marquee: OCR로 추출한 후기 텍스트 카드 렌더링 ──
   (function() {
     const track = document.getElementById('reviewTrack');
     if (!track) return;
-    const cards = Array.from(track.querySelectorAll('.rv-card'));
-    // 카드 복제 (2배 = 한 사이클)
-    cards.forEach(c => track.appendChild(c.cloneNode(true)));
-    // 복제본에도 클릭 이벤트 재연결은 이벤트 위임으로 처리
+    track.innerHTML = reviewData.map((d, idx) => `
+      <div class="rv-card" data-idx="${idx}">
+        <div class="rv-quote">"</div>
+        <p class="rv-text">${d.text}</p>
+        <div class="rv-author">
+          <div class="rv-avatar">${d.avatar}</div>
+          <div><div class="rv-name">${d.name}</div><div class="rv-role">${d.role}</div></div>
+        </div>
+      </div>
+    `).join('');
+    Array.from(track.querySelectorAll('.rv-card')).forEach(c => track.appendChild(c.cloneNode(true)));
   })();
-
-  // ── Review 모달 ──
-  const reviewData = [
-    { avatar:'강', name:'강OO', role:'광주지법 부장판사',
-      text:'판사로서 법정에서 많은 말을 하지만, 코칭 후 목소리에 무게감과 신뢰감이 생겼다는 피드백을 받기 시작했습니다. 단순한 발성 교정이 아니라 말의 본질을 다시 생각하게 해주셨습니다.' },
-    { avatar:'정', name:'정재은', role:'뮤지컬 배우 (뮤지컬 \'영웅\' 주연)',
-      text:'뮤지컬 영웅 주연 준비 중에 발음 코칭을 받았습니다. 조진희 선생님은 발음을 단순히 교정하는 것이 아니라, 감정과 음색이 조화롭게 전달되도록 섬세하게 이끌어 주셨습니다.' },
-    { avatar:'박', name:'박OO', role:'대기업 임원 (비즈니스 스피치 수강)',
-      text:'임원 프레젠테이션 코칭을 받았는데, 목소리 톤과 속도 조절만으로 회의실 분위기가 달라졌습니다. 설득력이 높아졌다는 피드백을 상사에게서 직접 들었을 때 정말 놀랐습니다.' },
-    { avatar:'이', name:'이OO 목사', role:'두란노 바이블칼리지 수강생',
-      text:'목회자로서 설교 때 목소리가 떨리고 전달이 안 된다는 고민이 있었습니다. 발성부터 구조까지 체계적으로 배우고 나서, 성도들이 "말씀이 마음에 더 잘 닿는다"고 해주셨습니다.' },
-    { avatar:'김', name:'김민철', role:'KBS 기자',
-      text:'KBS 공채 준비를 하면서 선생님께 코칭을 받았습니다. 단순한 발음 교정이 아니라 방송인으로서의 마인드셋까지 짚어주셨고, 덕분에 합격 후에도 현장에서 든든한 기반이 되고 있습니다.' },
-    { avatar:'최', name:'최OO', role:'서울대 합격생 (면접 코칭 수강)',
-      text:'서울대 입시를 앞두고 면접 코칭을 받았습니다. 짧은 시간 안에 제 말투의 문제점을 정확히 짚어내시고, 자신감 있게 말하는 방법을 알려주셨습니다. 합격 후 지금도 그 가르침이 살아있습니다.' }
-  ];
 
   // 이벤트 위임 — 원본 + 복제 모두 처리
   document.getElementById('reviewTrack').addEventListener('click', e => {
@@ -2098,7 +2494,7 @@
     const idx = parseInt(card.dataset.idx);
     if (isNaN(idx)) return;
     const d = reviewData[idx];
-    document.getElementById('modalText').textContent = d.text;
+    document.getElementById('modalText').textContent = d.fullText || d.text;
     document.getElementById('modalAvatar').textContent = d.avatar;
     document.getElementById('modalName').textContent = d.name;
     document.getElementById('modalRole').textContent = d.role;
@@ -2120,6 +2516,7 @@
 
   // ESC 키로 닫기
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeReviewModal(); });
-</script>
+  </script>
+  <script src="assets/popup.js" defer></script>
 </body>
 </html>
