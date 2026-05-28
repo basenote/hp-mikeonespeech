@@ -34,6 +34,8 @@ function normalizePopup(input) {
     id,
     title,
     body,
+    displayMode: input.displayMode === "zone" ? "zone" : "modal",
+    imageUrl: String(input.imageUrl || "").trim(),
     buttonText: String(input.buttonText || "").trim(),
     buttonUrl: String(input.buttonUrl || "").trim(),
     active: Boolean(input.active),

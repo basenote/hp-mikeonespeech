@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "npx netlify dev",
-    "check": "node --check netlify/functions/auth.mjs && node --check netlify/functions/popups.mjs"
+    "check": "node --check netlify/functions/auth.mjs && node --check netlify/functions/popups.mjs && node --check netlify/functions/submissions.mjs"
   },
   "dependencies": {
     "@netlify/blobs": "^9.1.2"

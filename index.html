@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-theme="4">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>마이크온 스피치 아카데미 | 조진희 대표</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -27,10 +27,137 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Noto Sans KR', sans-serif;
+      font-family: 'Nanum Myeongjo', 'Noto Serif KR', serif;
       background: var(--navy);
       color: var(--white);
+      font-size: 17px;
       line-height: 1.7;
+    }
+
+    .nav-brand-text,
+    .hero-title,
+    .hero-strip-label,
+    .section-title,
+    .course-section-title,
+    .course-story-title,
+    .client-cat-title,
+    .media-label,
+    .record-heading,
+    .client-message-title,
+    .faculty-name,
+    .faculty-statement,
+    .faculty-closing-statement,
+    .award-title,
+    .contact-title {
+      font-family: 'Nanum Myeongjo', 'Noto Serif KR', serif;
+    }
+
+    .nav-brand-text,
+    .nav-brand-sub,
+    .nav-links a,
+    .nav-cta,
+    .hero-label,
+    .hero-title,
+    .hero-subtitle,
+    .hero-cred-title,
+    .hero-cred-desc,
+    .hero-strip-label,
+    .strip-title,
+    .btn-primary,
+    .btn-secondary,
+    .section-title,
+    .section-desc,
+    .program-title,
+    .program-desc,
+    .program-message,
+    .tag,
+    .course-section-title,
+    .course-story-body,
+    .course-list li,
+    .client-cat-title,
+    .client-chip,
+    .media-logo-name,
+    .record-stat-label,
+    .record-stat-value,
+    .record-text,
+    .client-message-title,
+    .client-message-body,
+    .rv-text,
+    .rv-name,
+    .rv-role,
+    .faculty-name,
+    .faculty-quote,
+    .faculty-list li,
+    .award-title,
+    .award-desc,
+    .location-info-label,
+    .location-info-text,
+    .contact-title,
+    .contact-card-label,
+    .contact-card-value,
+    .contact-helper {
+      word-break: keep-all;
+      overflow-wrap: normal;
+    }
+
+    .hero-title,
+    .section-title,
+    .program-title,
+    .course-section-title,
+    .client-cat-title,
+    .record-heading,
+    .client-message-title,
+    .faculty-name,
+    .award-title,
+    .contact-title {
+      text-wrap: balance;
+    }
+
+    .section-desc,
+    .program-desc,
+    .program-message,
+    .course-story-body,
+    .course-list li,
+    .record-text,
+    .client-message-body,
+    .rv-text,
+    .faculty-list li,
+    .award-desc,
+    .location-info-text,
+    .contact-helper {
+      text-wrap: pretty;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .tag,
+    .client-chip,
+    .record-stat-label,
+    .record-stat-value {
+      white-space: nowrap;
+    }
+
+    .nav-links a,
+    .nav-cta,
+    .nav-drawer a,
+    .btn-primary,
+    .btn-secondary,
+    .section-label,
+    .tag,
+    .client-chip,
+    .media-logo-name,
+    .record-year,
+    .record-stat-label,
+    .record-stat-value,
+    .contact-form-field label,
+    .contact-form-field input,
+    .contact-form-field textarea,
+    .contact-form-field select,
+    .contact-card-label,
+    .location-info-label,
+    .faculty-detail-title,
+    .rv-role {
+      font-family: 'Nanum Gothic', 'Noto Sans KR', sans-serif;
     }
 
     /* ── NAV ── */
@@ -72,7 +199,11 @@
     }
     .nav-links a {
       text-decoration: none; color: var(--gray-light);
-      font-size: 14px; font-weight: 400;
+      font-family: 'Nanum Gothic', 'Noto Sans KR', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1;
+      white-space: nowrap;
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--gold); }
@@ -80,10 +211,13 @@
     .nav-cta {
       background: var(--gold);
       color: var(--navy) !important;
-      font-weight: 700 !important;
+      font-family: 'Nanum Gothic', 'Noto Sans KR', sans-serif;
+      font-weight: 800 !important;
       padding: 10px 22px;
       border-radius: 4px;
       font-size: 13px !important;
+      line-height: 1;
+      white-space: nowrap;
       transition: background 0.2s !important;
     }
     .nav-cta:hover { background: var(--gold-light) !important; }
@@ -198,13 +332,23 @@
     /* 우열 — 크레덴셜 세로 리스트 */
     .hero-cred-col {
       padding: 30px 48px 48px 28px;
-      display: flex; flex-direction: column; justify-content: flex-start;
-      gap: 22px;
+      display: flex; flex-direction: column; justify-content: stretch;
+      gap: 0;
       position: relative; z-index: 2;
     }
 
     .hero-cred-item {
       display: flex; align-items: flex-start; gap: 14px;
+      flex: 1;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(201,162,39,0.16);
+    }
+    .hero-cred-item:first-child {
+      padding-top: 0;
+    }
+    .hero-cred-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
     }
 
     .hero-cred-icon {
@@ -334,8 +478,8 @@
     }
 
     .section-desc {
-      font-size: 16px; color: var(--gray-light);
-      line-height: 1.8; max-width: 640px;
+      font-size: 18px; color: var(--gray-light);
+      line-height: 1.9; max-width: 640px;
     }
 
     .divider {
@@ -356,61 +500,156 @@
     }
 
     .program-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(201,162,39,0.15);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 72px minmax(112px, auto) minmax(86px, auto) 76px;
+      align-items: start;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      border: 1px solid rgba(255,255,255,0.16);
       border-radius: 12px;
       padding: 32px 28px;
-      transition: transform 0.2s, background 0.2s, border-color 0.2s;
+      transition: transform 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.2s;
       cursor: default;
+      box-shadow: 0 18px 44px rgba(0,0,0,0.16);
     }
     .program-card:hover {
       transform: translateY(-4px);
-      background: rgba(201,162,39,0.06);
-      border-color: rgba(201,162,39,0.4);
+      background: rgba(255,255,255,0.96);
+      border-color: rgba(201,162,39,0.42);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.18);
+    }
+    .program-card:nth-child(1) {
+      --program-bg: url("https://images.unsplash.com/photo-1686656446001-41af3994216b?q=80&w=1200&auto=format&fit=crop");
+      background-position: center 30%;
+    }
+    .program-card:nth-child(2) {
+      --program-bg: url("https://images.unsplash.com/photo-1758518727077-ffb66ffccced?q=80&w=1200&auto=format&fit=crop");
+      background-position: center;
+    }
+    .program-card:nth-child(3) {
+      --program-bg: url("https://images.unsplash.com/photo-1758270705696-ec9caffc73dd?q=80&w=1200&auto=format&fit=crop");
+      background-position: center;
+    }
+    .program-card:nth-child(4) {
+      --program-bg: url("https://images.unsplash.com/photo-1756900737286-af0daa63d40b?q=80&w=1200&auto=format&fit=crop");
+      background-position: center;
+    }
+    .program-card:nth-child(5) {
+      --program-bg: url("https://images.unsplash.com/photo-1758613656153-196ebbef97d9?q=80&w=1200&auto=format&fit=crop");
+      background-position: center;
+    }
+    .program-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-image: var(--program-bg);
+      background-size: cover;
+      background-position: inherit;
+      opacity: 0.30;
+      filter: saturate(0.8) contrast(1.05);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .program-card::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      z-index: 2;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    }
+    .program-card > * {
+      position: relative;
+      z-index: 1;
+    }
+    .program-card:hover::after {
+      opacity: 0.20;
+      transform: scale(1.03);
     }
 
     .program-icon {
-      width: 52px; height: 52px;
-      background: rgba(201,162,39,0.15);
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 24px;
-      margin-bottom: 20px;
+      display: none;
     }
 
     .program-title {
-      font-family: 'Noto Serif KR', serif;
-      font-size: 18px; font-weight: 700;
-      color: var(--white);
-      margin-bottom: 12px;
+      grid-column: 1;
+      min-height: 72px;
+      font-family: 'Nanum Gothic', 'Noto Sans KR', sans-serif;
+      font-size: 21px;
+      font-weight: 800;
+      line-height: 1.38;
+      color: #FFFFFF;
+      text-shadow: 0 2px 12px rgba(33,33,33,0.46);
+      margin-bottom: 0;
+      align-self: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      letter-spacing: 0;
+    }
+    .program-card:hover .program-title {
+      color: #212121;
+      text-shadow: none;
+    }
+    .program-title-main,
+    .program-title-sub {
+      display: block;
+      white-space: nowrap;
     }
 
     .program-desc {
-      font-size: 13.5px; color: var(--gray-light);
-      line-height: 1.7;
+      grid-column: 1 / -1;
+      grid-row: 2;
+      color: #212121;
+      font-size: 15.5px;
+      line-height: 1.8;
+      min-height: 112px;
+      margin-top: 18px;
     }
 
     .program-message {
+      grid-column: 1 / -1;
+      grid-row: 3;
       margin-top: 18px;
-      padding-left: 14px;
-      border-left: 2px solid rgba(201,162,39,0.45);
-      color: var(--gold-light);
+      margin-bottom: 20px;
+      padding: 16px 16px 16px 18px;
+      border-left: 2px solid rgba(122,90,42,0.72);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.50);
+      color: #5C421F;
       font-family: 'Noto Serif KR', serif;
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 15.5px;
+      font-weight: 800;
       line-height: 1.65;
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.34);
     }
 
     .program-tags {
+      grid-column: 1 / -1;
+      grid-row: 4;
       display: flex; flex-wrap: wrap; gap: 6px;
-      margin-top: 18px;
+      min-height: 64px;
+      align-content: flex-start;
+      align-self: end;
+      margin-top: 8px;
     }
     .tag {
-      font-size: 11px; padding: 4px 10px;
-      background: rgba(201,162,39,0.12);
-      color: var(--gold-light);
+      font-size: 12.5px; padding: 4px 10px;
+      background: rgba(255,255,255,0.40);
+      color: #363636;
       border-radius: 100px;
-      border: 1px solid rgba(201,162,39,0.25);
+      border: 1px solid rgba(54,54,54,0.14);
+      font-weight: 800;
+    }
+    .program-card:hover .tag {
+      background: rgba(54,54,54,0.88);
+      border-color: rgba(54,54,54,0.88);
+      color: #FFFFFF;
     }
 
     /* ── ABOUT ── */
@@ -528,6 +767,24 @@
       opacity: 0.65;
     }
     .faculty-statement strong { color: var(--gold-light); }
+    .faculty-closing-statement {
+      margin: 54px auto 0;
+      max-width: 840px;
+      text-align: center;
+      font-family: 'Noto Serif KR', serif;
+      font-size: clamp(22px, 2.6vw, 32px);
+      font-weight: 700;
+      line-height: 1.65;
+      color: var(--white);
+      word-break: keep-all;
+    }
+    .faculty-closing-statement::before,
+    .faculty-closing-statement::after {
+      content: '"';
+      color: var(--gold);
+      opacity: 0.65;
+    }
+    .faculty-closing-statement strong { color: var(--gold-light); }
 
     .faculty-grid {
       display: grid;
@@ -536,21 +793,65 @@
       margin-top: 48px;
     }
     .faculty-card {
+      position: relative;
       background: rgba(255,255,255,0.035);
       border: 1px solid rgba(201,162,39,0.18);
       border-radius: 14px;
       overflow: hidden;
+      box-shadow: 0 18px 38px rgba(0,0,0,0.12);
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .faculty-card:hover {
+      border-color: rgba(201,162,39,0.62);
+      box-shadow: 0 22px 48px rgba(0,0,0,0.18);
+      transform: translateY(-2px);
+    }
+    .faculty-photo-frame {
+      width: 100%;
+      height: 340px;
+      aspect-ratio: 4 / 5;
+      background:
+        radial-gradient(ellipse at 50% 28%, rgba(201,162,39,0.28) 0%, rgba(255,255,255,0.10) 52%, rgba(255,255,255,0.02) 78%);
+      border-bottom: 1px solid rgba(201,162,39,0.22);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      overflow: hidden;
     }
     .faculty-photo {
-      width: 100%;
-      height: 320px;
-      aspect-ratio: 4 / 5;
-      background: rgba(255,255,255,0.04);
+      width: calc(100% - 28px);
+      height: calc(100% - 18px);
+      margin-top: 18px;
       display: block;
       object-fit: contain;
-      object-position: top center;
-      padding: 14px 14px 0;
-      border-bottom: 1px solid rgba(201,162,39,0.12);
+      object-position: center bottom;
+      filter: saturate(0.96) contrast(1.03);
+      transform: translate(var(--faculty-x, 0), var(--faculty-y, 0)) scale(var(--faculty-scale, 1));
+      transform-origin: center bottom;
+      transition: transform 0.28s ease;
+      --faculty-hover-scale: 1.035;
+    }
+    .faculty-card:hover .faculty-photo {
+      transform: translate(var(--faculty-x, 0), var(--faculty-y, 0)) scale(var(--faculty-hover-scale, 1.025));
+    }
+    .faculty-card:nth-child(2) .faculty-photo {
+      width: calc(100% - 58px);
+      height: calc(100% - 44px);
+      margin-top: 44px;
+    }
+    .faculty-card:nth-child(3) .faculty-photo {
+      width: calc(100% - 34px);
+      height: calc(100% - 24px);
+      margin-top: 24px;
+      --faculty-scale: 1.03;
+      --faculty-x: -10px;
+      --faculty-y: 10px;
+      --faculty-hover-scale: 1.06;
+    }
+    .faculty-card:nth-child(4) .faculty-photo {
+      width: calc(100% - 50px);
+      height: calc(100% - 22px);
+      margin-top: 22px;
     }
     .faculty-body { padding: 24px; }
     .faculty-name {
@@ -566,12 +867,21 @@
       font-weight: 700;
       line-height: 1.65;
       margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(201,162,39,0.18);
     }
     .faculty-detail-title {
       color: var(--white);
       font-size: 13px;
       font-weight: 700;
-      margin: 18px 0 8px;
+      margin: 20px 0 8px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(201,162,39,0.14);
+    }
+    .faculty-quote + .faculty-detail-title {
+      border-top: 0;
+      padding-top: 0;
+      margin-top: 0;
     }
     .faculty-list {
       list-style: none;
@@ -581,17 +891,21 @@
     }
     .faculty-list li {
       color: var(--gray-light);
-      font-size: 13px;
-      line-height: 1.55;
-      padding-left: 14px;
+      font-size: 15.5px;
+      line-height: 1.8;
+      padding-left: 18px;
       position: relative;
     }
     .faculty-list li::before {
-      content: '›';
+      content: '';
       position: absolute;
-      left: 0;
-      color: var(--gold);
-      font-weight: 700;
+      left: 1px;
+      top: 0.68em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 4px rgba(201,162,39,0.12);
     }
 
     /* ── NOTABLE CLIENTS ── */
@@ -605,15 +919,24 @@
     }
 
     .client-category {
+      position: relative;
+      overflow: hidden;
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(201,162,39,0.15);
       border-radius: 10px;
       padding: 28px;
+      box-shadow: 0 14px 36px rgba(0,0,0,0.10);
+    }
+    .client-category::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
     }
 
     .client-cat-title {
-      font-family: 'Noto Serif KR', serif;
-      font-size: 20px; font-weight: 700;
+      font-size: 21px; font-weight: 700;
       color: var(--white);
       margin-bottom: 16px;
       padding-bottom: 12px;
@@ -633,42 +956,61 @@
       display: flex; flex-wrap: wrap; gap: 8px;
     }
     .client-chip {
-      font-size: 12px; padding: 5px 12px;
-      background: rgba(255,255,255,0.05);
+      font-size: 12.5px; padding: 5px 12px;
+      background: rgba(255,255,255,0.40);
       color: var(--gray-light);
       border-radius: 100px;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      font-weight: 800;
     }
 
     /* Media logos row */
     .media-row {
-      margin-top: 48px;
-      padding: 28px 0;
-      border-top: 1px solid rgba(255,255,255,0.07);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      margin-top: 54px;
+      padding: 0;
+      border: 0;
     }
 
     .media-label {
-      text-align: center; font-size: 11px;
-      color: var(--gray); letter-spacing: 2px;
-      text-transform: uppercase; margin-bottom: 20px;
+      text-align: left;
+      font-family: 'Noto Serif KR', serif;
+      color: var(--white);
+      font-size: clamp(22px, 2.4vw, 30px);
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: 0;
+      text-transform: none;
+      margin-bottom: 22px;
     }
 
     .media-logos {
-      display: flex; flex-wrap: wrap;
-      align-items: center; justify-content: center;
-      gap: 12px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+      justify-content: stretch;
     }
 
     .media-logo-item {
+      position: relative;
+      overflow: hidden;
       display: flex; align-items: center; gap: 8px;
-      padding: 8px 16px;
+      justify-content: flex-start;
+      min-height: 74px;
+      padding: 20px 22px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 6px;
-      transition: border-color 0.2s, background 0.2s;
+      border-radius: 12px;
+      box-shadow: 0 14px 36px rgba(0,0,0,0.10);
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
     }
-    .media-logo-item:hover { border-color: rgba(201,162,39,0.4); background: rgba(201,162,39,0.06); }
+    .media-logo-item::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    }
+    .media-logo-item:hover { border-color: rgba(201,162,39,0.4); background: rgba(201,162,39,0.06); transform: translateY(-2px); }
 
     .media-logo-img {
       width: 22px; height: 22px;
@@ -676,17 +1018,49 @@
       flex-shrink: 0;
     }
 
+    .media-logo-mark {
+      position: relative;
+      width: 26px;
+      height: 26px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+    }
+
+    .media-logo-mark .media-logo-img {
+      position: relative;
+      z-index: 2;
+      width: 34px;
+      height: 28px;
+      background: #fff;
+      border-radius: 7px;
+      object-fit: contain;
+    }
+
     .media-logo-badge {
-      width: 22px; height: 22px; flex-shrink: 0;
+      position: absolute;
+      inset: 2px;
+      z-index: 1;
+      width: auto; height: auto; flex-shrink: 0;
       background: rgba(201,162,39,0.2);
-      border-radius: 3px;
+      border-radius: 7px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 11px; font-weight: 700; color: var(--gold);
+      font-size: 9px; font-weight: 700; color: var(--gold);
+      letter-spacing: -0.2px;
     }
 
     .media-logo-name {
-      font-size: 13px; color: var(--gray-light);
-      font-weight: 500;
+      font-size: 15.5px; color: var(--gray-light);
+      font-weight: 800;
+    }
+    .media-logo-mark .logo-gwangju {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+    }
+    .media-logo-mark .logo-krx {
+      width: 38px;
+      height: 26px;
     }
 
     .media-logos-old {
@@ -725,18 +1099,31 @@
       color: var(--gold-light);
       line-height: 1.5;
       margin-bottom: 18px;
+      white-space: nowrap;
     }
     .client-message-body {
       color: var(--gray-light);
-      font-size: 16px;
+      font-size: 15.5px;
       line-height: 1.9;
+      white-space: nowrap;
     }
 
     .record-grid {
+      position: relative;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-      margin-top: 22px;
+      gap: 16px;
+      margin-top: 28px;
+      padding-left: 36px;
+    }
+    .record-grid::before {
+      content: '';
+      position: absolute;
+      left: 12px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(201,162,39,0), rgba(201,162,39,0.85) 14%, rgba(201,162,39,0.85) 86%, rgba(201,162,39,0));
     }
     .record-heading {
       font-family: 'Noto Serif KR', serif;
@@ -747,10 +1134,26 @@
       margin-top: 54px;
     }
     .record-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(170px, 0.34fr) 1fr;
+      gap: 18px;
+      align-items: center;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(201,162,39,0.16);
       border-radius: 12px;
-      padding: 24px;
+      padding: 22px 24px;
+    }
+    .record-card::before {
+      content: '';
+      position: absolute;
+      left: -31px;
+      top: 24px;
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 0 6px rgba(201,162,39,0.14);
     }
     .record-year {
       color: var(--gold);
@@ -758,10 +1161,37 @@
       font-weight: 800;
       margin-bottom: 8px;
     }
+    .record-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .record-stat {
+      min-height: 64px;
+      padding: 11px 10px;
+      border-radius: 10px;
+      background: rgba(201,162,39,0.10);
+      border: 1px solid rgba(201,162,39,0.18);
+    }
+    .record-stat-label {
+      display: block;
+      color: var(--gray);
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    .record-stat-value {
+      display: block;
+      color: var(--gold-light);
+      font-family: 'Nanum Gothic', 'Noto Sans KR', sans-serif;
+      font-size: 15px;
+      font-weight: 900;
+      line-height: 1.25;
+    }
     .record-text {
       color: var(--gray-light);
-      font-size: 14px;
-      line-height: 1.7;
+      font-size: 15.5px;
+      line-height: 1.8;
     }
 
     /* ── AWARDS ── */
@@ -775,20 +1205,106 @@
     }
 
     .award-card {
-      background: rgba(201,162,39,0.06);
+      position: relative;
+      overflow: hidden;
+      min-height: 272px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.98), rgba(250,247,239,0.96));
       border: 1px solid rgba(201,162,39,0.2);
       border-radius: 10px;
       padding: 28px;
-      text-align: center;
+      padding-top: 166px;
+      text-align: left;
+      color: #363636;
+      box-shadow: 0 14px 36px rgba(0,0,0,0.10);
+      --award-bg-size: contain;
+      --award-bg-position: center;
     }
-    .award-emoji { font-size: 36px; margin-bottom: 16px; display: block; }
+    .award-card:nth-child(1) {
+      --award-bg: url("assets/logos/seoul-logo.png");
+      --award-bg-size: 70%;
+      --award-bg-position: center;
+    }
+    .award-card:nth-child(2) {
+      --award-bg: url("assets/logos/liaoning-logo.png");
+      --award-bg-size: 44%;
+      --award-bg-position: center;
+    }
+    .award-card:nth-child(3) {
+      --award-bg:
+        url("https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg"),
+        url("https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg");
+      --award-bg-size: 38%, 38%;
+      --award-bg-position: 28% center, 72% center;
+    }
+    .award-card:nth-child(4) {
+      --award-bg: url("https://www.google.com/s2/favicons?domain=snu.ac.kr&sz=128");
+      --award-bg-size: 42%;
+      --award-bg-position: center;
+    }
+    .award-card:nth-child(5) {
+      --award-bg: url("https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=1200&auto=format&fit=crop");
+      --award-bg-size: cover;
+      --award-bg-position: center;
+    }
+    .award-card:nth-child(6) {
+      --award-bg:
+        url("https://www.google.com/s2/favicons?domain=snu.ac.kr&sz=128"),
+        url("assets/logos/yonsei-logo.png"),
+        url("assets/logos/korea-logo.png");
+      --award-bg-size: 20%, 24%, 24%;
+      --award-bg-position: 22% center, 50% center, 78% center;
+    }
+    .award-card::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      z-index: 2;
+    }
+    .award-card::after {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      right: 24px;
+      height: 116px;
+      z-index: 0;
+      border-radius: 12px;
+      border: 1px solid rgba(201,162,39,0.18);
+      background-color: rgba(255,255,255,0.92);
+      background-image: var(--award-bg);
+      background-size: var(--award-bg-size);
+      background-position: var(--award-bg-position);
+      background-repeat: no-repeat;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.66);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .award-card:hover::after {
+      border-color: rgba(201,162,39,0.34);
+      transform: translateY(-2px);
+    }
+    .award-card > * {
+      position: relative;
+      z-index: 1;
+    }
+    .award-emoji { display: none; }
     .award-title {
-      font-family: 'Noto Serif KR', serif;
-      font-size: 16px; font-weight: 700;
-      color: var(--gold-light);
-      margin-bottom: 8px;
+      min-height: 58px;
+      display: flex;
+      align-items: flex-end;
+      font-family: 'Nanum Gothic', 'Noto Sans KR', sans-serif;
+      font-size: 20px;
+      line-height: 1.35;
+      font-weight: 900;
+      color: #212121;
+      margin-bottom: 12px;
     }
-    .award-desc { font-size: 13px; color: var(--gray-light); }
+    .award-desc { font-size: 15.5px; line-height: 1.8; color: #363636; }
 
     /* ── COURSES TABLE ── */
     #courses { background: var(--navy); }
@@ -801,15 +1317,24 @@
     }
 
     .course-section {
+      position: relative;
+      overflow: hidden;
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.06);
       border-radius: 10px;
       padding: 28px;
+      box-shadow: 0 14px 36px rgba(0,0,0,0.10);
+    }
+    .course-section::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
     }
 
     .course-section-title {
-      font-family: 'Noto Serif KR', serif;
-      font-size: 18px; font-weight: 700;
+      font-size: 19.5px; font-weight: 700;
       color: var(--white);
       margin-bottom: 18px;
       padding-bottom: 14px;
@@ -830,16 +1355,42 @@
       display: flex; flex-direction: column; gap: 10px;
     }
     .course-list li {
-      font-size: 13px; color: var(--gray-light);
-      line-height: 1.5;
-      padding-left: 16px;
+      font-size: 15.5px; color: var(--gray-light);
+      line-height: 1.8;
+      padding-left: 20px;
       position: relative;
     }
     .course-list li::before {
-      content: '›';
-      position: absolute; left: 0;
-      color: var(--gold);
+      content: '';
+      position: absolute;
+      left: 1px;
+      top: 0.62em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 4px rgba(201,162,39,0.12);
+    }
+    .course-story {
+      margin-top: 42px;
+      padding: 34px 38px;
+      border-radius: 14px;
+      border: 1px solid rgba(201,162,39,0.18);
+      background: linear-gradient(135deg, rgba(201,162,39,0.10), rgba(255,255,255,0.035));
+    }
+    .course-story-title {
+      font-family: 'Noto Serif KR', serif;
+      color: var(--gold-light);
+      font-size: clamp(21px, 2.4vw, 30px);
       font-weight: 700;
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+    .course-story-body {
+      color: var(--gray-light);
+      font-size: 15.5px;
+      line-height: 1.9;
+      word-break: keep-all;
     }
 
     /* ── CONTACT ── */
@@ -864,23 +1415,33 @@
     }
 
     .contact-card {
+      position: relative;
+      overflow: hidden;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(201,162,39,0.2);
       border-radius: 12px;
       padding: 28px 32px;
       min-width: 200px;
       text-align: center;
-      transition: background 0.2s;
+      box-shadow: 0 14px 36px rgba(0,0,0,0.10);
+      transition: background 0.2s, transform 0.2s, border-color 0.2s;
     }
-    .contact-card:hover { background: rgba(201,162,39,0.08); }
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    }
+    .contact-card:hover { background: rgba(201,162,39,0.08); transform: translateY(-2px); border-color: rgba(201,162,39,0.44); }
 
     .contact-card-icon { font-size: 28px; margin-bottom: 12px; }
     .contact-card-label {
-      font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
-      color: var(--gold); font-weight: 600; margin-bottom: 8px;
+      font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--gold); font-weight: 800; margin-bottom: 8px;
     }
     .contact-card-value {
-      font-size: 15px; font-weight: 700; color: var(--white);
+      font-size: 16px; font-weight: 700; color: var(--white);
     }
 
     .contact-cta-wrap {
@@ -892,6 +1453,8 @@
     }
 
     .contact-form-wrap {
+      position: relative;
+      overflow: hidden;
       max-width: 760px;
       margin: 42px auto 0;
       padding: 32px;
@@ -899,6 +1462,14 @@
       border: 1px solid rgba(201,162,39,0.18);
       border-radius: 12px;
       text-align: left;
+      box-shadow: 0 14px 36px rgba(0,0,0,0.10);
+    }
+    .contact-form-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
     }
     .contact-form-grid {
       display: grid;
@@ -914,7 +1485,7 @@
     .contact-form-field.full { grid-column: 1 / -1; }
     .contact-form-field label {
       color: var(--gold-light);
-      font-size: 12px;
+      font-size: 13.5px;
       font-weight: 700;
       letter-spacing: 0.04em;
     }
@@ -927,6 +1498,7 @@
       background: rgba(8,20,33,0.72);
       color: var(--white);
       font: inherit;
+      font-size: 16px;
       padding: 12px 13px;
       outline: none;
     }
@@ -941,8 +1513,8 @@
     }
     .contact-helper {
       color: var(--gray);
-      font-size: 12px;
-      line-height: 1.6;
+      font-size: 15.5px;
+      line-height: 1.8;
       margin-top: 12px;
     }
 
@@ -968,6 +1540,8 @@
     .review-marquee-track:active { cursor: grabbing; }
 
     .rv-card {
+      position: relative;
+      overflow: hidden;
       width: 340px;
       flex-shrink: 0;
       background: rgba(255,255,255,0.04);
@@ -975,13 +1549,22 @@
       border-radius: 14px;
       padding: 28px 26px;
       cursor: pointer;
-      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+      box-shadow: 0 14px 36px rgba(0,0,0,0.10);
+      transition: border-color 0.2s, background 0.2s, transform 0.2s, box-shadow 0.2s;
       user-select: none;
+    }
+    .rv-card::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
     }
     .rv-card:hover {
       border-color: rgba(201,162,39,0.45);
       background: rgba(201,162,39,0.06);
       transform: translateY(-3px);
+      box-shadow: 0 18px 44px rgba(0,0,0,0.16);
     }
 
     .rv-quote {
@@ -993,9 +1576,9 @@
       opacity: 0.45;
     }
     .rv-text {
-      font-size: 13.5px;
+      font-size: 15.5px;
       color: var(--gray-light);
-      line-height: 1.85;
+      line-height: 1.8;
       margin-bottom: 22px;
       display: -webkit-box;
       -webkit-line-clamp: 4;
@@ -1015,17 +1598,26 @@
       font-size: 15px; font-weight: 700; color: var(--gold);
     }
     .rv-name {
-      font-size: 13px; font-weight: 700; color: var(--white);
+      font-size: 14px; font-weight: 700; color: var(--white);
       margin-bottom: 3px;
     }
     .rv-role {
-      font-size: 11px; color: var(--gray);
+      font-size: 13px; color: var(--gray);
     }
 
     /* 모달 */
     #reviewModal.open {
       display: flex !important;
       animation: fadeIn 0.2s ease;
+    }
+    #modalText {
+      font-size: 18px !important;
+    }
+    #modalName {
+      font-size: 16px !important;
+    }
+    #modalRole {
+      font-size: 13px !important;
     }
     @keyframes fadeIn {
       from { opacity: 0; }
@@ -1085,7 +1677,10 @@
     .nav-drawer.open { transform: translateX(0); }
     .nav-drawer a {
       text-decoration: none; color: var(--gray-light);
-      font-size: 15px; font-weight: 400;
+      font-family: 'Nanum Gothic', 'Noto Sans KR', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.2;
       padding: 14px 0;
       border-bottom: 1px solid rgba(255,255,255,0.05);
       transition: color 0.2s;
@@ -1094,7 +1689,7 @@
     .nav-drawer .drawer-cta {
       margin-top: 20px;
       background: var(--gold); color: var(--navy) !important;
-      font-weight: 700 !important;
+      font-weight: 800 !important;
       padding: 14px 24px; border-radius: 4px;
       text-align: center; border-bottom: none;
     }
@@ -1179,14 +1774,35 @@
       .rv-card { width: 280px; }
       .review-marquee-outer { padding: 4px 0 16px; }
       .client-message { padding: 30px 22px; }
+      .client-message-title,
+      .client-message-body {
+        white-space: normal;
+      }
+      .record-grid {
+        padding-left: 28px;
+      }
+      .record-grid::before {
+        left: 9px;
+      }
+      .record-card {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 20px 18px;
+      }
+      .record-meta {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .record-card::before,
+      [data-theme="4"] .record-card::before {
+        left: -26px;
+      }
       .contact-form-wrap { padding: 24px 20px; }
       .faculty-statement {
         max-width: 340px;
         font-size: 23px;
       }
-      .faculty-photo {
+      .faculty-photo-frame {
         height: 280px;
-        padding: 12px 12px 0;
       }
 
       /* footer: 2열 → 1열 */
@@ -1263,14 +1879,54 @@
     [data-theme="2"] .hero-programs-strip,
     [data-theme="2"] .hero-cred-col { background: transparent; }
     [data-theme="2"] .cred-card,
-    [data-theme="2"] .program-card,
     [data-theme="2"] .course-section,
     [data-theme="2"] .client-category,
     [data-theme="2"] .award-card {
       background: rgba(200,75,17,0.05);
       border-color: rgba(200,75,17,0.2);
     }
+    [data-theme="2"] .program-card {
+      background: linear-gradient(135deg, #C84B11 0%, #E05A1A 100%);
+      border-color: rgba(200,75,17,0.24);
+      box-shadow: 0 18px 44px rgba(200,75,17,0.16);
+    }
+    [data-theme="2"] .program-card:hover {
+      background: #FFFAF5;
+      border-color: rgba(200,75,17,0.42);
+      box-shadow: 0 20px 48px rgba(200,75,17,0.18);
+    }
+    [data-theme="2"] .program-card .program-desc {
+      color: #2F160A;
+    }
+    [data-theme="2"] .program-card .program-message {
+      color: #5A250E;
+      border-left-color: rgba(200,75,17,0.72);
+      background: rgba(255,250,245,0.60);
+    }
+    [data-theme="2"] .award-card {
+      background: linear-gradient(145deg, rgba(255,250,245,0.98), rgba(255,243,232,0.96));
+      border-color: rgba(200,75,17,0.22);
+      box-shadow: 0 14px 36px rgba(200,75,17,0.10);
+    }
+    [data-theme="2"] .award-card::after {
+      border-color: rgba(200,75,17,0.18);
+    }
+    [data-theme="2"] .award-title,
+    [data-theme="2"] .award-desc {
+      color: #1A0800;
+    }
     [data-theme="2"] .rv-card { background: rgba(200,75,17,0.05); border-color: rgba(200,75,17,0.2); }
+    [data-theme="2"] .client-message {
+      background: linear-gradient(135deg, rgba(200,75,17,0.10), rgba(255,250,245,0.78));
+      border-color: rgba(200,75,17,0.24);
+      box-shadow: 0 14px 36px rgba(200,75,17,0.08);
+    }
+    [data-theme="2"] .client-message-title {
+      color: #C84B11;
+    }
+    [data-theme="2"] .client-message-body {
+      color: #3D2010;
+    }
     [data-theme="2"] .section-inner { max-width: 1160px; }
     [data-theme="2"] .about-photo-frame { background: radial-gradient(ellipse at 50% 30%, rgba(200,75,17,0.12) 0%, #FFFAF5 65%) !important; border-color: rgba(200,75,17,0.2) !important; }
     [data-theme="2"] .media-logo-item { background: rgba(200,75,17,0.04); border-color: rgba(200,75,17,0.12); }
@@ -1327,7 +1983,6 @@
       border-top-color: rgba(224,96,16,0.2);
     }
     [data-theme="3"] .cred-card,
-    [data-theme="3"] .program-card,
     [data-theme="3"] .course-section,
     [data-theme="3"] .client-category,
     [data-theme="3"] .award-card {
@@ -1335,10 +1990,52 @@
       border-color: rgba(224,96,16,0.25);
       border-radius: 16px;
     }
+    [data-theme="3"] .program-card {
+      background: linear-gradient(135deg, #E06010 0%, #FF8040 100%);
+      border-color: rgba(224,96,16,0.24);
+      box-shadow: 0 18px 44px rgba(224,96,16,0.14);
+    }
+    [data-theme="3"] .program-card:hover {
+      background: #FFFDF5;
+      border-color: rgba(224,96,16,0.42);
+      box-shadow: 0 20px 48px rgba(224,96,16,0.16);
+    }
+    [data-theme="3"] .program-card .program-desc {
+      color: #2F2008;
+    }
+    [data-theme="3"] .program-card .program-message {
+      color: #5C2B08;
+      border-left-color: rgba(224,96,16,0.72);
+      background: rgba(255,253,245,0.64);
+    }
+    [data-theme="3"] .award-card {
+      background: linear-gradient(145deg, rgba(255,253,245,0.98), rgba(255,240,250,0.94));
+      border-color: rgba(224,96,16,0.22);
+      box-shadow: 0 14px 36px rgba(224,96,16,0.10);
+    }
+    [data-theme="3"] .award-card::after {
+      border-color: rgba(224,96,16,0.18);
+    }
+    [data-theme="3"] .award-title,
+    [data-theme="3"] .award-desc {
+      color: #1A1000;
+    }
     [data-theme="3"] .rv-card {
       background: rgba(224,96,16,0.05);
       border-color: rgba(224,96,16,0.2);
       border-radius: 20px;
+    }
+    [data-theme="3"] .client-message {
+      background: linear-gradient(135deg, rgba(224,96,16,0.10), rgba(240,251,248,0.78));
+      border-color: rgba(224,96,16,0.24);
+      box-shadow: 0 14px 36px rgba(224,96,16,0.08);
+      border-radius: 20px;
+    }
+    [data-theme="3"] .client-message-title {
+      color: #E06010;
+    }
+    [data-theme="3"] .client-message-body {
+      color: #3D3010;
     }
     [data-theme="3"] .program-card { border-radius: 20px; }
     [data-theme="3"] .about-photo-frame { background: radial-gradient(ellipse at 50% 30%, rgba(224,96,16,0.12) 0%, #FFFDF5 65%) !important; border-color: rgba(224,96,16,0.2) !important; }
@@ -1353,6 +2050,674 @@
     [data-theme="3"] .btn-secondary { border-radius: 100px; }
     [data-theme="3"] .nav-cta { border-radius: 100px; }
 
+    /* ═══════════════════════════════════════════
+       THEME 4 — 마이콘스피치 브랜드 (Imweb reference)
+       ═══════════════════════════════════════════ */
+    [data-theme="4"] {
+      --navy:       #FFFFFF;
+      --navy-mid:   #FAFAFA;
+      --navy-light: #F7F7F7;
+      --gold:       #D6B07A;
+      --gold-light: #DEC384;
+      --gold-pale:  #F2E4C8;
+      --white:      #212121;
+      --gray:       #757575;
+      --gray-light: #363636;
+      --section-bg: #F7F7F7;
+      --alt-bg:     #F3F3F3;
+    }
+    [data-theme="4"] body {
+      background: #FFFFFF;
+      color: #212121;
+      font-family: 'Nanum Myeongjo', 'Noto Serif KR', serif;
+      font-size: 17px;
+    }
+    [data-theme="4"] .nav-brand-text,
+    [data-theme="4"] .hero-title,
+    [data-theme="4"] .hero-strip-label,
+    [data-theme="4"] .section-title,
+    [data-theme="4"] .program-title,
+    [data-theme="4"] .program-message,
+    [data-theme="4"] .faculty-statement,
+    [data-theme="4"] .faculty-closing-statement,
+    [data-theme="4"] .instructor-name,
+    [data-theme="4"] .client-message-title,
+    [data-theme="4"] .review-heading,
+    [data-theme="4"] .award-title,
+    [data-theme="4"] .course-title,
+    [data-theme="4"] .contact-title,
+    [data-theme="4"] footer [style*="Noto Serif KR"] {
+      font-family: 'Nanum Myeongjo', 'Noto Serif KR', serif !important;
+    }
+    [data-theme="4"] nav {
+      background: rgba(255,255,255,0.96);
+      border-bottom-color: rgba(214,176,122,0.28);
+    }
+    [data-theme="4"] .nav-brand-text,
+    [data-theme="4"] .nav-links a { color: #222222; }
+    [data-theme="4"] .nav-links a,
+    [data-theme="4"] .nav-cta,
+    [data-theme="4"] .nav-drawer a,
+    [data-theme="4"] .btn-primary,
+    [data-theme="4"] .btn-secondary,
+    [data-theme="4"] .section-label,
+    [data-theme="4"] .tag,
+    [data-theme="4"] .client-chip,
+    [data-theme="4"] .media-logo-name,
+    [data-theme="4"] .record-year,
+    [data-theme="4"] .contact-form-field label,
+    [data-theme="4"] .contact-form-field input,
+    [data-theme="4"] .contact-form-field textarea,
+    [data-theme="4"] .contact-form-field select,
+    [data-theme="4"] .contact-card-label,
+    [data-theme="4"] .location-info-label,
+    [data-theme="4"] .faculty-detail-title,
+    [data-theme="4"] .rv-role {
+      font-family: 'Nanum Gothic', 'Noto Sans KR', sans-serif;
+    }
+    [data-theme="4"] .nav-brand-sub,
+    [data-theme="4"] .nav-links a:hover,
+    [data-theme="4"] .section-label,
+    [data-theme="4"] .hero-label,
+    [data-theme="4"] .career-period { color: #D6B07A; }
+    [data-theme="4"] .nav-hamburger span { background: #222222; }
+    [data-theme="4"] .nav-drawer {
+      background: #FFFFFF;
+      border-left-color: rgba(214,176,122,0.24);
+    }
+    [data-theme="4"] .nav-drawer a { color: #374151; }
+    [data-theme="4"] .nav-cta,
+    [data-theme="4"] .btn-primary {
+      background: #363636;
+      color: #FFFFFF !important;
+    }
+    [data-theme="4"] .nav-cta:hover,
+    [data-theme="4"] .btn-primary:hover { background: #D6B07A !important; color: #212121 !important; }
+    [data-theme="4"] .section-desc {
+      font-size: 18px;
+      line-height: 1.9;
+    }
+    [data-theme="4"] #hero {
+      background: linear-gradient(130deg, #FFFFFF 0%, #FAFAFA 48%, #F2E4C8 100%);
+    }
+    [data-theme="4"] #hero::before {
+      background:
+        radial-gradient(ellipse 720px 480px at 18% 58%, rgba(214,176,122,0.22) 0%, transparent 70%),
+        radial-gradient(ellipse 580px 380px at 78% 20%, rgba(222,195,132,0.18) 0%, transparent 72%);
+    }
+    [data-theme="4"] .hero-title .gold { color: #D6B07A; }
+    [data-theme="4"] .hero-photo-col::before {
+      background: linear-gradient(to right, #FFFFFF, transparent);
+    }
+    [data-theme="4"] .hero-photo-col::after {
+      background: linear-gradient(to left, #FAFAFA, transparent);
+    }
+    [data-theme="4"] .hero-photo-bottom {
+      background: linear-gradient(to bottom, transparent, #FFFFFF);
+    }
+    [data-theme="4"] .hero-cred-item {
+      border-bottom-color: rgba(214,176,122,0.28);
+    }
+    [data-theme="4"] .hero-programs-strip {
+      background: rgba(214,176,122,0.10);
+      border-top-color: rgba(214,176,122,0.24);
+    }
+    [data-theme="4"] .btn-secondary {
+      color: #363636;
+      border-color: rgba(54,54,54,0.26);
+    }
+    [data-theme="4"] .btn-secondary:hover {
+      border-color: #D6B07A;
+      color: #7A5A2A;
+    }
+    [data-theme="4"] .program-card,
+    [data-theme="4"] .course-section,
+    [data-theme="4"] .client-category,
+    [data-theme="4"] .award-card,
+    [data-theme="4"] .rv-card,
+    [data-theme="4"] .media-logo-item,
+    [data-theme="4"] .record-card,
+    [data-theme="4"] .faculty-card,
+    [data-theme="4"] .location-info-block,
+    [data-theme="4"] .contact-card,
+    [data-theme="4"] .contact-form-wrap {
+      background: #FFFFFF;
+      border-color: rgba(214,176,122,0.22);
+      box-shadow: 0 14px 36px rgba(54,54,54,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+    [data-theme="4"] .program-card::before,
+    [data-theme="4"] .course-section::before,
+    [data-theme="4"] .client-category::before,
+    [data-theme="4"] .award-card::before,
+    [data-theme="4"] .rv-card::before,
+    [data-theme="4"] .record-card::before,
+    [data-theme="4"] .faculty-card::before,
+    [data-theme="4"] .location-info-block::before,
+    [data-theme="4"] .contact-card::before,
+    [data-theme="4"] .contact-form-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: linear-gradient(90deg, #D6B07A, #DEC384);
+    }
+    [data-theme="4"] .program-card:hover {
+      background: #FFFFFF;
+      border-color: rgba(214,176,122,0.44);
+      box-shadow: 0 18px 44px rgba(54,54,54,0.10);
+    }
+    [data-theme="4"] .program-card {
+      background: linear-gradient(135deg, #D6B07A 0%, #DEC384 100%);
+      border-color: rgba(54,54,54,0.12);
+      box-shadow: 0 18px 44px rgba(122,90,42,0.16);
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 72px minmax(112px, auto) minmax(86px, auto) 76px;
+      align-items: start;
+    }
+    [data-theme="4"] .program-card:nth-child(1) {
+      --program-bg: url("https://images.unsplash.com/photo-1686656446001-41af3994216b?q=80&w=1200&auto=format&fit=crop");
+      background-position: center 30%;
+    }
+    [data-theme="4"] .program-card:nth-child(2) {
+      --program-bg: url("https://images.unsplash.com/photo-1758518727077-ffb66ffccced?q=80&w=1200&auto=format&fit=crop");
+      background-position: center;
+    }
+    [data-theme="4"] .program-card:nth-child(3) {
+      --program-bg: url("https://images.unsplash.com/photo-1758270705696-ec9caffc73dd?q=80&w=1200&auto=format&fit=crop");
+      background-position: center;
+    }
+    [data-theme="4"] .program-card:nth-child(4) {
+      --program-bg: url("https://images.unsplash.com/photo-1756900737286-af0daa63d40b?q=80&w=1200&auto=format&fit=crop");
+      background-position: center;
+    }
+    [data-theme="4"] .program-card:nth-child(5) {
+      --program-bg: url("https://images.unsplash.com/photo-1758613656153-196ebbef97d9?q=80&w=1200&auto=format&fit=crop");
+      background-position: center;
+    }
+    [data-theme="4"] .program-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-image: var(--program-bg);
+      background-size: cover;
+      background-position: inherit;
+      opacity: 0.30;
+      filter: saturate(0.8) contrast(1.05);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    [data-theme="4"] .program-card::before {
+      z-index: 2;
+    }
+    [data-theme="4"] .program-card > * {
+      position: relative;
+      z-index: 1;
+    }
+    [data-theme="4"] .program-card:hover {
+      background: #FFFFFF;
+    }
+    [data-theme="4"] .program-card:hover::after {
+      opacity: 0.20;
+      transform: scale(1.03);
+    }
+    [data-theme="4"] .program-card .program-title,
+    [data-theme="4"] .program-card .program-desc,
+    [data-theme="4"] .program-card .program-message,
+    [data-theme="4"] .program-card .tag {
+      color: #212121;
+    }
+    [data-theme="4"] .program-card .program-title {
+      color: #FFFFFF;
+      text-shadow: 0 2px 12px rgba(33,33,33,0.46);
+    }
+    [data-theme="4"] .program-card:hover .program-title {
+      color: #212121;
+      text-shadow: none;
+    }
+    [data-theme="4"] .program-icon {
+      display: none;
+    }
+    [data-theme="4"] .program-title {
+      grid-column: 1;
+      min-height: 72px;
+      font-family: 'Nanum Gothic', 'Noto Sans KR', sans-serif !important;
+      font-size: 21px;
+      line-height: 1.38;
+      margin-bottom: 0;
+      align-self: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+    [data-theme="4"] .program-title-main,
+    [data-theme="4"] .program-title-sub {
+      display: block;
+      white-space: nowrap;
+    }
+    [data-theme="4"] .program-icon {
+      width: 48px;
+      height: 48px;
+      font-size: 22px;
+    }
+    [data-theme="4"] .program-desc {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      font-size: 15.5px;
+      line-height: 1.8;
+      min-height: 112px;
+      margin-top: 18px;
+    }
+    [data-theme="4"] .program-message {
+      grid-column: 1 / -1;
+      grid-row: 3;
+      border-left-color: rgba(122,90,42,0.72);
+      background: rgba(255,255,255,0.50);
+      border-radius: 8px;
+      padding: 16px 16px 16px 18px;
+      color: #5C421F !important;
+      font-size: 15.5px;
+      font-weight: 800;
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.34);
+    }
+    [data-theme="4"] .program-tags {
+      grid-column: 1 / -1;
+      grid-row: 4;
+      min-height: 64px;
+      align-content: flex-start;
+      align-self: end;
+      margin-top: 8px;
+    }
+    [data-theme="4"] .tag,
+    [data-theme="4"] .client-chip {
+      background: rgba(255,255,255,0.40);
+      border-color: rgba(54,54,54,0.14);
+      color: #363636;
+      font-size: 12.5px;
+      font-weight: 800;
+    }
+    [data-theme="4"] .program-card:hover .tag {
+      background: rgba(54,54,54,0.88);
+      border-color: rgba(54,54,54,0.88);
+      color: #FFFFFF;
+    }
+    [data-theme="4"] .course-story {
+      background: linear-gradient(135deg, rgba(214,176,122,0.16), rgba(255,255,255,0.82));
+      border-color: rgba(214,176,122,0.28);
+      box-shadow: 0 18px 44px rgba(54,54,54,0.07);
+    }
+    [data-theme="4"] .course-story-title {
+      color: #7A5A2A;
+    }
+    [data-theme="4"] .course-story-body {
+      color: #363636;
+      font-size: 17px;
+    }
+    [data-theme="4"] .course-section-title,
+    [data-theme="4"] .client-cat-title,
+    [data-theme="4"] .record-heading,
+    [data-theme="4"] .faculty-name,
+    [data-theme="4"] .contact-card-value,
+    [data-theme="4"] .rv-name {
+      color: #212121;
+    }
+    [data-theme="4"] .course-list li,
+    [data-theme="4"] .client-message-body,
+    [data-theme="4"] .record-text,
+    [data-theme="4"] .award-desc,
+    [data-theme="4"] .location-info-text,
+    [data-theme="4"] .contact-helper,
+    [data-theme="4"] .rv-text,
+    [data-theme="4"] .faculty-list li {
+      color: #363636;
+      font-size: 15.5px;
+      line-height: 1.8;
+    }
+    [data-theme="4"] .award-title,
+    [data-theme="4"] .client-message-title,
+    [data-theme="4"] .faculty-quote {
+      color: #7A5A2A;
+    }
+    [data-theme="4"] .award-card {
+      min-height: 272px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      text-align: left;
+      padding-top: 166px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.98), rgba(250,247,239,0.96)) !important;
+      color: #363636;
+      border-color: rgba(214,176,122,0.24);
+      box-shadow: 0 14px 36px rgba(54,54,54,0.06);
+      --award-bg-size: contain;
+      --award-bg-position: center;
+    }
+    [data-theme="4"] .award-card:nth-child(1) {
+      --award-bg: url("assets/logos/seoul-logo.png");
+      --award-bg-size: 70%;
+      --award-bg-position: center;
+    }
+    [data-theme="4"] .award-card:nth-child(2) {
+      --award-bg: url("assets/logos/liaoning-logo.png");
+      --award-bg-size: 44%;
+      --award-bg-position: center;
+    }
+    [data-theme="4"] .award-card:nth-child(3) {
+      --award-bg:
+        url("https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg"),
+        url("https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg");
+      --award-bg-size: 38%, 38%;
+      --award-bg-position: 28% center, 72% center;
+    }
+    [data-theme="4"] .award-card:nth-child(4) {
+      --award-bg: url("https://www.google.com/s2/favicons?domain=snu.ac.kr&sz=128");
+      --award-bg-size: 42%;
+      --award-bg-position: center;
+    }
+    [data-theme="4"] .award-card:nth-child(5) {
+      --award-bg: url("https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=1200&auto=format&fit=crop");
+      --award-bg-size: cover;
+      --award-bg-position: center;
+    }
+    [data-theme="4"] .award-card:nth-child(6) {
+      --award-bg:
+        url("https://www.google.com/s2/favicons?domain=snu.ac.kr&sz=128"),
+        url("assets/logos/yonsei-logo.png"),
+        url("assets/logos/korea-logo.png");
+      --award-bg-size: 20%, 24%, 24%;
+      --award-bg-position: 22% center, 50% center, 78% center;
+    }
+    [data-theme="4"] .award-card::after {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      right: 24px;
+      height: 116px;
+      z-index: 0;
+      border-radius: 12px;
+      border: 1px solid rgba(214,176,122,0.18);
+      background-color: rgba(255,255,255,0.92);
+      background-image: var(--award-bg);
+      background-size: var(--award-bg-size);
+      background-position: var(--award-bg-position);
+      background-repeat: no-repeat;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.66);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    [data-theme="4"] .award-card:hover::after {
+      border-color: rgba(214,176,122,0.34);
+      transform: translateY(-2px);
+    }
+    [data-theme="4"] .award-card > * {
+      position: relative;
+      z-index: 1;
+    }
+    [data-theme="4"] .award-emoji {
+      display: none;
+    }
+    [data-theme="4"] .award-title {
+      min-height: 58px;
+      display: flex;
+      align-items: flex-end;
+      font-family: 'Nanum Gothic', 'Noto Sans KR', sans-serif !important;
+      font-size: 20px;
+      line-height: 1.35;
+      font-weight: 900;
+      color: #212121;
+      text-shadow: none;
+      margin-bottom: 12px;
+      word-break: keep-all;
+    }
+    [data-theme="4"] .award-desc {
+      color: #363636;
+      text-shadow: none;
+    }
+    [data-theme="4"] .media-logo-mark .media-logo-badge {
+      position: absolute;
+      inset: 2px;
+      width: auto;
+      height: auto;
+      z-index: 1;
+      border-radius: 7px;
+      font-size: 9px;
+      letter-spacing: -0.2px;
+    }
+    [data-theme="4"] .media-logo-mark .media-logo-img {
+      border-radius: 7px;
+      box-shadow: 0 1px 0 rgba(54,54,54,0.08);
+      width: 34px;
+      height: 28px;
+      object-fit: contain;
+    }
+    [data-theme="4"] .media-logo-mark .logo-gwangju {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+    }
+    [data-theme="4"] .media-logo-mark .logo-krx {
+      width: 38px;
+      height: 26px;
+    }
+    [data-theme="4"] .media-row {
+      border: 0;
+      padding: 0;
+      margin-top: 54px;
+    }
+    [data-theme="4"] .media-label {
+      font-family: 'Noto Serif KR', serif;
+      color: #212121;
+      font-size: clamp(22px, 2.4vw, 30px);
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: 0;
+      text-transform: none;
+      text-align: left;
+      margin-bottom: 22px;
+    }
+    [data-theme="4"] .media-logos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+      justify-content: stretch;
+    }
+    [data-theme="4"] .media-logo-item {
+      justify-content: flex-start;
+      min-height: 74px;
+      padding: 20px 22px;
+      background: #FFFFFF;
+      border-color: rgba(214,176,122,0.22);
+      border-radius: 12px;
+      box-shadow: 0 14px 36px rgba(54,54,54,0.06);
+    }
+    [data-theme="4"] .media-logo-name {
+      color: #363636;
+      font-size: 15.5px;
+      font-weight: 800;
+    }
+    [data-theme="4"] .contact-card-label {
+      font-size: 13px;
+    }
+    [data-theme="4"] .section-label,
+    [data-theme="4"] .contact-card-label,
+    [data-theme="4"] .location-info-label,
+    [data-theme="4"] .record-year {
+      color: #7A5A2A;
+      font-weight: 800;
+      font-size: 14px;
+    }
+    [data-theme="4"] .record-grid::before {
+      background: linear-gradient(180deg, rgba(214,176,122,0), rgba(214,176,122,0.9) 14%, rgba(214,176,122,0.9) 86%, rgba(214,176,122,0));
+      box-shadow: 0 0 0 4px rgba(214,176,122,0.08);
+    }
+    [data-theme="4"] .record-card {
+      overflow: visible;
+      padding: 22px 24px;
+    }
+    [data-theme="4"] .record-stat {
+      background: linear-gradient(135deg, rgba(214,176,122,0.16), rgba(242,228,200,0.28));
+      border-color: rgba(214,176,122,0.28);
+    }
+    [data-theme="4"] .record-stat-label {
+      color: #7A5A2A;
+    }
+    [data-theme="4"] .record-stat-value {
+      color: #212121;
+    }
+    [data-theme="4"] .record-card::before {
+      content: '';
+      position: absolute;
+      inset: auto;
+      left: -31px;
+      top: 24px;
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      background: #D6B07A;
+      box-shadow: 0 0 0 6px rgba(214,176,122,0.18), 0 6px 18px rgba(122,90,42,0.16);
+    }
+    [data-theme="4"] .record-text {
+      color: #363636;
+    }
+    [data-theme="4"] .rv-quote,
+    [data-theme="4"] .rv-avatar,
+    [data-theme="4"] .media-logo-badge {
+      color: #7A5A2A;
+      opacity: 1;
+    }
+    [data-theme="4"] #contact {
+      background: linear-gradient(135deg, #FFFFFF 0%, #F7F7F7 52%, #F2E4C8 100%) !important;
+    }
+    [data-theme="4"] .contact-form-field label {
+      color: #7A5A2A;
+      font-size: 13.5px;
+    }
+    [data-theme="4"] .contact-form-field input,
+    [data-theme="4"] .contact-form-field textarea,
+    [data-theme="4"] .contact-form-field select {
+      background: #FFFFFF;
+      border-color: rgba(54,54,54,0.20);
+      color: #212121;
+      font-size: 16px;
+    }
+    [data-theme="4"] .contact-form-field input:focus,
+    [data-theme="4"] .contact-form-field textarea:focus,
+    [data-theme="4"] .contact-form-field select:focus {
+      border-color: #D6B07A;
+      box-shadow: 0 0 0 3px rgba(214,176,122,0.20);
+    }
+    [data-theme="4"] #reviewModal {
+      background: rgba(54,54,54,0.52) !important;
+    }
+    [data-theme="4"] #reviewModalBox {
+      background: #FFFFFF !important;
+      border-color: rgba(214,176,122,0.42) !important;
+      box-shadow: 0 24px 80px rgba(54,54,54,0.24) !important;
+    }
+    [data-theme="4"] #modalText {
+      color: #212121 !important;
+      font-size: 18px !important;
+    }
+    [data-theme="4"] #modalAvatar {
+      background: rgba(214,176,122,0.22) !important;
+      color: #7A5A2A !important;
+    }
+    [data-theme="4"] #modalName {
+      color: #212121 !important;
+      font-size: 16px !important;
+    }
+    [data-theme="4"] #modalRole {
+      color: #757575 !important;
+      font-size: 13px !important;
+    }
+    [data-theme="4"] #reviewModalBox button {
+      color: #757575 !important;
+    }
+    [data-theme="4"] #reviewModalBox button:hover {
+      color: #D6B07A !important;
+    }
+    [data-theme="4"] .faculty-card {
+      background: #FFFFFF;
+      border-color: rgba(214,176,122,0.28);
+      box-shadow: 0 18px 38px rgba(33,33,33,0.08);
+    }
+    [data-theme="4"] .faculty-card:hover {
+      border-color: rgba(214,176,122,0.62);
+      box-shadow: 0 22px 48px rgba(54,54,54,0.13);
+    }
+    [data-theme="4"] .faculty-photo-frame {
+      height: 340px;
+      background:
+        radial-gradient(ellipse at 50% 28%, rgba(222,195,132,0.34) 0%, rgba(247,247,247,0.84) 52%, #FFFFFF 78%);
+      border-bottom-color: rgba(214,176,122,0.22);
+    }
+    [data-theme="4"] .faculty-photo {
+      width: calc(100% - 28px);
+      height: calc(100% - 18px);
+      margin-top: 18px;
+      filter: saturate(0.96) contrast(1.03);
+      --faculty-hover-scale: 1.035;
+    }
+    [data-theme="4"] .faculty-card:nth-child(2) .faculty-photo {
+      width: calc(100% - 58px);
+      height: calc(100% - 44px);
+      margin-top: 44px;
+    }
+    [data-theme="4"] .faculty-card:nth-child(3) .faculty-photo {
+      width: calc(100% - 34px);
+      height: calc(100% - 24px);
+      margin-top: 24px;
+      --faculty-scale: 1.03;
+      --faculty-x: -10px;
+      --faculty-y: 10px;
+      --faculty-hover-scale: 1.06;
+    }
+    [data-theme="4"] .faculty-card:nth-child(4) .faculty-photo {
+      width: calc(100% - 50px);
+      height: calc(100% - 22px);
+      margin-top: 22px;
+    }
+    [data-theme="4"] .about-photo-frame {
+      background: radial-gradient(ellipse at 50% 30%, rgba(214,176,122,0.18) 0%, #F7F7F7 65%) !important;
+      border-color: rgba(214,176,122,0.26) !important;
+    }
+    [data-theme="4"] .about-photo-badge {
+      background: #D6B07A;
+      color: #FFFFFF;
+    }
+    [data-theme="4"] .career-timeline::before {
+      background: linear-gradient(to bottom, #D6B07A 0%, rgba(214,176,122,0.22) 85%, transparent 100%);
+    }
+    [data-theme="4"] .career-item::before {
+      background: #D6B07A;
+      border-color: #FFFFFF;
+    }
+    [data-theme="4"] #courses,
+    [data-theme="4"] #programs,
+    [data-theme="4"] #reviews { background: #F7F7F7 !important; }
+    [data-theme="4"] footer {
+      background: #363636 !important;
+      border-top-color: rgba(214,176,122,0.24) !important;
+    }
+    [data-theme="4"] footer,
+    [data-theme="4"] footer a,
+    [data-theme="4"] footer [style*="var(--gray"],
+    [data-theme="4"] footer [style*="var(--white"] {
+      color: rgba(255,255,255,0.78) !important;
+    }
+    [data-theme="4"] footer [style*="var(--gold"] {
+      color: #DEC384 !important;
+    }
+
     /* ── 테마 스위처 UI ── */
     .theme-switcher {
       position: fixed;
@@ -1362,23 +2727,25 @@
     }
     .theme-toggle-btn {
       width: 52px; height: 52px;
-      background: #C9A227;
-      color: #0C1B2E;
-      border: none; border-radius: 50%;
+      background: #363636;
+      color: #DEC384;
+      border: 2px solid #DEC384; border-radius: 50%;
       cursor: pointer;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.35), 0 0 0 3px rgba(201,162,39,0.25);
+      box-shadow: 0 6px 22px rgba(0,0,0,0.28), 0 0 0 4px rgba(255,255,255,0.9), 0 0 0 7px rgba(214,176,122,0.28);
       display: flex; flex-direction: column; align-items: center; justify-content: center;
       gap: 2px;
       transition: transform 0.2s, box-shadow 0.2s;
+      font-size: 21px;
+      line-height: 1;
     }
     .theme-toggle-btn:hover {
       transform: scale(1.08);
-      box-shadow: 0 6px 24px rgba(0,0,0,0.4), 0 0 0 4px rgba(201,162,39,0.4);
+      box-shadow: 0 8px 26px rgba(0,0,0,0.35), 0 0 0 4px rgba(255,255,255,1), 0 0 0 8px rgba(214,176,122,0.42);
     }
     .theme-toggle-btn svg { display: block; }
     .theme-toggle-label {
       font-size: 8px; font-weight: 700; letter-spacing: 0.5px;
-      color: #0C1B2E; line-height: 1;
+      color: #DEC384; line-height: 1;
     }
 
     .theme-picker {
@@ -1401,6 +2768,7 @@
     .theme-dot-1 { background: linear-gradient(135deg, #0C1B2E 50%, #C9A227 50%); }
     .theme-dot-2 { background: linear-gradient(135deg, #FFFAF5 50%, #C84B11 50%); }
     .theme-dot-3 { background: linear-gradient(135deg, #FFFDF5 50%, #E06010 50%); }
+    .theme-dot-4 { background: linear-gradient(135deg, #FFFFFF 45%, #D6B07A 45%, #D6B07A 72%, #363636 72%); }
 
     .theme-dot-label {
       position: absolute;
@@ -1442,22 +2810,32 @@
     }
 
     .location-info-block {
+      position: relative;
+      overflow: hidden;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(201,162,39,0.15);
       border-radius: 10px;
       padding: 22px 24px;
+      box-shadow: 0 14px 36px rgba(0,0,0,0.10);
+    }
+    .location-info-block::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
     }
 
     .location-info-label {
-      font-size: 11px; font-weight: 700;
+      font-size: 14px; font-weight: 800;
       color: var(--gold); letter-spacing: 1.5px;
       text-transform: uppercase;
       margin-bottom: 10px;
     }
 
     .location-info-text {
-      font-size: 13.5px; color: var(--gray-light);
-      line-height: 1.85;
+      font-size: 15.5px; color: var(--gray-light);
+      line-height: 1.8;
     }
 
     .kakao-map-btn {
@@ -1537,14 +2915,17 @@
 <!-- 테마 스위처 (우하단 고정) -->
 <div class="theme-switcher">
   <div class="theme-picker" id="themePicker">
+    <button class="theme-dot theme-dot-4 active" onclick="setTheme(4)" title="마이콘스피치 브랜드 (기본)">
+      <span class="theme-dot-label">마이콘스피치 브랜드 (기본)</span>
+    </button>
     <button class="theme-dot theme-dot-3" onclick="setTheme(3)" title="아기자기한">
       <span class="theme-dot-label">아기자기한</span>
     </button>
     <button class="theme-dot theme-dot-2" onclick="setTheme(2)" title="밝고 화사한">
       <span class="theme-dot-label">밝고 화사한</span>
     </button>
-    <button class="theme-dot theme-dot-1 active" onclick="setTheme(1)" title="신뢰감 (기본)">
-      <span class="theme-dot-label">신뢰감 (기본)</span>
+    <button class="theme-dot theme-dot-1" onclick="setTheme(1)" title="신뢰감">
+      <span class="theme-dot-label">신뢰감</span>
     </button>
   </div>
   <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleThemePicker()" title="테마 변경">🎨</button>
@@ -1652,36 +3033,31 @@
     <p class="section-desc">목소리 브랜딩부터 설득 커뮤니케이션, 강사 양성, 미디어 트레이닝까지 — 결정적인 순간에 실력이 드러나도록 훈련합니다.</p>
     <div class="programs-grid">
       <div class="program-card">
-        <div class="program-icon">🎙</div>
-        <div class="program-title">보이스 브랜딩 &amp; 전달력 코칭</div>
+        <div class="program-title"><span class="program-title-main">보이스 브랜딩 &amp;</span><span class="program-title-sub">전달력 코칭</span></div>
         <p class="program-desc">발성·발음·호흡·말투·음색을 교정하고, 한 문장만 들어도 신뢰가 느껴지는 목소리와 전달력을 만듭니다.</p>
         <p class="program-message">한 문장만 들어도 신뢰가 가는 사람이 있습니다. 목소리도 명함입니다.</p>
         <div class="program-tags"><span class="tag">발성</span><span class="tag">발음</span><span class="tag">보이스 브랜딩</span></div>
       </div>
       <div class="program-card">
-        <div class="program-icon">📊</div>
-        <div class="program-title">비즈니스 스피치 &amp; 설득 커뮤니케이션</div>
+        <div class="program-title"><span class="program-title-main">비즈니스 스피치 &amp;</span><span class="program-title-sub">설득 커뮤니케이션</span></div>
         <p class="program-desc">보고·PT·IR 피칭·임원 스피치에 필요한 핵심 메시지 구조와 논리·감정을 연결하는 전달 전략을 코칭합니다.</p>
         <p class="program-message">짧게 말해도 설득력 있게. 결과를 만드는 비즈니스 스피치를 완성합니다.</p>
         <div class="program-tags"><span class="tag">보고</span><span class="tag">IR 피칭</span><span class="tag">설득 전략</span></div>
       </div>
       <div class="program-card">
-        <div class="program-icon">🎓</div>
-        <div class="program-title">교수법 &amp; 스피치 전문가 강사 양성</div>
+        <div class="program-title"><span class="program-title-main">교수법 &amp;</span><span class="program-title-sub">스피치 전문가 강사 양성</span></div>
         <p class="program-desc">강의 설계, 전달 스킬, 무대 스피치, 전문 강사 브랜딩까지 가르치는 사람의 말하기 역량을 강화합니다.</p>
         <p class="program-message">가르치는 사람의 말은 곧 브랜드입니다.</p>
         <div class="program-tags"><span class="tag">강의 설계</span><span class="tag">강사 브랜딩</span><span class="tag">청중 몰입</span></div>
       </div>
       <div class="program-card">
-        <div class="program-icon">🧭</div>
-        <div class="program-title">프레젠테이션 &amp; 발표 스피치 코칭</div>
+        <div class="program-title"><span class="program-title-main">프레젠테이션 &amp;</span><span class="program-title-sub">발표 스피치 코칭</span></div>
         <p class="program-desc">준비한 내용을 가장 효과적으로 전달할 수 있도록 발표 구성 전략, 핵심 메시지 설계, 실전 발표 훈련을 진행합니다.</p>
         <p class="program-message">준비한 내용을 가장 효과적으로 전달하는 설득력 있는 발표를 완성합니다.</p>
         <div class="program-tags"><span class="tag">발표 구조</span><span class="tag">메시지 설계</span><span class="tag">피드백</span></div>
       </div>
       <div class="program-card">
-        <div class="program-icon">🎥</div>
-        <div class="program-title">리더를 위한 미디어 트레이닝</div>
+        <div class="program-title"><span class="program-title-main">리더를 위한</span><span class="program-title-sub">미디어 트레이닝</span></div>
         <p class="program-desc">카메라 앞 표정·시선 처리, 기자 인터뷰 대응, 돌발 질문과 위기 대응 커뮤니케이션을 훈련합니다.</p>
         <p class="program-message">카메라 앞의 1초가 이미지를 결정합니다.</p>
         <div class="program-tags"><span class="tag">인터뷰 대응</span><span class="tag">카메라 스피치</span><span class="tag">위기 대응</span></div>
@@ -1696,38 +3072,47 @@
     <div class="section-label">MIC-ON SPEECH</div>
     <h2 class="section-title">왜 마이크온일까요?</h2>
     <div class="divider"></div>
-    <p class="section-desc">면접장, 발표장, 입찰 PT처럼 준비한 모든 것을 보여줘야 하는 순간은 마치 마이크가 켜지는 순간과 닮아 있습니다.</p>
+    <p class="section-desc">말은 단순한 표현이 아니라, 사람의 전문성과 태도가 가장 먼저 드러나는 장면입니다. 마이크온은 그 결정적인 순간을 준비합니다.</p>
+    <div class="course-story">
+      <div class="course-story-title">좋은 말하기는 타고나는 재능이 아니라, 나에게 맞게 설계된 훈련의 결과입니다.</div>
+      <div class="course-story-body">
+        면접장, 발표장, 강의실, 카메라 앞에서 사람들은 당신의 내용을 듣기 전에 목소리의 안정감, 첫 문장의 구조, 시선과 태도를 먼저 감지합니다.
+        마이크온은 아나운서의 현장 감각과 교육자의 분석을 결합해, 개인의 목적과 직업에 맞는 말하기 방식을 찾아냅니다.
+        그래서 수업은 단순한 발성 교정에서 끝나지 않습니다. 녹음과 촬영으로 습관을 확인하고, 메시지 구조를 다시 세우며,
+        실제 상황에서 신뢰와 설득으로 이어지는 말의 루틴을 몸에 남깁니다.
+      </div>
+    </div>
     <div class="courses-grid">
       <div class="course-section">
-        <div class="course-section-title">🎙 MIC ON</div>
+        <div class="course-section-title">🎙 목소리 진단에서 시작합니다</div>
         <ul class="course-list">
-          <li>숨소리까지 들릴 것 같은 긴장과 작은 떨림이 커지는 순간</li>
-          <li>누군가는 그 순간 자신 있게 자신의 실력을 증명합니다</li>
-          <li>마이크온은 말하기 기술을 넘어 결정적인 순간의 전달력을 훈련합니다</li>
+          <li>발성, 발음, 호흡, 속도, 억양을 분리해 현재 말하기 습관을 확인합니다</li>
+          <li>긴장하면 작아지는 목소리와 흐려지는 발음을 안정적인 루틴으로 교정합니다</li>
+          <li>한 문장만 들어도 신뢰가 느껴지는 목소리의 기준을 세웁니다</li>
         </ul>
       </div>
       <div class="course-section">
-        <div class="course-section-title">🧠 커뮤니케이션의 힘</div>
+        <div class="course-section-title">🧠 말의 구조를 다시 설계합니다</div>
         <ul class="course-list">
-          <li>준비한 자신의 실력을 온전히 보여주는 목소리</li>
-          <li>핵심을 놓치지 않는 전달력</li>
-          <li>사람의 마음을 움직이는 설득 커뮤니케이션</li>
+          <li>하고 싶은 말을 상대가 듣고 싶어지는 순서로 재구성합니다</li>
+          <li>보고, 발표, 강의, 인터뷰 상황에 맞춰 핵심 메시지를 선명하게 압축합니다</li>
+          <li>논리와 감정이 함께 움직이는 설득의 흐름을 만듭니다</li>
         </ul>
       </div>
       <div class="course-section">
-        <div class="course-section-title">🧩 실전형 훈련 설계</div>
+        <div class="course-section-title">🧩 실전처럼 반복합니다</div>
         <ul class="course-list">
-          <li>개인의 말하기 습관을 진단하고 개선 포인트를 구체화합니다</li>
-          <li>발표·면접·강의·인터뷰 상황에 맞춰 말의 구조를 다시 설계합니다</li>
-          <li>녹음과 실습, 피드백을 통해 변화가 체감되는 훈련을 진행합니다</li>
+          <li>녹음과 촬영 피드백으로 스스로 인지하지 못한 습관을 눈에 보이게 만듭니다</li>
+          <li>면접, PT, 강의, 미디어 인터뷰 등 실제 장면에 맞춰 말하기를 리허설합니다</li>
+          <li>수업 이후 현장에서 바로 꺼내 쓸 수 있는 개인별 말하기 루틴을 완성합니다</li>
         </ul>
       </div>
       <div class="course-section">
-        <div class="course-section-title">✨ 나답게 전달하는 힘</div>
+        <div class="course-section-title">✨ 나답게 신뢰받게 합니다</div>
         <ul class="course-list">
-          <li>좋은 말하기는 화려한 기술보다 결정적인 순간에 나답게 전달하는 힘입니다</li>
-          <li>청중의 시선 앞에서도 흔들리지 않는 호흡과 태도를 만듭니다</li>
-          <li>마이크가 켜지는 순간, 준비한 실력이 가장 잘 드러나도록 돕습니다</li>
+          <li>누군가를 흉내 내는 말투가 아니라 자신의 전문성이 드러나는 표현을 찾습니다</li>
+          <li>청중의 시선 앞에서도 흔들리지 않는 호흡, 자세, 시선 처리를 훈련합니다</li>
+          <li>말의 기술을 넘어 신뢰의 인상을 남기는 커뮤니케이션을 완성합니다</li>
         </ul>
       </div>
     </div>
@@ -1738,7 +3123,7 @@
 <section id="clients">
   <div class="section-inner">
     <div class="section-label">CLIENTS</div>
-    <h2 class="section-title">1대1 코칭 주요 수강생</h2>
+    <h2 class="section-title">주요 수강생</h2>
     <div class="divider"></div>
     <p class="section-desc">각 분야 최정상에 있는 전문가들이 마이크온 스피치를 선택했습니다.</p>
 
@@ -1796,89 +3181,134 @@
       <div class="media-label">강의 기업 · 기관</div>
       <div class="media-logos">
         <div class="media-logo-item">
-          <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=shinhancard.com&sz=32" alt="" onerror="this.style.display='none'">
+          <span class="media-logo-mark">
+            <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=shinhancard.com&sz=64" alt="" onerror="this.style.display='none'">
+            <span class="media-logo-badge">신</span>
+          </span>
           <span class="media-logo-name">신한카드</span>
         </div>
         <div class="media-logo-item">
-          <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=lotteshopping.com&sz=32" alt="" onerror="this.style.display='none'">
+          <span class="media-logo-mark">
+            <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=lotteshopping.com&sz=64" alt="" onerror="this.style.display='none'">
+            <span class="media-logo-badge">롯</span>
+          </span>
           <span class="media-logo-name">롯데백화점</span>
         </div>
         <div class="media-logo-item">
-          <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=thehyundai.com&sz=32" alt="" onerror="this.style.display='none'">
+          <span class="media-logo-mark">
+            <img class="media-logo-img" src="assets/logos/hyundai-logo.jpg" alt="" onerror="this.style.display='none'">
+            <span class="media-logo-badge">현</span>
+          </span>
           <span class="media-logo-name">현대백화점</span>
         </div>
         <div class="media-logo-item">
-          <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=krx.co.kr&sz=32" alt="" onerror="this.style.display='none'">
+          <span class="media-logo-mark">
+            <img class="media-logo-img logo-krx" src="assets/logos/krx-logo-crop.png" alt="" onerror="this.style.display='none'">
+            <span class="media-logo-badge">KRX</span>
+          </span>
           <span class="media-logo-name">한국거래소</span>
         </div>
         <div class="media-logo-item">
-          <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=kyobo.co.kr&sz=32" alt="" onerror="this.style.display='none'">
+          <span class="media-logo-mark">
+            <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=kyobo.com&sz=64" alt="" onerror="this.style.display='none'">
+            <span class="media-logo-badge">교</span>
+          </span>
           <span class="media-logo-name">교보생명</span>
         </div>
         <div class="media-logo-item">
-          <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=stn.co.kr&sz=32" alt="" onerror="this.style.display='none'">
+          <span class="media-logo-mark">
+            <img class="media-logo-img" src="assets/logos/sejong-logo.jpg" alt="" onerror="this.style.display='none'">
+            <span class="media-logo-badge">세</span>
+          </span>
           <span class="media-logo-name">세종텔레콤</span>
         </div>
         <div class="media-logo-item">
-          <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=kjbank.com&sz=32" alt="" onerror="this.style.display='none'">
+          <span class="media-logo-mark">
+            <img class="media-logo-img logo-gwangju" src="assets/logos/gwangju-logo-crop.png" alt="" onerror="this.style.display='none'">
+            <span class="media-logo-badge">광</span>
+          </span>
           <span class="media-logo-name">광주은행</span>
         </div>
         <div class="media-logo-item">
-          <div class="media-logo-badge">중</div>
+          <span class="media-logo-mark">
+            <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=kosmes.or.kr&sz=64" alt="" onerror="this.style.display='none'">
+            <span class="media-logo-badge">중</span>
+          </span>
           <span class="media-logo-name">중소벤처기업진흥공단</span>
         </div>
         <div class="media-logo-item">
-          <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=kf.or.kr&sz=32" alt="" onerror="this.style.display='none'">
+          <span class="media-logo-mark">
+            <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=kf.or.kr&sz=64" alt="" onerror="this.style.display='none'">
+            <span class="media-logo-badge">KF</span>
+          </span>
           <span class="media-logo-name">한국국제교류재단</span>
         </div>
         <div class="media-logo-item">
-          <div class="media-logo-badge">Y</div>
+          <span class="media-logo-mark">
+            <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=seoulywca.or.kr&sz=64" alt="" onerror="this.style.display='none'">
+            <span class="media-logo-badge">Y</span>
+          </span>
           <span class="media-logo-name">서울YWCA</span>
         </div>
         <div class="media-logo-item">
-          <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=nicerating.com&sz=32" alt="" onerror="this.style.display='none'">
+          <span class="media-logo-mark">
+            <img class="media-logo-img" src="assets/logos/nice-logo.jpg" alt="" onerror="this.style.display='none'">
+            <span class="media-logo-badge">N</span>
+          </span>
           <span class="media-logo-name">나이스평가정보</span>
         </div>
         <div class="media-logo-item">
-          <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=daelimbath.com&sz=32" alt="" onerror="this.style.display='none'">
+          <span class="media-logo-mark">
+            <img class="media-logo-img" src="https://www.google.com/s2/favicons?domain=daelimbath.com&sz=64" alt="" onerror="this.style.display='none'">
+            <span class="media-logo-badge">대</span>
+          </span>
           <span class="media-logo-name">대림바스</span>
         </div>
-      </div>
-    </div>
-
-    <div class="client-message">
-      <div class="client-message-title">수강생은 설명보다 경험을 기억합니다.</div>
-      <div class="client-message-body">
-        단순한 말하기 교육이 아닌,<br>
-        전달력 · 몰입감 · 자신감을 완성하는<br>
-        실전형 커뮤니케이션 코칭을 진행하고 있습니다.
       </div>
     </div>
 
     <h3 class="record-heading">누적 강의 기록</h3>
     <div class="record-grid">
       <div class="record-card">
-        <div class="record-year">2010-현재</div>
+        <div class="record-meta">
+          <span class="record-stat"><span class="record-stat-label">수행기간</span><span class="record-stat-value">2010-현재</span></span>
+          <span class="record-stat"><span class="record-stat-label">누적규모</span><span class="record-stat-value">500명+</span></span>
+        </div>
         <div class="record-text">목회자 1대1 스피치 &amp; 목소리 코칭 500여 명 이상</div>
       </div>
       <div class="record-card">
-        <div class="record-year">2010-2016</div>
+        <div class="record-meta">
+          <span class="record-stat"><span class="record-stat-label">수행기간</span><span class="record-stat-value">2010-2016</span></span>
+          <span class="record-stat"><span class="record-stat-label">배출성과</span><span class="record-stat-value">70명+</span></span>
+        </div>
         <div class="record-text">신문·방송기자·아나운서·기상캐스터 등 현직 진출 언론인 70여 명 이상</div>
       </div>
       <div class="record-card">
-        <div class="record-year">2011-2015</div>
+        <div class="record-meta">
+          <span class="record-stat"><span class="record-stat-label">수행기간</span><span class="record-stat-value">2011-2015</span></span>
+          <span class="record-stat"><span class="record-stat-label">강의이력</span><span class="record-stat-value">5년 연속</span></span>
+        </div>
         <div class="record-text">전국 중소·중견기업 CEO 대상 명품스피치 강의 5년 연속 진행</div>
       </div>
       <div class="record-card">
-        <div class="record-year">2016-현재</div>
+        <div class="record-meta">
+          <span class="record-stat"><span class="record-stat-label">수행기간</span><span class="record-stat-value">2016-현재</span></span>
+          <span class="record-stat"><span class="record-stat-label">누적수강</span><span class="record-stat-value">10,000명+</span></span>
+        </div>
         <div class="record-text">스피치지도사 1급, 프레젠테이션 전문가 1급 자격증 과정 온라인 누적 수강생 10,000명 이상</div>
       </div>
       <div class="record-card">
-        <div class="record-year">2017-현재</div>
+        <div class="record-meta">
+          <span class="record-stat"><span class="record-stat-label">수행기간</span><span class="record-stat-value">2017-현재</span></span>
+          <span class="record-stat"><span class="record-stat-label">성과범위</span><span class="record-stat-value">매년 배출</span></span>
+        </div>
         <div class="record-text">서울대, 고려대, 연세대, 서강대, 중앙대, 시립대, 한동대 등 매년 전국 주요대학 합격자 배출</div>
       </div>
       <div class="record-card">
-        <div class="record-year">2022-2025</div>
+        <div class="record-meta">
+          <span class="record-stat"><span class="record-stat-label">수행기간</span><span class="record-stat-value">2022-2025</span></span>
+          <span class="record-stat"><span class="record-stat-label">수상성과</span><span class="record-stat-value">3년 연속</span></span>
+        </div>
         <div class="record-text">중국 정부 주최 한국어 말하기대회 3년 연속 전국 1·2등 수상 지도</div>
       </div>
     </div>
@@ -1953,6 +3383,12 @@
       <!-- 무한루프를 위한 복제본 6개 (JS로 추가) -->
     </div>
   </div>
+  <div class="section-inner" style="overflow:visible;">
+    <div class="client-message">
+      <div class="client-message-title">수강생은 설명보다 경험을 기억합니다.</div>
+      <div class="client-message-body">전달력 · 몰입감 · 자신감을 완성하는 실전형 커뮤니케이션 코칭을 진행합니다.</div>
+    </div>
+  </div>
 </section>
 
 <!-- 후기 모달 -->
@@ -1980,7 +3416,9 @@
 
     <div class="faculty-grid">
       <article class="faculty-card">
-        <img class="faculty-photo" src="assets/instructors/cho-jinhee.png" alt="조진희 대표강사">
+        <div class="faculty-photo-frame">
+          <img class="faculty-photo" src="assets/instructors/cho-jinhee.png?v=20260527" alt="조진희 대표강사">
+        </div>
         <div class="faculty-body">
           <div class="faculty-name">조진희 <span>대표강사</span></div>
           <p class="faculty-quote">스피치 전문가들의 전문가, 상위 1%를 위한 목소리 코칭 전문가</p>
@@ -2009,7 +3447,9 @@
       </article>
 
       <article class="faculty-card">
-        <img class="faculty-photo" src="assets/instructors/kim-heejung.png" alt="김희정 교수">
+        <div class="faculty-photo-frame">
+          <img class="faculty-photo" src="assets/instructors/kim-heejung.png?v=20260527" alt="김희정 교수">
+        </div>
         <div class="faculty-body">
           <div class="faculty-name">김희정 <span>교수</span></div>
           <p class="faculty-quote">KBS 아나운서 출신, 설득 스피치와 미디어 트레이닝의 정석</p>
@@ -2035,7 +3475,9 @@
       </article>
 
       <article class="faculty-card">
-        <img class="faculty-photo" src="assets/instructors/sim-jaeheun.png" alt="심재흔 교수">
+        <div class="faculty-photo-frame">
+          <img class="faculty-photo" src="assets/instructors/sim-jaeheun.png?v=20260527" alt="심재흔 교수">
+        </div>
         <div class="faculty-body">
           <div class="faculty-name">심재흔 <span>교수</span></div>
           <p class="faculty-quote">방송 제작 현장과 교육을 아우르는 실전형 미디어 전문가</p>
@@ -2055,7 +3497,9 @@
       </article>
 
       <article class="faculty-card">
-        <img class="faculty-photo" src="assets/instructors/yoon-hyungsun.png" alt="윤형선 교수">
+        <div class="faculty-photo-frame">
+          <img class="faculty-photo" src="assets/instructors/yoon-hyungsun.png?v=20260527" alt="윤형선 교수">
+        </div>
         <div class="faculty-body">
           <div class="faculty-name">윤형선 <span>교수</span></div>
           <p class="faculty-quote">13,000회의 임상이 증명하는 목소리의 과학, 발성 교정 전문가</p>
@@ -2078,6 +3522,10 @@
           </ul>
         </div>
       </article>
+    </div>
+    <div class="faculty-closing-statement">
+      마이크온 스피치(MIC-ON SPEECH)는<br>
+      말의 기술을 넘어, <strong>신뢰와 설득의 결과</strong>를 만드는 전문가들과 함께 합니다.
     </div>
   </div>
 </section>
@@ -2308,9 +3756,9 @@
         <div style="font-size:10px; font-weight:700; color:var(--gold); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px; padding-bottom:7px; border-bottom:1px solid rgba(201,162,39,0.2);">개인정보 및 정책</div>
         <div style="font-size:11.5px; color:var(--gray-light); line-height:1.9;">
           보호 책임자: 조진희 &nbsp;/&nbsp; 처리 문의: cleeprin@naver.com<br>
-          <a href="#" style="color:var(--gray); text-decoration:underline;" onmouseover="this.style.color='#C9A227'" onmouseout="this.style.color='#8B9BB4'">개인정보처리방침</a>
+          <a href="privacy.html" style="color:var(--gray); text-decoration:underline;" onmouseover="this.style.color='#C9A227'" onmouseout="this.style.color='#8B9BB4'">개인정보처리방침</a>
           &nbsp;|&nbsp;
-          <a href="#" style="color:var(--gray); text-decoration:underline;" onmouseover="this.style.color='#C9A227'" onmouseout="this.style.color='#8B9BB4'">이용약관</a>
+          <a href="terms.html" style="color:var(--gray); text-decoration:underline;" onmouseover="this.style.color='#C9A227'" onmouseout="this.style.color='#8B9BB4'">이용약관</a>
         </div>
       </div>
 
@@ -2318,14 +3766,15 @@
 
     <!-- 저작권 -->
     <div style="font-size:11px; color:var(--gray); padding-top:16px; border-top:1px solid rgba(255,255,255,0.05);">
-      © 2025 마이크온 스피치 아카데미. All rights reserved.
+      © 2026 마이크온 스피치 아카데미. All rights reserved.
     </div>
   </div>
 </footer>
 
 <script>
   // ── 테마 스위처 ──
-  const themeLabels = { 1: '신뢰감 (기본)', 2: '밝고 화사한', 3: '아기자기한' };
+  const THEME_STORAGE_KEY = 'mikon-theme-v2';
+  const themeLabels = { 1: '신뢰감', 2: '밝고 화사한', 3: '아기자기한', 4: '마이콘스피치 브랜드 (기본)' };
 
   function setTheme(n) {
     if (n === 1) {
@@ -2333,11 +3782,11 @@
     } else {
       document.documentElement.setAttribute('data-theme', String(n));
     }
-    localStorage.setItem('mikon-theme', n);
+    localStorage.setItem(THEME_STORAGE_KEY, n);
     document.querySelectorAll('.theme-dot').forEach(d => d.classList.remove('active'));
     document.querySelector(`.theme-dot-${n}`)?.classList.add('active');
     // 드로어 색상 동기화
-    const themeMap = { 1: '#0C1B2E', 2: '#FFF6EE', 3: '#FFF8E8' };
+    const themeMap = { 1: '#0C1B2E', 2: '#FFF6EE', 3: '#FFF8E8', 4: '#FFFFFF' };
     document.getElementById('navDrawer').style.background = themeMap[n] || '#0C1B2E';
   }
 
@@ -2347,8 +3796,8 @@
 
   // 저장된 테마 복원
   (function() {
-    const saved = parseInt(localStorage.getItem('mikon-theme') || '1');
-    if (saved !== 1) setTheme(saved);
+    const saved = parseInt(localStorage.getItem(THEME_STORAGE_KEY) || '4');
+    setTheme(saved);
   })();
 
   // 외부 클릭 시 테마 팔레트 닫기
@@ -2379,6 +3828,13 @@
   hamburger.addEventListener('click', () =>
     drawer.classList.contains('open') ? closeDrawer() : openDrawer()
   );
+
+  // Put the brand rationale before the program catalog in the page flow.
+  const programsSection = document.getElementById('programs');
+  const coursesSection = document.getElementById('courses');
+  if (programsSection && coursesSection && programsSection.previousElementSibling !== coursesSection) {
+    programsSection.parentNode.insertBefore(coursesSection, programsSection);
+  }
 
   // ── Smooth scroll ──
   document.querySelectorAll('a[href^="#"]').forEach(a => {
